@@ -78,7 +78,7 @@ header.logo-container {
     margin: 0 0 10px;
     color: #ff7900;
 
-    font-family: 'TitanOne', cursive;
+    font-family: 'TitanOne', sans-serif;
     font-size: clamp(40px, 4.5vw, 65px);
     font-weight: normal;
 

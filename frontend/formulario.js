@@ -28,13 +28,13 @@
         const correoCompleto = inputusuario + dominioInstitucional;
         console.log("Correo listo para enviar al servidor:", correoCompleto);
         alert("¡Acceso correcto! Correo completo: " + correoCompleto);
-        const inputUsuario = document.getElementById('correo-login');
+});
+const inputUsuario = document.getElementById('correo-login');
 
     inputUsuario.addEventListener('input', function(event) {
-        let valorLimpio = this.value.toLowerCase().replace(/[^a-z0-9_]/g, '');
+        let valorLimpio = this.value.toLowerCase().replace(/[^a-z0-9._]/g, '');
     
         this.value = valorLimpio;
-});
     });
     //Utilzamos el evento visibilitychange para detectar cuando el usuario cambia de pestaña o minimiza la ventana
     document.addEventListener("visibilitychange", function() {
