@@ -1,12 +1,12 @@
 
 @font-face {
     font-family: 'TitanOne';
-    src: url('fonts/TitanOne-Regular.ttf') format('truetype');
+    src: url('/frontend/fonts/TitanOne-Regular.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Orbitron';
-    src: url('fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
+    src: url('/frontend/fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
 }
 
 * {
