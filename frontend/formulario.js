@@ -6,7 +6,7 @@
                 formularioLogin.addEventListener("submit", function(evento) {
                     evento.preventDefault();
         
-                    window.location.href = "./landing.html";
+                    window.location.href = "../Pagina-de-inicio.html";
                 });
             }
         
