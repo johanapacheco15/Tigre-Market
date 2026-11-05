@@ -29,3 +29,11 @@
             }
         }
     });
+    //Evitar que el usuario ingrese caracteres especiales en el campo de correo
+const inputUsuario = document.getElementById('correo-login');
+
+    inputUsuario.addEventListener('input', function(event) {
+        let valorLimpio = this.value.toLowerCase().replace(/[^a-z0-9._]/g, '');
+    
+        this.value = valorLimpio;
+    });

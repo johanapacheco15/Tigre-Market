@@ -82,3 +82,9 @@ body.pagina-legal {
     background-color: #d97706 !important; /* Tono naranja más oscuro al pasar el cursor */
     transform: translateY(-2px) !important; /* Efecto de elevación al pasar el cursor */
 }
+.parrafo-legal {
+    text-align: justify;
+}
+.contacto{
+    text-align: center;
+}

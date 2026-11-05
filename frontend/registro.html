@@ -23,17 +23,26 @@
             
         <form id="registro">
 
-        <label for="nombre">Nombre completo</label>
+        <label for="nombre">Nombre(s)</label>
         <input
             type="text"
             id="nombre"
             name="nombre"
-            placeholder="Escribe tu nombre completo"
+            placeholder="Escribe tu nombre(s)"
             autocomplete="name"
              maxlength="25"
             required
 
         >
+        <label for="apellido">Apellido(s)</label>
+        <input
+            type="text"
+            id="apellido"
+            name="apellido"
+            placeholder="Escribe tus apellidos"
+            autocomplete="family-name"
+             maxlength="25"
+            required>
 
         <label for="edad">Edad</label>
         <input
@@ -102,7 +111,7 @@
     <div class="confirmaciones">
     <label class="opcion-confirmacion">
     <input type="checkbox" id="privacidad" name="privacidad" required>
-        Acepto las <a href="acuerdos-de-privacidad.html" target="_blank">políticas de privacidad</a> de Tigre Market.
+        Acepto las <a href="acuerdos-de-privacidad.html" target="_blank">políticas de privacidad y terminos y condiciones</a> de Tigre Market.
     </label>
 
     <label class="opcion-confirmacion">
