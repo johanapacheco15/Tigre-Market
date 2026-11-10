@@ -348,4 +348,164 @@ footer {
     }
 }
 
-/*landing page corregido*/
+/*separacion para opciones de cuenta*/
+/* Previene scroll al fondo cuando el panel está activo */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Overlay semitransparente */
+.overlay-cuenta {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(3, 10, 23, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.overlay-cuenta.activo {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Panel Desplegable (Aproximadamente 1/4 de pantalla a la derecha) */
+.panel-cuenta {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    width: 320px;
+    max-width: 85vw;
+    height: 100vh;
+    background: #071429;
+    border-left: 1px solid #00aaff;
+    box-shadow: -5px 0 25px rgba(0, 170, 255, 0.2);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.panel-cuenta.activo {
+    right: 0;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #101f36;
+}
+
+.panel-header h3 {
+    margin: 0;
+    color: #ff8617;
+    font-size: 18px;
+}
+
+.btn-cerrar {
+    background: transparent;
+    border: none;
+    color: #91a3ba;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.btn-cerrar:hover {
+    color: #ff7908;
+}
+
+.perfil-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 0;
+    text-align: center;
+}
+
+.avatar-container {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(135deg, #ff7908, #00aaff);
+    margin-bottom: 10px;
+}
+
+.avatar-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #101f36;
+}
+
+.perfil-info h4 {
+    margin: 0 0 4px;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.user-email {
+    color: #91a3ba;
+    font-size: 13px;
+}
+
+.panel-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 12px 14px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    color: #d5deeb;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.menu-item:hover {
+    background: #101f36;
+    border-color: #3b587c;
+    color: #ffffff;
+}
+
+.menu-divider {
+    height: 1px;
+    background: #101f36;
+    margin: 8px 0;
+}
+
+.btn-logout:hover {
+    color: #ff9b3c;
+    border-color: #ff790840;
+}
+
+.btn-danger {
+    color: #ff5555;
+}
+
+.btn-danger:hover {
+    background: rgba(255, 85, 85, 0.1);
+    border-color: rgba(255, 85, 85, 0.3);
+    color: #ff6b6b;
+}

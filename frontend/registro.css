@@ -105,12 +105,14 @@ section.formulario h2 {
     color: #f59e0b; /* Título principal en naranja */
     font-size: 1.6rem;
     margin-bottom: 5px;
+    text-align: center;
 }
 
 section.formulario > p {
     color: #94a3b8;
     font-size: 0.85rem;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 /* Etiquetas y campos de entrada */
