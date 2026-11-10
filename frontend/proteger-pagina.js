@@ -7,7 +7,7 @@ import {
 onAuthStateChanged(auth, (user) => {
 
     if (!user) {
-        window.location.replace("/login.html");
+        window.location.replace("/index.html");
     }
 
 });
