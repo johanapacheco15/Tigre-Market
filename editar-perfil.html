@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/frontend/css/editar-perfil.css">
+</head>
+<body>
+    
+    <main class="main-contenedor">
+    <h2 class="titulo-seccion">Mis Productos Favoritos</h2>
+    
+    <!-- Contenedor donde se inyectarán dinámicamente los favoritos -->
+    <div id="grid-favoritos" class="productos-grid">
+        <!-- Ejemplo estático de tarjeta de producto favorito -->
+        <div class="card-producto">
+            <img src="/frontend/img/producto-ejemplo.jpg" alt="Producto">
+            <h3>Control Inalámbrico Neón</h3>
+            <span class="precio">$599.00 MXN</span>
+            <div class="card-acciones">
+                <button class="btn-principal" onclick="agregarAlCarrito(1)">Mover al Carrito</button>
+                <button class="btn-eliminar-fav" onclick="quitarFavorito(1)">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</main>
+<main class="main-contenedor">
+    <h2 class="titulo-seccion">Historial de Compras</h2>
+
+    <div class="tabla-historial-container">
+        <table class="tabla-historial">
+            <thead>
+                <tr>
+                    <th>ID Pedido</th>
+                    <th>Fecha</th>
+                    <th>Productos</th>
+                    <th>Total</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody id="body-historial">
+                <!-- Fila de ejemplo -->
+                <tr>
+                    <td>#TM-84920</td>
+                    <td>05/11/2026</td>
+                    <td>Smart Car Robot Arduino, Cable Jumper</td>
+                    <td>$850.00 MXN</td>
+                    <td><span class="badge entregado">Entregado</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+</body>
+</html>
