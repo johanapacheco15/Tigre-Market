@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,86 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tigres Blancos Market</title>
     <link rel="stylesheet" href="Pagina-de-inicio.css">
-    <script src="Pagina-de-inicio.js" defer></script>
 </head>
 <body>
 
-    <header class="encabezado">
-    <img src="/frontend/img/logo-landing.png" alt="Logo Tigre Market" class="logo">
-
-    <div class="texto-encabezado">
-        <h1>Tigre Market</h1>
-        <p>Compra y vende entre estudiantes universitarios GTU</p>
-    </div>
-
-<nav>
-    <a href="index.html">
-        <img src="/frontend/iconos/inicio.png" alt=""> Inicio
-    </a>
-
-    <a href="/frontend/compras.html">
-        <img src="/frontend/iconos/compras.png" alt=""> Compras
-    </a>
-
-    <a href="/frontend/venta.html">
-        <img src="/frontend/iconos/vender.png" alt=""> Vender
-    </a>
-
-    <a href="/frontend/carrito.html">
-        <img src="/frontend/iconos/carrito.png" alt=""> Carrito
-    </a>
-
-    <!-- [CAMBIO]: Asignamos el ID 'btn-abrir-cuenta' y cambiamos a href="javascript:void(0)" -->
-    <a href="javascript:void(0)" id="btn-abrir-cuenta">
-        <img src="/frontend/iconos/usuario.png" alt=""> Mi cuenta
-    </a>
-</nav>
-
-</header>
-
-<!-- [NUEVO]: Coloca esto justo debajo de tu </header> -->
-<div id="overlay-cuenta" class="overlay-cuenta"></div>
-
-<aside id="panel-cuenta" class="panel-cuenta">
-    <div class="panel-header">
-        <h3>Opciones de Cuenta</h3>
-        <button id="btn-cerrar-panel" class="btn-cerrar">&times;</button>
-    </div>
-
-    <!-- Información del Usuario -->
-    <div class="perfil-info">
-        <div class="avatar-container">
-            <img src="/frontend/iconos/usuario.png" alt="Foto de Perfil" id="foto-perfil">
+<header class="encabezado">
+        <div class="contenedor-logo-titulo">
+            <img src="/frontend/img/logoencab1.jpg.jpeg" alt="Logo Tigre Market" class="logo-tigre-encabezado">
+            
+            <div class="texto-encabezado">
+                <h1>Tigre Market</h1>
+                <p>Compra y vende entre estudiantes universitarios GTU</p>
+            </div>
         </div>
-        <h4 id="nombre-usuario">Usuario Tigre</h4>
-        <span class="user-email">usuario@tigremarket.com</span>
-    </div>
+    <nav>
+        <a href="index.html">
+            <img src="/frontend/iconos/inicio.png" alt=""> Inicio
+         </a>
 
-    <!-- Opciones del Menú -->
-    <nav class="panel-menu">
-        <a href="/frontend/perfil.html" class="menu-item">
-            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-            Editar Perfil
+        <a href="compras.html">
+            <img src="/frontend/iconos/compras.png" alt=""> Compras
         </a>
 
-        <a href="/frontend/cambio-password.html" class="menu-item">
-            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-            Cambiar Contraseña
+        <a href="venta.html">
+            <img src="/frontend/iconos/vender.png" alt=""> Vender
         </a>
 
-        <div class="menu-divider"></div>
+        <a href="carrito.html">
+            <img src="/frontend/iconos/carrito.png" alt=""> Carrito
+        </a>
 
-        <button id="btn-logout" class="menu-item btn-logout">
-            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
-            Cerrar Sesión
-        </button>
-
-        <button id="btn-eliminar-cuenta" class="menu-item btn-danger">
-            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
-            Eliminar Cuenta
-        </button>
+        <a href="#">
+            <img src="/frontend/iconos/usuario.png" alt=""> Mi cuenta
+        </a>
     </nav>
-</aside>
+
+    </header>
     
 <section class="busqueda-inicio">
     <h2>¿Qué estás <span class="texto-naranja">buscando?</span></h2>
@@ -99,11 +53,12 @@
             id="busqueda-producto"
             placeholder="Busca mochilas, libros, calculadoras..."
             aria-label="Buscar productos"
-            required>
+            required
+        >
     </div>
 
     <button type="submit">
-        <img src="frontend/iconos/busqueda.png" alt=""> Buscar
+        <img src="/frontend/iconos/busqueda.png" alt=""> Buscar
     </button>
 </form>
 </section>
@@ -115,8 +70,8 @@
             <div class="productos" id="catalogo">
             <div class="producto">
                 <h3>Mochila universitaria</h3>
-                <img src="pagina web" alt="Mochila universitaria" class="foto-producto">
-                <p>En buen estado.</p>
+                <img src="/frontend/img/mochila.jpg" alt="Mochila universitaria" class="foto-producto">
+                <p>Descripcion del producto</p>
                 <p class="precio">$180 MXN</p>
                 <button onclick="alert
                 ('Mochila universitaria: en buen estado. Precio: $180 MXN')">Ver producto
@@ -132,8 +87,8 @@
 
             <div class="producto">
                 <h3>Calculadora científica</h3>
-                <img src="pagina web1" alt="Mochila universitaria" class="foto-producto">
-                <p>Ideal para tus clases.</p>
+                <img src="/frontend/img/calculadora.jpg" alt="Calculadora científica" class="foto-producto">
+                <p>Descripcion del producto.</p>
                 <p class="precio">$250 MXN</p>
                 <button onclick="alert('Calculadora científica: ideal para tus clases. Precio: $250 MXN')">
                  Ver producto
@@ -153,11 +108,31 @@
         <p>© 2026 Tigre Market</p>
     </footer>
 
-<script src="/frontend/carrito.js" defer></script>
+<script src="carrito.js" defer></script>
 
+    <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBnRAQ9ZX82hOCqnML9QqPfBIJNzhSXIHU",
+    authDomain: "tiger-market-73a36.firebaseapp.com",
+    projectId: "tiger-market-73a36",
+    storageBucket: "tiger-market-73a36.firebasestorage.app",
+    messagingSenderId: "219212142513",
+    appId: "1:219212142513:web:364f290d2cc6188c9f8f90",
+    measurementId: "G-N0SN077EY6"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
 </script>
-    
-<script type="module" src="./proteger-pagina.js"></script>
 
 </body>
 </html>
