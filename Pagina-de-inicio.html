@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,28 +8,29 @@
 </head>
 <body>
 
-    <header class="encabezado">
-    <img src="/frontend/img/logo-landing.png" alt="Logo Tigre Market" class="logo">
-
-    <div class="texto-encabezado">
-        <h1>Tigre Market</h1>
-        <p>Compra y vende entre estudiantes universitarios GTU</p>
-    </div>
-
+<header class="encabezado">
+        <div class="contenedor-logo-titulo">
+            <img src="/frontend/img/logoencab1.jpg.jpeg" alt="Logo Tigre Market" class="logo-tigre-encabezado">
+            
+            <div class="texto-encabezado">
+                <h1>Tigre Market</h1>
+                <p>Compra y vende entre estudiantes universitarios GTU</p>
+            </div>
+        </div>
     <nav>
         <a href="index.html">
             <img src="/frontend/iconos/inicio.png" alt=""> Inicio
          </a>
 
-        <a href="/frontend/compras.html">
+        <a href="compras.html">
             <img src="/frontend/iconos/compras.png" alt=""> Compras
         </a>
 
-        <a href="/frontend/venta.html">
+        <a href="venta.html">
             <img src="/frontend/iconos/vender.png" alt=""> Vender
         </a>
 
-        <a href="/frontend/carrito.html">
+        <a href="carrito.html">
             <img src="/frontend/iconos/carrito.png" alt=""> Carrito
         </a>
 
@@ -53,11 +53,12 @@
             id="busqueda-producto"
             placeholder="Busca mochilas, libros, calculadoras..."
             aria-label="Buscar productos"
-            required>
+            required
+        >
     </div>
 
     <button type="submit">
-        <img src="frontend/iconos/busqueda.png" alt=""> Buscar
+        <img src="/frontend/iconos/busqueda.png" alt=""> Buscar
     </button>
 </form>
 </section>
@@ -69,8 +70,8 @@
             <div class="productos" id="catalogo">
             <div class="producto">
                 <h3>Mochila universitaria</h3>
-                <img src="pagina web" alt="Mochila universitaria" class="foto-producto">
-                <p>En buen estado.</p>
+                <img src="/frontend/img/mochila.jpg" alt="Mochila universitaria" class="foto-producto">
+                <p>Descripcion del producto</p>
                 <p class="precio">$180 MXN</p>
                 <button onclick="alert
                 ('Mochila universitaria: en buen estado. Precio: $180 MXN')">Ver producto
@@ -86,8 +87,8 @@
 
             <div class="producto">
                 <h3>Calculadora científica</h3>
-                <img src="pagina web1" alt="Mochila universitaria" class="foto-producto">
-                <p>Ideal para tus clases.</p>
+                <img src="/frontend/img/calculadora.jpg" alt="Calculadora científica" class="foto-producto">
+                <p>Descripcion del producto.</p>
                 <p class="precio">$250 MXN</p>
                 <button onclick="alert('Calculadora científica: ideal para tus clases. Precio: $250 MXN')">
                  Ver producto
@@ -107,12 +108,31 @@
         <p>© 2026 Tigre Market</p>
     </footer>
 
-<script src="/frontend/carrito.js" defer></script>
+<script src="carrito.js" defer></script>
 
+    <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBnRAQ9ZX82hOCqnML9QqPfBIJNzhSXIHU",
+    authDomain: "tiger-market-73a36.firebaseapp.com",
+    projectId: "tiger-market-73a36",
+    storageBucket: "tiger-market-73a36.firebasestorage.app",
+    messagingSenderId: "219212142513",
+    appId: "1:219212142513:web:364f290d2cc6188c9f8f90",
+    measurementId: "G-N0SN077EY6"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
 </script>
-    
-<script type="module" src="/frontend/proteger-pagina.js"></script>
-<script type="module" src="/frontend/control-salida.js"></script>
 
 </body>
 </html>

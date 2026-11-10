@@ -1,3 +1,17 @@
+
+import { auth, db } from "../backend/firebase.js";
+
+import {
+    createUserWithEmailAndPassword
+} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js";
+
+import {
+    doc,
+    setDoc,
+    serverTimestamp
+} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js";
+
+
 // ==========================================
 // 1. VISIBILIDAD DE LA CONTRASEÑA
 // ==========================================
@@ -240,7 +254,7 @@ const inputUsuario = document.getElementById('correo-login');
                 alert("¡Registro exitoso! Ya puedes iniciar sesión en Tiger Market.");
 
                 formularioRegistro.reset();
-                window.location.href = "index.html";
+                window.location.href = "/index.html";
 
             } catch (error) {
                 console.error("Error durante el registro:", error);
