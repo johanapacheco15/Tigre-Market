@@ -1,203 +1,212 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Compras | Tigre Market</title>
     <link rel="stylesheet" href="compras.css">
     <script src="carrito.js" defer></script>
+    <script src="compras.js" defer></script>
 </head>
+
 <body>
 
-    <header class="encabezado">
-        <h1>Tigre Market 🐯</h1>
-        <p>Encuentra todo lo que necesitas para la universidad</p>
+<header class="encabezado">
 
-        <nav>
-            <a href="../Pagina-de-inicio.html">Inicio</a>
-            <a href="compras.html">Compras</a>
-            <a href="carrito.html">Carrito</a>
-        </nav>
-    </header>
+    <div class="contenedor-logo-titulo">
 
-    <main class="contenedor">
-        <h2>Productos disponibles</h2>
-        <p>Compra y vende entre estudiantes universitarios.</p>
+        <img src="img/logoencab1.jpg.jpeg"
+             alt="Tigre blanco de Tigre Market"
+             class="logo-tigre-encabezado">
 
-        
-<section class="filtros">
-    <div class="filtro">
-        <label for="filtro-producto">Buscar producto:</label>
-        <input
-            type="text"
-            id="filtro-producto"
-            placeholder="Ej. mochila, libro..."
-        >
+        <div class="texto-encabezado">
+            <h1>Tigre Market</h1>
+            <p>Compra y vende entre estudiantes universitarios</p>
+        </div>
+
     </div>
 
-    <div class="filtro">
-        <label for="filtro-color">Color:</label>
-        <select id="filtro-color">
-            <option value="todos">Todos los colores</option>
-            <option value="negro">Negro</option>
-            <option value="blanco">Blanco</option>
-            <option value="azul">Azul</option>
-            <option value="rosa">Rosa</option>
-            <option value="rojo">Rojo</option>
-        </select>
-    </div>
+<nav>
+    <a href="Pagina-de-inicio.html">
+        <img src="iconos/inicio.png" alt="">
+        Inicio
+    </a>
 
-    <div class="filtro">
-        <label for="filtro-presupuesto">
-            Presupuesto máximo (MXN):
-        </label>
-        <input
-            type="number"
-            id="filtro-presupuesto"
-            min="0"
-            placeholder="Ej. 300"
-        >
-    </div>
+    <a href="compras.html">
+        <img src="iconos/compras.png" alt="">
+        Compras
+    </a>
 
-    <button type="button" id="limpiar-filtros">
-        Limpiar filtros
+    <a href="carrito.html">
+        <img src="iconos/carrito.png" alt="">
+        Carrito
+    </a>
+</nav>
+
+</header>
+
+<main class="contenedor">
+
+    <h2>Productos disponibles</h2>
+    <section class="barra-busqueda-filtros">
+
+       <div class="buscador">
+
+    <input
+        type="text"
+        id="buscador-producto"
+        placeholder="Busca mochilas, libros, calculadoras..."
+    >
+
+    <button type="button" id="boton-buscar">
+        Buscar
     </button>
-</section>
+</div>
 
+        <section class="filtros">
 
-        <section class="catalogo" id="catalogo">
+            <div class="filtro">
 
-            <article class="tarjeta-producto"
+                <label for="filtro-categoria">Categoría:</label>
+
+                <select id="filtro-categoria">
+
+                    <option value="todas">Todas</option>
+                    <option value="mochilas">Mochilas</option>
+                    <option value="libros">Libros</option>
+                    <option value="calculadoras">Calculadoras</option>
+                    <option value="papeleria">Papelería</option>
+                    <option value="otros">Otros</option>
+
+                </select>
+
+            </div>
+
+            <div class="filtro">
+
+                <label for="filtro-color">Color:</label>
+
+                <select id="filtro-color">
+
+                    <option value="todos">Todos</option>
+                    <option value="negro">Negro</option>
+                    <option value="blanco">Blanco</option>
+                    <option value="azul">Azul</option>
+                    <option value="rosa">Rosa</option>
+                    <option value="rojo">Rojo</option>
+
+                </select>
+
+            </div>
+
+            <div class="filtro">
+
+                <label for="filtro-presupuesto">Precio máximo:</label>
+
+                <input
+                    type="number"
+                    id="filtro-presupuesto"
+                    min="0"
+                    placeholder="Ej. 300"
+                >
+
+            </div>
+
+            <button type="button" id="limpiar-filtros">
+                Limpiar
+            </button>
+
+        </section>
+
+    </section>
+
+    <section class="catalogo" id="catalogo">
+
+        <article class="tarjeta-producto"
+            data-categoria="mochilas"
             data-producto="mochila universitaria"
             data-color="negro"
             data-precio="180">
 
-                <img src="mochila.jpg"
-                     alt="Mochila universitaria"
-                     class="foto-producto">
+            <img src="mochila.jpg"
+                 alt="Mochila universitaria"
+                 class="foto-producto">
 
-                <h3>Mochila universitaria</h3>
-                <p>En buen estado, ideal para tus clases.</p>
-                <p class="precio">$180 MXN</p>
+            <h3>Mochila universitaria</h3>
 
-                <button class="ver-producto"
-                    data-nombre="Mochila universitaria"
-                    data-descripcion="En buen estado, ideal para tus clases."
-                    data-precio="180">
-                    Ver producto
-                </button>
+            <p>En buen estado, ideal para tus clases.</p>
 
-                <button class="agregar"
-                    data-id="1"
-                    data-nombre="Mochila universitaria"
-                    data-precio="180"
-                    data-imagen="mochila.jpg">
-                    Agregar al carrito
-                </button>
-            </article>
+            <p class="precio">$180 MXN</p>
 
-            <article class="tarjeta-producto"
-               data-producto="calculadora científica"
-               data-color="negro"
-              data-precio="250">
+            <button class="ver-producto"
+                data-nombre="Mochila universitaria"
+                data-descripcion="En buen estado, ideal para tus clases."
+                data-precio="180">
 
-                <img src="calculadora.jpg"
-                     alt="Calculadora científica"
-                     class="foto-producto">
+                Ver producto
 
-                <h3>Calculadora científica</h3>
-                <p>Ideal para matemáticas y otras materias.</p>
-                <p class="precio">$250 MXN</p>
+            </button>
 
-                <button class="ver-producto"
-                    data-nombre="Calculadora científica"
-                    data-descripcion="Ideal para matemáticas y otras materias."
-                    data-precio="250">
-                    Ver producto
-                </button>
+            <button class="agregar"
+                data-id="1"
+                data-nombre="Mochila universitaria"
+                data-precio="180"
+                data-imagen="mochila.jpg">
 
-                <button class="agregar"
-                    data-id="2"
-                    data-nombre="Calculadora científica"
-                    data-precio="250"
-                    data-imagen="calculadora.jpg">
-                    Agregar al carrito
-                </button>
-            </article>
+                Agregar al carrito
 
-        </section>
-    </main>
+            </button>
 
-    <footer>
-        <p>© 2026 Tigre Market</p>
-    </footer>
+        </article>
 
-    <script>
-        document.querySelectorAll(".ver-producto").forEach(function(boton) {
-            boton.addEventListener("click", function() {
-                alert(
-                    boton.dataset.nombre + "\n" +
-                    boton.dataset.descripcion + "\nPrecio: $" +
-                    boton.dataset.precio + " MXN"
-                );
-            });
-        });
-    </script>
-    
-    <script>
-        const buscador = document.getElementById("filtro-producto");
-        const filtroColor = document.getElementById("filtro-color");
-        const filtroPresupuesto = document.getElementById("filtro-presupuesto");
-        const botonLimpiar = document.getElementById("limpiar-filtros");
+        <article class="tarjeta-producto"
+            data-categoria="calculadoras"
+            data-producto="calculadora científica"
+            data-color="negro"
+            data-precio="250">
 
-        function filtrarProductos() {
-            const texto = buscador.value.trim().toLowerCase();
-            const colorElegido = filtroColor.value;
-            const presupuesto = filtroPresupuesto.value;
+            <img src="calculadora.jpg"
+                 alt="Calculadora científica"
+                 class="foto-producto">
 
-            const tarjetas = document.querySelectorAll(".tarjeta-producto");
+            <h3>Calculadora científica</h3>
 
-            tarjetas.forEach(function(tarjeta) {
-                const nombre = tarjeta.dataset.producto.toLowerCase();
-                const color = tarjeta.dataset.color.toLowerCase();
-                const precio = Number(tarjeta.dataset.precio);
+            <p>Ideal para matemáticas y otras materias.</p>
 
-                const coincideProducto = nombre.includes(texto);
+            <p class="precio">$250 MXN</p>
 
-                const coincideColor =
-                    colorElegido === "todos" || color === colorElegido;
+            <button class="ver-producto"
+                data-nombre="Calculadora científica"
+                data-descripcion="Ideal para matemáticas y otras materias."
+                data-precio="250">
 
-                const coincidePrecio =
-                    presupuesto === "" || precio <= Number(presupuesto);
+                Ver producto
 
-                if (coincideProducto && coincideColor && coincidePrecio) {
-                    tarjeta.style.display = "";
-                } else {
-                    tarjeta.style.display = "none";
-                }
-            });
-        }
+            </button>
 
-        buscador.addEventListener("input", filtrarProductos);
-        filtroColor.addEventListener("change", filtrarProductos);
-        filtroPresupuesto.addEventListener("input", filtrarProductos);
+            <button class="agregar"
+                data-id="2"
+                data-nombre="Calculadora científica"
+                data-precio="250"
+                data-imagen="calculadora.jpg">
 
-        const parametros = new URLSearchParams(window.location.search);
-const busquedaInicial = parametros.get("buscar");
+                Agregar al carrito
 
-if (busquedaInicial) {
-    buscador.value = busquedaInicial;
-    filtrarProductos();
-}
+            </button>
 
-        botonLimpiar.addEventListener("click", function() {
-            buscador.value = "";
-            filtroColor.value = "todos";
-            filtroPresupuesto.value = "";
-            filtrarProductos();
-        });
-    </script>
+        </article>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 Tigre Market</p>
+</footer>
+
+</body>
+</html>
 
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
@@ -218,7 +227,6 @@ if (busquedaInicial) {
 </script>
     
 <script type="module" src="./proteger-pagina.js"></script>
-<script type="module" src="/frontend/control-salida.js"></script> 
 
 </body>
 </html>

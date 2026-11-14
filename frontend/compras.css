@@ -1,109 +1,744 @@
+/* =========================================
+   FUENTES
+========================================= */
+
+@font-face {
+    font-family: 'TitanOne';
+    src: url('fonts/TitanOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
+    font-weight: 400 900;
+    font-style: normal;
+}
+
+
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
+    font-family: 'Orbitron', sans-serif;
+    background-color: #030a17;
+    background-image: url("img/fondo8.jpeg");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    color: #f2f5ff;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
+
+
+/* =========================================
+   ENCABEZADO
+========================================= */
 
 .encabezado {
-    background-color: #0b3fea;
-    color: white;
-    text-align: center;
-    padding: 25px 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 160px;
+    padding: 15px 35px;
+
+    background:
+        linear-gradient(
+            rgba(3, 10, 23, 0.15),
+            rgba(3, 10, 23, 0.35)
+        ),
+        url('img/encabezado2.jpeg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-bottom: 2px solid #ff7900;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
 }
 
-.encabezado h1 {
-    margin: 0 0 10px;
+
+/* LOGO Y TÍTULO */
+
+.contenedor-logo-titulo {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex-shrink: 0;
 }
 
-nav {
-    margin-top: 20px;
+.logo-tigre-encabezado {
+    height: 145px;
+    width: auto;
+    object-fit: contain;
 }
 
-nav a {
-    color: white;
+.texto-encabezado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.texto-encabezado h1 {
+    font-family: 'TitanOne', sans-serif;
+    font-size: 55px;
+    font-weight: normal;
+    line-height: 1.2;
+
+    background: linear-gradient(
+        to bottom,
+        #fff0a3 0%,
+        #ffbd24 25%,
+        #ff8500 65%,
+        #d94b00 100%
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    filter:
+        drop-shadow(0 3px 0 #a94300)
+        drop-shadow(0 6px 0 #713000)
+        drop-shadow(0 9px 5px rgba(0, 0, 0, 0.8));
+}
+
+.texto-encabezado p {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    color: #dce6f5;
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================
+   MENÚ DE NAVEGACIÓN
+========================================= */
+
+.encabezado nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 7px;
+
+    background: rgba(7, 20, 41, 0.95);
+    border: 1.5px solid #168bff;
+    border-radius: 35px;
+
+    box-shadow:
+        0 0 5px #168bff,
+        0 0 12px rgba(22, 139, 255, 0.8),
+        0 0 22px rgba(22, 139, 255, 0.5),
+        inset 0 0 8px rgba(22, 139, 255, 0.15);
+}
+
+.encabezado nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 16px;
+
+    color: #e5eaf5;
     text-decoration: none;
-    margin: 0 12px;
-    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+
+    border-radius: 25px;
+    transition: all 0.3s ease;
 }
 
-nav a:hover {
-    text-decoration: underline;
+/* COLOR NARANJA DE LOS ICONOS */
+.encabezado nav a img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    filter: invert(52%) sepia(98%) saturate(3000%) hue-rotate(359deg) brightness(102%);
 }
+
+/* ICONOS AZULES AL PASAR EL CURSOR */
+.encabezado nav a:hover img {
+    filter: brightness(0) saturate(100%)
+            invert(35%) sepia(98%) saturate(2500%)
+            hue-rotate(190deg) brightness(105%);
+}
+
+.encabezado nav a:hover {
+    background: #ff7900;
+    color: white;
+    box-shadow: 0 0 12px rgba(255, 121, 0, 0.7);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   CONTENIDO PRINCIPAL
+========================================= */
 
 .contenedor {
-    max-width: 1100px;
-    margin: 30px auto;
-    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+
+    max-width: 1450px;
+    margin: auto;
+    padding: 40px 30px;
 }
 
-.contenedor h2 {
+.contenedor > h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+
+    color: #f2f5ff;
+    text-shadow: 0 3px 8px #000;
+}
+
+.contenedor > p {
+    margin-top: -15px;
+    margin-bottom: 5px;
+
+    font-size: 13px;
+    color: #b8c4d8;
     text-align: center;
 }
+
+
+/* =========================================
+   BARRA DE BUSCADOR Y FILTROS
+========================================= */
+
+.barra-busqueda-filtros {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    width: 100%;
+    margin: 0 auto 10px;
+}
+
+
+/* =========================================
+   BUSCADOR
+========================================= */
+
+.buscador {
+    display: flex;
+    align-items: center;
+
+    flex: 1;
+    min-width: 180px;
+    max-width: 650px;
+    height: 46px;
+
+    margin: 0;
+
+    background: #07152b;
+    border: 2px solid #ff7900;
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 0 8px rgba(255, 121, 0, 0.5),
+        0 0 18px rgba(255, 121, 0, 0.2);
+}
+
+/* CAMPO DE TEXTO */
+.buscador input {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 18px;
+
+    background: transparent;
+    border: none;
+    outline: none;
+
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+}
+
+.buscador input::placeholder {
+    color: #8494aa;
+}
+
+/* BOTÓN BUSCAR */
+#boton-buscar {
+    height: 100%;
+    min-width: 105px;
+    padding: 0 18px;
+
+    background: linear-gradient(135deg, #ff7900, #f47721);
+    border: none;
+
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#boton-buscar:hover {
+    background: #ff7900;
+    box-shadow: 0 0 12px rgba(255, 121, 0, 0.7);
+}
+
+
+/* =========================================
+   FILTROS EN FILA
+========================================= */
+
+.filtros {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+
+    flex: 1;
+    min-width: 0;
+    padding: 9px 12px;
+
+    background: rgba(3, 10, 23, 0.94);
+
+    border: 1.5px solid #168bff;
+    border-radius: 14px;
+
+    box-shadow:
+        0 0 6px #168bff,
+        0 0 12px rgba(22, 139, 255, 0.4),
+        inset 0 0 8px rgba(22, 139, 255, 0.1);
+}
+
+
+/* CAMPOS DE FILTROS */
+
+.filtro {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    flex: 1;
+    min-width: 0;
+}
+
+.filtro label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 9px;
+    font-weight: bold;
+    color: #dce6f5;
+    white-space: nowrap;
+}
+
+.filtro input,
+.filtro select {
+    width: 100%;
+    height: 32px;
+    padding: 0 8px;
+
+    background: #030a17;
+    border: 1px solid #355071;
+    border-radius: 8px;
+
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 9px;
+
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.filtro input:focus,
+.filtro select:focus {
+    border-color: #168bff;
+    box-shadow: 0 0 10px rgba(22, 139, 255, 0.6);
+}
+
+.filtro input::placeholder {
+    color: #8494aa;
+}
+
+.filtro select option {
+    background: #07152b;
+    color: white;
+}
+
+
+/* BOTÓN LIMPIAR */
+
+#limpiar-filtros {
+    align-self: flex-end;
+
+    min-width: 75px;
+    height: 32px;
+    padding: 0 10px;
+
+    border: 1px solid #ff7900;
+    border-radius: 20px;
+
+    background: transparent;
+    color: #ffad42;
+
+    font-family: 'Orbitron', sans-serif;
+    font-size: 9px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#limpiar-filtros:hover {
+    background: #ff7900;
+    color: white;
+    box-shadow: 0 0 12px rgba(255, 121, 0, 0.6);
+}
+
+
+/* =========================================
+   CATÁLOGO
+========================================= */
 
 .catalogo {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
 }
 
+
+/* =========================================
+   TARJETAS DE PRODUCTOS
+========================================= */
+
 .tarjeta-producto {
-    background-color: white;
-    padding: 18px;
-    border-radius: 12px;
-    box-shadow: 0 3px 10px #00000015;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    min-width: 0;
+    padding: 14px;
+
+    background: linear-gradient(
+        145deg,
+        #0b1d38,
+        #030a17
+    );
+
+    border: 1.5px solid #168bff;
+    border-radius: 16px;
+
+    box-shadow:
+        0 0 5px rgba(22, 139, 255, 0.5),
+        0 0 12px rgba(22, 139, 255, 0.2),
+        inset 0 0 8px rgba(22, 139, 255, 0.08);
+
+    transition: all 0.3s ease;
 }
+
+.tarjeta-producto:hover {
+    transform: translateY(-5px);
+
+    border-color: #45a8ff;
+
+    box-shadow:
+        0 0 8px #168bff,
+        0 0 18px rgba(22, 139, 255, 0.8),
+        0 0 28px rgba(22, 139, 255, 0.35);
+}
+
+
+/* IMÁGENES */
 
 .foto-producto {
     width: 100%;
-    height: 190px;
+    height: 185px;
+
     object-fit: contain;
-    display: block;
+    padding: 8px;
+
+    background: #e8eaf0;
+    border-radius: 11px;
     margin-bottom: 15px;
 }
 
+
+/* NOMBRE */
+
 .tarjeta-producto h3 {
-    margin-bottom: 8px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+
+    color: #f2f5ff;
+    margin-bottom: 9px;
 }
 
-.precio {
-    color: #176b3a;
-    font-size: 20px;
-    font-weight: bold;
+
+/* DESCRIPCIÓN */
+
+.tarjeta-producto p:not(.precio) {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+
+    color: #b8c4d8;
+    margin-bottom: 12px;
 }
+
+/* PRECIO */
+
+.tarjeta-producto .precio {
+    font-family: 'TitanOne', sans-serif;
+    font-size: 23px;
+
+    color: #ff7900;
+    margin-top: auto;
+    margin-bottom: 15px;
+
+    text-shadow: 0 0 8px rgba(255, 121, 0, 0.3);
+}
+
+/* =========================================
+   BOTONES DE PRODUCTOS
+========================================= */
 
 .tarjeta-producto button {
     width: 100%;
-    padding: 11px;
-    margin-top: 8px;
-    border: none;
-    border-radius: 6px;
+    min-height: 38px;
+    padding: 8px 5px;
+
+    border-radius: 22px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+
     cursor: pointer;
-    font-size: 14px;
+    transition: all 0.3s ease;
 }
 
-.ver-producto {
-    background-color: #e5e5e5;
-    color: #333;
+/* VER PRODUCTO */
+
+.tarjeta-producto button.ver-producto {
+    margin-bottom: 9px;
+
+    background: transparent;
+    border: 1px solid #168bff;
+    color: #55adff;
 }
 
-.agregar {
-    background-color: #f07808;
+.tarjeta-producto button.ver-producto:hover {
+    background: #168bff;
+    color: white;
+
+    box-shadow: 0 0 12px rgba(22, 139, 255, 0.7);
+}
+
+/* AGREGAR AL CARRITO */
+
+.tarjeta-producto button.agregar {
+    background: linear-gradient(
+        135deg,
+        #ff7900,
+        #f47721
+    );
+
+    border: 1px solid #ff7900;
     color: white;
 }
 
-.tarjeta-producto button:hover {
-    opacity: 0.85;
+.tarjeta-producto button.agregar:hover {
+    background: #ff9500;
+
+    box-shadow:
+        0 0 10px rgba(255, 121, 0, 0.6),
+        0 0 18px rgba(255, 121, 0, 0.3);
+
+    transform: scale(1.03);
 }
 
+/* =========================================
+   PIE DE PÁGINA
+========================================= */
+
 footer {
-    text-align: center;
-    padding: 20px;
-    margin-top: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 65px;
+    padding: 15px 30px;
+
+    background: linear-gradient(
+        90deg,
+        #07152b,
+        #030a17
+    );
+
+    border-top: 2px solid #142c4b;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
+}
+
+footer p {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    color: #dce6f5;
+}
+
+/* =========================================
+   DISEÑO RESPONSIVO
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .contenedor {
+        padding: 30px 20px;
+    }
+
+    .barra-busqueda-filtros {
+        flex-wrap: wrap;
+    }
+
+    .buscador {
+        max-width: none;
+        flex-basis: 100%;
+    }
+
+    .filtros {
+        flex-basis: 100%;
+    }
+
+    .catalogo {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .encabezado {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .filtros {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .filtro {
+        flex: 1 1 130px;
+    }
+
+    .catalogo {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .texto-encabezado h1 {
+        font-size: 36px;
+    }
+}
+
+
+@media (max-width: 550px) {
+
+    .contenedor-logo-titulo {
+        gap: 10px;
+    }
+
+    .logo-tigre-encabezado {
+        height: 75px;
+    }
+
+    .texto-encabezado h1 {
+        font-size: 25px;
+    }
+
+    .texto-encabezado p {
+        font-size: 8px;
+    }
+
+    .encabezado nav {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .encabezado nav a {
+        font-size: 10px;
+        padding: 9px 12px;
+    }
+
+    .contenedor {
+        padding: 25px 12px;
+    }
+
+    .contenedor > h2 {
+        font-size: 23px;
+    }
+
+    .contenedor > p {
+        font-size: 10px;
+    }
+
+    .barra-busqueda-filtros {
+        gap: 12px;
+    }
+
+    .buscador {
+        height: 46px;
+    }
+
+    .filtros {
+        padding: 12px;
+    }
+
+    .filtro {
+        flex: 1 1 100%;
+    }
+
+    .filtro label {
+        font-size: 10px;
+    }
+
+    .filtro input,
+    .filtro select {
+        height: 38px;
+        font-size: 10px;
+    }
+
+    #limpiar-filtros {
+        width: 100%;
+        height: 38px;
+    }
+
+    .catalogo {
+        grid-template-columns: 1fr;
+    }
+
+    .foto-producto {
+        height: 200px;
+    }
+
+    .tarjeta-producto h3 {
+        font-size: 13px;
+    }
 }

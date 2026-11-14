@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,21 +9,46 @@
 </head>
 <body>
 
-    <header class="encabezado">
-        <h1>Tigre Markert</h1>
 
-        <nav>
-            <a href="../Pagina-de-inicio.html">Inicio</a>
-            <a href="carrito.html">Mi carrito</a>
-        </nav>
-    </header>
+<header class="encabezado">
+        <div class="contenedor-logo-titulo">
+            <img src="img/logoencab1.jpg.jpeg" alt="Logo Tigre Market" class="logo-tigre-encabezado">
+            
+            <div class="texto-encabezado">
+                <h1>Tigre Market</h1>
+                <p>Compra y vende entre estudiantes universitarios GTU</p>
+            </div>
+        </div>
+
+<nav>
+    <a href="landing .html">
+        <img src="iconos/inicio.png" alt="">
+        Inicio
+    </a>
+
+    <a href="compras.html">
+        <img src="iconos/compras.png" alt="">
+        Compras
+    </a>
+
+    <a href="venta.html">
+        <img src="iconos/vender.png" alt="">
+       Vender
+    </a>
+    <a href="mi cuenta.html">
+        <img src="iconos/usuario.png" alt="">
+        Mi cuenta
+    </a>
+</nav>
+
+</header>
+
 
     <main class="contenedor-carrito">
 
         <h2>Mi carrito de compras</h2>
-        <p>Revisa los productos que seleccionaste.</p>
-
-        <section id="lista-carrito">
+            <h3 class="titulo-productos">Tus productos seleccionados</h3>
+            <section id="lista-carrito">
             <!-- Los productos aparecerán aquí -->
         </section>
 
@@ -44,11 +68,35 @@
             <button id="confirmar-pedido">
                 Confirmar pedido
             </button>
+    </div>
+</div>
 
             <p id="mensaje" role="status"></p>
         </section>
 
     </main>
+
+<!-- VENTANA DE COMPRA EXITOSA -->
+
+<div id="ventana-exito" class="ventana-exito">
+
+    <div class="contenido-exito">
+
+        <h2>¡Felicidades!</h2>
+        <p class="mensaje-exito">
+            Tu compra se realizó con éxito
+        </p>
+
+        <img src="img/carrito.jpeg" alt="Tigre de Tigre Market">
+
+        <p class="entrega-exito">
+            Recuerda que tu producto se te entregará
+            en persona en el plantel.
+        </p>
+
+        <button id="cerrar-exito">
+            ¡Entendido!
+        </button>
 
     <script type="module">
 

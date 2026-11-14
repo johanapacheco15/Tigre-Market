@@ -1,0 +1,575 @@
+/* =========================================
+   FUENTES
+========================================= */
+
+@font-face {
+    font-family: 'TitanOne';
+    src: url('fonts/TitanOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
+    font-weight: 400 900;
+    font-style: normal;
+}
+
+
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #030a17;
+    background-image: url("");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    color: #f2f5ff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   ENCABEZADO
+========================================= */
+
+.encabezado {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 160px;
+    padding: 15px 35px;
+
+    background:
+        linear-gradient(
+            rgba(3, 10, 23, 0.15),
+            rgba(3, 10, 23, 0.35)
+        ),
+        url('img/encabezado2.jpeg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-bottom: 2px solid #ff7900;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+}
+/* LOGO Y TÍTULO */
+
+.contenedor-logo-titulo {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex-shrink: 0;
+}
+
+.logo-tigre-encabezado {
+    height: 145px;
+    width: auto;
+    object-fit: contain;
+}
+
+.texto-encabezado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.texto-encabezado h1 {
+    font-family: 'TitanOne', sans-serif;
+    font-size: 55px;
+    font-weight: normal;
+    line-height: 1.2;
+
+    background: linear-gradient(
+        to bottom,
+        #fff0a3 0%,
+        #ffbd24 25%,
+        #ff8500 65%,
+        #d94b00 100%
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    filter:
+        drop-shadow(0 3px 0 #a94300)
+        drop-shadow(0 6px 0 #713000)
+        drop-shadow(0 9px 5px rgba(0, 0, 0, 0.8));
+}
+
+.texto-encabezado p {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    color: #dce6f5;
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================
+   MENÚ DE NAVEGACIÓN
+========================================= */
+
+.encabezado nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 7px;
+
+    background: rgba(7, 20, 41, 0.95);
+    border: 1.5px solid #168bff;
+    border-radius: 35px;
+
+    box-shadow:
+        0 0 5px #168bff,
+        0 0 12px rgba(22, 139, 255, 0.8),
+        0 0 22px rgba(22, 139, 255, 0.5),
+        inset 0 0 8px rgba(22, 139, 255, 0.15);
+}
+
+.encabezado nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 16px;
+
+    color: #e5eaf5;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+/* COLOR NARANJA DE LOS ICONOS */
+.encabezado nav a img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    filter: invert(52%) sepia(98%) saturate(3000%) hue-rotate(359deg) brightness(102%);
+}
+
+/* ICONOS AZULES AL PASAR EL CURSOR */
+.encabezado nav a:hover img {
+    filter: brightness(0) saturate(100%)
+            invert(35%) sepia(98%) saturate(2500%)
+            hue-rotate(190deg) brightness(105%);
+}
+
+.encabezado nav a:hover {
+    background: #ff7900;
+    color: white;
+    box-shadow: 0 0 12px rgba(255, 121, 0, 0.7);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   CONTENIDO PRINCIPAL
+========================================= */
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+
+    max-width: 1450px;
+    margin: auto;
+    padding: 40px 30px;
+}
+
+.contenedor > h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+
+    color: #f2f5ff;
+    text-shadow: 0 3px 8px #000;
+}
+
+.contenedor > p {
+    margin-top: -15px;
+    margin-bottom: 5px;
+
+    font-size: 13px;
+    color: #b8c4d8;
+    text-align: center;
+}
+/* =========================================
+   SECCIÓN DE AVATAR
+   ========================================= */
+/* Contenedor principal de la sección de avatar */
+.seccion-avatar-editar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #101f36;
+}
+
+/* Contorno circular para la foto de perfil */
+.avatar-preview-container {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(135deg, #ff7908, #00aaff);
+    flex-shrink: 0;
+}
+
+.avatar-preview-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #071429;
+}
+
+/* Acciones y botón para subir */
+.avatar-acciones {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.btn-subir-avatar {
+    display: inline-block;
+    background: #101f36;
+    color: #ffffff;
+    border: 1px solid #ff8617;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease;
+    width: fit-content;
+}
+
+.btn-subir-avatar:hover {
+    background: #ff8617;
+    box-shadow: 0 0 10px rgba(255, 134, 23, 0.4);
+}
+
+.avatar-info {
+    color: #91a3ba;
+    font-size: 11px;
+}
+
+/* =========================================
+   Seccion de datos personales
+   ========================================= */
+   .grupo-inputs-perfil {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.campo-perfil {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo-perfil label {
+    color: #d5deeb;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Etiqueta visual que indica que el campo está protegido */
+.badge-lock {
+    font-size: 11px;
+    color: #91a3ba;
+    background: #101f36;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid #3b587c40;
+}
+
+/* Estilo general de los inputs */
+.campo-perfil input {
+    background: #071429;
+    border: 1px solid #168cff40;
+    border-radius: 8px;
+    padding: 12px 14px;
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.campo-perfil input:focus {
+    border-color: #ff8617;
+}
+
+/* Estilo específico para los campos de SOLO LECTURA */
+.campo-perfil input[readonly] {
+    background: #030a17;
+    border-color: #101f36;
+    color: #91a3ba;
+    cursor: not-allowed;
+    user-select: all; /* Facilita que puedan seleccionar el texto para copiarlo */
+}
+
+.campo-perfil input[readonly]:focus {
+    border-color: #101f36;
+    box-shadow: none;
+}
+/* ===================================
+    Contenedores principales
+======================================= */
+.main-contenedor {
+    padding: 30px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #ffffff;
+}
+
+.titulo-seccion {
+    color: #ff8617;
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #101f36;
+    padding-bottom: 10px;
+}
+
+/* Cuadrícula de Favoritos */
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.card-producto {
+    background: #071429;
+    border: 1px solid #168cff40;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.card-producto:hover {
+    border-color: #ff8617;
+    box-shadow: 0 0 15px rgba(255, 134, 23, 0.2);
+}
+
+.card-producto img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+/* Estilos para la Tabla de Historial */
+.tabla-historial-container {
+    overflow-x: auto;
+    background: #071429;
+    border: 1px solid #168cff40;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.tabla-historial {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    color: #d5deeb;
+    font-size: 14px;
+}
+
+.tabla-historial th, .tabla-historial td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #101f36;
+}
+
+.tabla-historial th {
+    color: #ff8617;
+    font-weight: 600;
+}
+
+/* Badges de estado */
+.badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.badge.entregado {
+    background: rgba(0, 255, 136, 0.15);
+    color: #00ff88;
+    border: 1px solid rgba(0, 255, 136, 0.3);
+}
+
+.vacio-msg {
+    color: #91a3ba;
+    font-style: italic;
+}
+
+/* ==========================================
+   VENTANA EMERGENTE (MODAL) Y FOTO DE PERFIL
+   ========================================== */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(3, 10, 23, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.activo {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Tarjeta principal del modal (Más amplia y espaciada) */
+.modal-card, .modal-foto-card {
+    background: #071429;
+    border: 1px solid #ff8617;
+    box-shadow: 0 0 20px rgba(255, 134, 23, 0.3);
+    padding: 36px 32px;
+    border-radius: 12px;
+    width: 92%;
+    max-width: 500px;
+    text-align: center;
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+.modal-card h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #ff8617;
+    font-size: 24px;
+}
+
+.modal-card p {
+    color: #91a3ba;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Vista previa de la foto dentro del modal */
+.modal-preview-wrapper {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(135deg, #ff7908, #00aaff);
+    margin: 20px auto;
+    box-shadow: 0 0 20px rgba(0, 170, 255, 0.25);
+}
+
+.modal-preview-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #030a17;
+}
+
+/* Botón estilizado para seleccionar imagen */
+.btn-seleccionar-archivo {
+    display: inline-block;
+    background: #101f36;
+    color: #00aaff;
+    border: 2px dashed #00aaff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+
+.btn-seleccionar-archivo:hover {
+    background: rgba(0, 170, 255, 0.15);
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 170, 255, 0.35);
+    transform: translateY(-2px);
+}
+
+/* Texto del archivo seleccionado */
+.archivo-nombre {
+    display: block;
+    color: #91a3ba;
+    font-size: 13px;
+    margin-bottom: 28px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Contenedor de botones de acción */
+.modal-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.modal-buttons button {
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.btn-secundario {
+    background: #101f36;
+    color: #d5deeb;
+    border: 1px solid #3b587c !important;
+}
+
+.btn-secundario:hover {
+    background: #1a3154;
+}
+
+.btn-principal {
+    background: #ff8617;
+    color: #ffffff;
+}
+
+.btn-principal:hover {
+    background: #ff9b3c;
+    box-shadow: 0 0 10px rgba(255, 134, 23, 0.5);
+}

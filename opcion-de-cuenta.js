@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btnConfirmar.addEventListener('click', () => {
             localStorage.clear();
             sessionStorage.clear();
-            window.location.href = '/frontend/views/login.html'; // Redirige al login
+            window.location.href = '/frontend/index.html'; // Redirige al login
         });
     }
 

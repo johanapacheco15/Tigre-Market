@@ -1,5 +1,3 @@
-
-
 let carrito = JSON.parse(localStorage.getItem("miCarrito")) || [];
 
 // Elementos del carrito
@@ -160,15 +158,34 @@ function quitarProducto(id) {
 }
 
 // CONFIRMAR PEDIDO
+
+const ventanaExito = document.getElementById("ventana-exito");
+const cerrarExito = document.getElementById("cerrar-exito");
+
 if (botonConfirmar) {
     botonConfirmar.addEventListener("click", function() {
+
         if (carrito.length === 0) {
             mensaje.textContent = "Tu carrito está vacío.";
             return;
         }
 
-        mensaje.textContent =
-            "Tu carrito está listo para confirmar el pedido.";
+        ventanaExito.style.display = "flex";
+
+    });
+}
+
+// CERRAR VENTANA
+
+if (cerrarExito) {
+    cerrarExito.addEventListener("click", function() {
+
+        ventanaExito.style.display = "none";
+
+        carrito = [];
+        guardarCarrito();
+        mostrarCarrito();
+
     });
 }
 
