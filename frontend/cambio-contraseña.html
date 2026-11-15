@@ -9,22 +9,42 @@
 </head>
 <body>
 
+    <!--==========================================
+        1. CONTENEDOR PRINCIPAL 
+    ==========================================-->
+
     <main class="contenedor">
-        <!-- Columna Izquierda: Marca y Logotipo -->
-        <header class="container">
+
+    <!--================================================
+        2. COLUMNA IZQUIERDA: IDENTIDAD DE LA PLATAFORMA
+    =================================================-->
+
+    <header class="container">
             <section class="text">
                 <h1 class="title">Tiger Market</h1>
                 <p class="subtitle">Compra y vende entre estudiantes universitarios</p>
             </section>
         </header>
 
-        <!-- Columna Derecha: Tarjeta de Recuperación -->
-        <section class="formulario">
+      <!--================================================
+        3. COLUMNA DERECHA: TARJETA DE RECUPERACION
+      =================================================-->
+
+      <section class="formulario">
             <h2>Cambio de contraseña</h2>
             <p>Ingresa tu correo electrónico institucional para continuar.</p>
 
+      <!--================================================
+        4. FORMULARIO 
+      =================================================-->
+
             <form id="cambio-password-form">
                 <label for="correo-login">Correo electrónico</label>
+
+      <!--================================================
+        5. CAMPO DE CORREO ELECTRÓNICO 
+      =================================================-->
+
                 <div class="input-container">
                     <input 
                         type="text" 
@@ -38,7 +58,15 @@
                     <span class="domain-fixed">@tecnaucalpan.mx</span>
                 </div>
 
+      <!--================================================
+        6. BOTÓN PARA ENVIAR EL ENLACE 
+      =================================================-->
+
                 <button type="submit">Enviar enlace a tu correo electrónico</button>
+
+      <!--================================================
+        7.  ENLACE PARA REGRESAR AL LOGIN 
+      =================================================-->
 
                 <p class="nota">
                     ¿Recordaste tu contraseña? <a href="../index.html">Inicia sesión</a>
@@ -47,6 +75,9 @@
         </section>
     </main>
 
+      <!--================================================
+        8. CONFIGURACIÓN DE FIREBASE 
+      =================================================-->
     <script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";

@@ -1,3 +1,6 @@
+/* ==========================================================
+   1. IMPORTACIÓN DE FUENTES PERSONALIZADAS
+========================================================== */
 
 @font-face {
     font-family: 'TitanOne';
@@ -9,11 +12,19 @@
     src: url('fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
 }
 
+/* ==========================================================
+   2. CONFIGURACIÓN GENERAL
+========================================================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* ==========================================================
+   3. CONFIGURACIÓN DEL CUERPO DE LA PÁGINA
+========================================================== */
 
 body {
     min-height: 100vh;
@@ -21,6 +32,10 @@ body {
     color: white;
     background: #030a17;
 }
+
+/* ==========================================================
+   4. CONTENEDOR PRINCIPAL
+========================================================== */
 
 .contenedor {
     position: relative;
@@ -35,6 +50,10 @@ body {
     background: #030a17;
 }
 
+/* ==========================================================
+   5. IMAGEN DE FONDO
+========================================================== */
+
 .contenedor::before {
     content: "";
     position: fixed;
@@ -46,6 +65,10 @@ body {
     background-position: center center;
     background-size: cover;
 }
+
+/* ==========================================================
+   6. CAPA OSCURA SOBRE LA IMAGEN
+========================================================== */
 
 .contenedor::after {
     content: "";
@@ -60,6 +83,10 @@ body {
     );
 }
 
+/* ==========================================================
+   7. ENCABEZADO DE LA PLATAFORMA
+========================================================== */
+
 .container {
     position: absolute;
     top: 35px;
@@ -67,6 +94,10 @@ body {
     width: 100%;
     text-align: center;
 }
+
+/* ==========================================================
+   8. TÍTULO PRINCIPAL
+========================================================== */
 
     .title {
     font-family: 'TitanOne', sans-serif;
@@ -91,6 +122,10 @@ body {
             drop-shadow(0 9px 5px rgba(0,0,0,0.8));
 }
 
+/* ==========================================================
+   9. DESCRIPCIÓN DE LA PLATAFORMA
+========================================================== */
+
 .subtitle {
     font-family: 'Orbitron', sans-serif;
     font-size: 16px;
@@ -98,6 +133,10 @@ body {
     letter-spacing: 1px;
     margin-top: 20px;
 }
+
+/* ==========================================================
+   10. TARJETA DEL FORMULARIO
+========================================================== */
 
 .formulario {
     width: 100%;
@@ -116,12 +155,20 @@ body {
         0 0 30px #ffffff40;
 }
 
+/* ==========================================================
+   11. TÍTULO DEL FORMULARIO
+========================================================== */
+
 .formulario h2 {
     text-align: center;
     color: #ff8617;
     font-size: 28px;
     margin-bottom: 15px;
 }
+
+/* ==========================================================
+   12. TEXTO INFORMATIVO
+========================================================== */
 
 .formulario > p {
     text-align: center;
@@ -131,12 +178,20 @@ body {
     margin-bottom: 25px;
 }
 
+/* ==========================================================
+   13. ETIQUETAS DEL FORMULARIO
+========================================================== */
+
 form label {
     display: block;
     color: #f0f4fa;
     font-weight: bold;
     margin-bottom: 10px;
 }
+
+/* ==========================================================
+   14. CONTENEDOR DEL CAMPO DE CORREO
+========================================================== */
 
 .input-container {
     display: flex;
@@ -151,10 +206,18 @@ form label {
     overflow: hidden;
 }
 
+/* ==========================================================
+   15. EFECTO AL SELECCIONAR EL CAMPO
+========================================================== */
+
 .input-container:focus-within {
     border-color: #f5f7f9;
     box-shadow: 0 0 8px rgba(22, 140, 255, 0.3);
 }
+
+/* ==========================================================
+   16. ESTILOS DEL CAMPO DE CORREO
+========================================================== */
 
 .input-container input {
     width: 100%;
@@ -173,12 +236,20 @@ form label {
     color: #91a3ba;
 }
 
+/* ==========================================================
+   17. TERMINACIÓN DEL CORREO INSTITUCIONAL
+========================================================== */
+
 .domain-fixed {
     padding-right: 10px;
     color: #aabbd0;
     font-size: 12px;
     white-space: nowrap;
 }
+
+/* ==========================================================
+   18. BOTÓN PARA ENVIAR EL ENLACE
+========================================================== */
 
 form button[type="submit"] {
     width: 100%;
@@ -202,12 +273,20 @@ form button[type="submit"]:hover {
     background: #ff9b3c;
 }
 
+/* ==========================================================
+   19. TEXTO PARA REGRESAR AL LOGIN
+========================================================== */
+
 .nota {
     margin-top: 25px;
     text-align: center;
     color: #d5deeb;
     font-size: 14px;
 }
+
+/* ==========================================================
+   20. ENLACE PARA INICIAR SESIÓN
+========================================================== */
 
 .nota a {
     color: #ff941f;
@@ -218,6 +297,10 @@ form button[type="submit"]:hover {
 .nota a:hover {
     text-decoration: underline;
 }
+
+/* ==========================================================
+   21. ADAPTACIÓN PARA DISPOSITIVOS MÓVILES
+========================================================== */
 
 @media (max-width: 600px) {
     .container {

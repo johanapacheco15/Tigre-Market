@@ -24,6 +24,8 @@
             <a href="/Pagina-de-inicio.html" class="btn-inicio">
                 <img src="/frontend/iconos/inicio.png" alt=""> Inicio
             </a>
+            <a href="/frontend/carrito.html" class="btn-carrito">
+                <img src="/frontend/iconos/carrito.png" alt=""> Carrito
         </nav>
     </header>
 
@@ -34,7 +36,7 @@
              SECCIÓN DE CAMBIO DE IMAGEN DE PERFIL
              ----------------------------------------- -->
         <section class="seccion-perfil-usuario">
-            <h2 class="editar-perfil">Editar Perfil</h2>
+            <h2 class="editar-perfil">Editar Perfil</h2></br>
             <div class="form-editar-perfil">
                 <div class="seccion-avatar-editar">
                     <div class="avatar-preview-container">
@@ -50,28 +52,32 @@
             </div>
         </section>
 
-        <!-- -----------------------------------------
-             SECCIÓN DE DATOS PERSONALES (SOLO LECTURA)
-             ----------------------------------------- -->
-        <section class="seccion-datos-personales">
-            <h2 class="datos-personales">Datos Personales</h2>
-            <div class="grupo-inputs-perfil">
-                <div class="campo-perfil">
-                    <label for="perfil-nombre">Nombre Completo <span class="badge-lock">Solo lectura</span></label>
-                    <input type="text" id="perfil-nombre" value="Usuario Tigre" readonly>
-                </div>
-
-                <div class="campo-perfil">
-                    <label for="perfil-correo">Correo Institucional <span class="badge-lock">Solo lectura</span></label>
-                    <input type="email" id="perfil-correo" value="usuario@tigremarket.com" readonly>
-                </div>
-
-                <div class="campo-perfil">
-                    <label for="perfil-telefono">Teléfono / Contacto <span class="badge-lock">Solo lectura</span></label>
-                    <input type="tel" id="perfil-telefono" value="5555555555" readonly>
-                </div>
+<!-- -----------------------------------------
+     SECCIÓN DE DATOS PERSONALES (SOLO LECTURA)
+     ----------------------------------------- -->
+<section class="seccion-datos-personales">
+    <h2 class="titulo-seccion">Datos Personales</h2>
+    
+    <!-- Contenedor en forma de tarjeta con borde neón -->
+    <div class="seccion-tarjeta-datos">
+        <div class="grupo-inputs-perfil">
+            <div class="campo-perfil">
+                <label for="perfil-nombre">Nombre Completo <span class="badge-lock">Solo lectura</span></label>
+                <input type="text" id="perfil-nombre" value="Usuario Tigre" readonly>
             </div>
-        </section>
+
+            <div class="campo-perfil">
+                <label for="perfil-correo">Correo Institucional <span class="badge-lock">Solo lectura</span></label>
+                <input type="email" id="perfil-correo" value="usuario@tigremarket.com" readonly>
+            </div>
+
+            <div class="campo-perfil">
+                <label for="perfil-telefono">Teléfono / Contacto <span class="badge-lock">Solo lectura</span></label>
+                <input type="tel" id="perfil-telefono" value="5555555555" readonly>
+            </div>
+        </div>
+    </div>
+</section></br>
 
         <!-- -----------------------------------------
              SECCIÓN DE PRODUCTOS FAVORITOS
@@ -81,17 +87,18 @@
             <!-- Contenedor donde se inyectarán dinámicamente los favoritos -->
             <div id="grid-favoritos" class="productos-grid">
                 <!-- Ejemplo estático de tarjeta de producto favorito -->
-                <div class="card-producto">
-                    <img src="/frontend/img/producto-ejemplo.jpg" alt="Producto">
-                    <h3>Control Inalámbrico Neón</h3>
-                    <span class="precio">$599.00 MXN</span>
-                    <div class="card-acciones">
-                        <button class="btn-principal" onclick="agregarAlCarrito(1)">Mover al Carrito</button>
-                        <button class="btn-eliminar-fav" onclick="quitarFavorito(1)">Eliminar</button>
-                    </div>
+            <div class="card-producto" id="producto-1">
+                <img src="/frontend/img/producto-ejemplo.jpg" alt="Producto">
+            <h3>Control Inalámbrico Neón</h3>
+            <span class="precio">$599.00 MXN</span>
+            <div class="card-acciones">
+            <!-- Pasamos el ID 1 como parámetro a las funciones -->
+                <button class="btn-principal" onclick="moverAlCarrito(1)">Mover al Carrito</button>
+            <button class="btn-eliminar-fav" onclick="quitarFavorito(1)">Eliminar</button>
                 </div>
             </div>
-        </section>
+        </div>
+        </section></br>
 
         <!-- -----------------------------------------
              SECCIÓN DE HISTORIAL DE COMPRAS

@@ -30,7 +30,7 @@
 body {
     font-family: 'Orbitron', sans-serif;
     background-color: #030a17;
-    background-image: url("");
+    background-image: url("img/fondo8.jpeg");
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
@@ -129,12 +129,16 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5px;
-    padding: 7px;
-
+    gap: 8px; /* Espacio entre el botón de Inicio y el de Carrito */
+    padding: 6px 10px; /* Ajusta este padding si se ve muy gruesa */
+    
+    /* Mantiene tu diseño de píldora neón pero evita que se expanda de más */
     background: rgba(7, 20, 41, 0.95);
     border: 1.5px solid #168bff;
     border-radius: 35px;
+    
+    /* Elimina cualquier propiedad como margin: 0 auto; si la tuviera */
+    margin-left: auto; 
 
     box-shadow:
         0 0 5px #168bff,
@@ -338,6 +342,25 @@ body {
 .campo-perfil input[readonly]:focus {
     border-color: #101f36;
     box-shadow: none;
+}
+/* Contenedor tipo tarjeta para los datos personales */
+.seccion-tarjeta-datos {
+    background: #071429;
+    border: 1px solid rgba(22, 140, 255, 0.4);
+    box-shadow: 0 0 20px rgba(0, 170, 255, 0.15);
+    border-radius: 16px;
+    padding: 24px;
+    margin-top: 16px;
+    box-sizing: border-box;
+}
+
+/* Opcional: separador limpio entre los campos dentro de la tarjeta */
+.seccion-tarjeta-datos .campo-perfil {
+    margin-bottom: 14px;
+}
+
+.seccion-tarjeta-datos .campo-perfil:last-child {
+    margin-bottom: 0;
 }
 /* ===================================
     Contenedores principales

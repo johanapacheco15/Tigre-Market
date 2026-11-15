@@ -191,3 +191,59 @@ if (cerrarExito) {
 
 // ACTUALIZAR LA PÁGINA DEL CARRITO
 mostrarCarrito();
+
+//Guardado en favoritos si no funciona ignorar por ahora//
+document.addEventListener('DOMContentLoaded', () => {
+    renderizarCarrito();
+});
+
+function renderizarCarrito() {
+    // Leer los productos guardados desde Favoritos o la Tienda
+    const carrito = JSON.parse(localStorage.getItem('tigre_carrito')) || [];
+    
+    // Reemplaza 'contenedor-productos-carrito' por el ID real que usaste en tu carrito.html
+    const contenedor = document.getElementById('contenedor-productos-carrito'); 
+    const totalElemento = document.getElementById('total-carrito'); // ID donde muestras el total a pagar
+
+    if (!contenedor) return;
+
+    contenedor.innerHTML = ''; // Limpiar contenido previo
+    let totalGeneral = 0;
+
+    if (carrito.length === 0) {
+        contenedor.innerHTML = '<p class="carrito-vacio">Tu carrito está vacío.</p>';
+        if (totalElemento) totalElemento.textContent = '$0.00 MXN';
+        return;
+    }
+
+    carrito.forEach((producto, index) => {
+        const subtotal = producto.precio * producto.cantidad;
+        totalGeneral += subtotal;
+
+        // Adapta estas clases HTML a las que ya diseñaste en tu carrito.css
+        contenedor.innerHTML += `
+            <div class="item-carrito">
+                <img src="${producto.imagen}" alt="${producto.nombre}">
+                <div class="item-info">
+                    <h4>${producto.nombre}</h4>
+                    <p>$${producto.precio.toFixed(2)} MXN</p>
+                </div>
+                <div class="item-cantidad">
+                    <span>Cant: ${producto.cantidad}</span>
+                </div>
+                <button onclick="eliminarDelCarrito(${index})" class="btn-eliminar">Eliminar</button>
+            </div>
+        `;
+    });
+
+    if (totalElemento) {
+        totalElemento.textContent = `$${totalGeneral.toFixed(2)} MXN`;
+    }
+}
+
+function eliminarDelCarrito(index) {
+    let carrito = JSON.parse(localStorage.getItem('tigre_carrito')) || [];
+    carrito.splice(index, 1); // Quita el elemento por su posición
+    localStorage.setItem('tigre_carrito', JSON.stringify(carrito));
+    renderizarCarrito(); // Vuelve a dibujar el carrito actualizado
+}

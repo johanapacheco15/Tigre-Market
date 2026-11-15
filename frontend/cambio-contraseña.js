@@ -1,6 +1,14 @@
-    //Script para limpiar los campos al cambiar de pestaña o minimizar la ventana
+/* ==========================================================
+   1. LIMPIAR Y VALIDAR EL CAMPO DE CORREO
+========================================================== */
+
     document.addEventListener("visibilitychange", function() {
         if (document.visibilityState === "hidden") {
+
+/* ==========================================================
+    2. LISTA DE CAMPOS CUYOS VALORES DEBEN BORRASE 
+========================================================== */
+
             const sensitiveFields = [
                 'nombre', 
                 'edad', 
@@ -17,6 +25,10 @@
                 }
             });
 
+/* ==========================================================
+    3. OCULTA LA CONTRASEÑA SI EL CAMPO ESTA DISPONIBLE 
+========================================================== */
+
             if (passwordInput) {
                 passwordInput.setAttribute('type', 'password');
             }
@@ -29,7 +41,11 @@
             }
         }
     });
-    //Evitar que el usuario ingrese caracteres especiales en el campo de correo
+
+/* ==========================================================
+   2. LIMPIAR Y VALIDAR EL CAMPO DE CORREO
+========================================================== */
+
 const inputUsuario = document.getElementById('correo-login');
 
     inputUsuario.addEventListener('input', function(event) {
