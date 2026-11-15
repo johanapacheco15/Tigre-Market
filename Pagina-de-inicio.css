@@ -1,3 +1,7 @@
+/* ==========================================================
+   1. CARGA DE FUENTES PERSONALIZADAS
+========================================================== */
+
 @font-face {
     font-family: 'TitanOne';
     src: url('/frontend/fonts/TitanOne-Regular.ttf') format('truetype');
@@ -12,16 +16,24 @@
     font-style: normal;
 }
 
+/* ==========================================================
+   2. CONFIGURACIÓN GENERAL
+========================================================== */
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* ==========================================================
+   3. ESTILOS GENERALES DEL DOCUMENTO
+========================================================== */
+
 body {
     font-family: 'Orbitron', sans-serif;
     background-color: #030a17;
-    background-image: url("/frontend/img/fondo7.jpeg");
+    background-image: url("/frontend/img/fondo8.jpeg");
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
@@ -30,6 +42,10 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
 }
+
+/* ==========================================================
+   4. ENCABEZADO PRINCIPAL
+========================================================== */
 
 .encabezado {
     position: relative;
@@ -53,12 +69,20 @@ body {
     overflow: visible;
 }
 
+/* ==========================================================
+   5. AGRUPA EL LOGOTIPO Y EL TEXTO DEL ENCABEZADO
+========================================================== */
+
 .contenedor-logo-titulo {
     display: flex;
     align-items: center;
     gap: 22px;
     flex-shrink: 0;
 }
+
+/* ==========================================================
+   6. CONFIGURACION DE LA IMAGEN DE LOGOTIPO
+========================================================== */
 
 .logo-tigre-encabezado {
     height: 155px;
@@ -70,12 +94,20 @@ body {
     filter: none;
 }
 
+/* ==========================================================
+   7. ORGANIZA VERTICALMENTE EL TITULO Y SUBTITULO
+========================================================== */
+
 .texto-encabezado {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 10px;
 }
+
+/* ==========================================================
+   8. TITULO PRINCIPAL
+========================================================== */
 
 .texto-encabezado h1 {
     font-family: 'TitanOne', sans-serif;
@@ -98,6 +130,10 @@ body {
         drop-shadow(0 9px 5px rgba(0, 0, 0, 0.8));
 }
 
+/* ==========================================================
+   9. SUBTITULO
+========================================================== */
+
 .texto-encabezado p {
     font-family: 'Orbitron', sans-serif;
     font-size: 15px;
@@ -105,6 +141,10 @@ body {
     color: #dce6f5;
     letter-spacing: 0.5px;
 }
+
+/* ==========================================================
+   10. MENÚ DE NAVEGACIÓN (AGRUPA LAS OPCIONES DE MENU)
+========================================================== */
 
 .encabezado nav {
     position: static;
@@ -127,6 +167,10 @@ body {
     transition: all 0.3s ease;
 }
 
+/* ==========================================================
+   11. APARIENCIA DE CADA ENLACE DEL MENU
+========================================================== */
+
 .encabezado nav a {
     display: flex;
     align-items: center;
@@ -141,6 +185,10 @@ body {
     background: transparent;
     transition: all 0.3s ease;
 }
+
+/* ==========================================================
+   12. TAMAÑO Y COLOR DE LOS ICONOS
+========================================================== */
 
 .encabezado nav a img {
     width: 17px;
@@ -158,12 +206,20 @@ body {
     transition: all 0.3s ease;
 }
 
+/* ==========================================================
+   13. ANIMACION AL PASAR EL CURSOR SOBRE UNA OPCION
+========================================================== */
+
 .encabezado nav a:hover {
     background: #ff7900;
     color: white;
     box-shadow: 0 0 12px rgba(6, 21, 131, 0.7);
     transform: translateY(-2px);
 }
+
+/* ==========================================================
+   14. CAMBIA EL COLOR DE LOS ICONOS AL PASAR CURSOR
+========================================================== */
 
 .encabezado nav a:hover img {
     filter:
@@ -177,11 +233,19 @@ body {
         contrast(110%);
 }
 
+/* ==========================================================
+   15. SECCIÓN DE BÚSQUEDA
+========================================================== */
+
 .busqueda-inicio {
     padding: 25px 20px 30px;
     text-align: center;
     background: transparent;
 }
+
+/* ==========================================================
+   16. TEXTO QUE APARECE ENCIMA DEL BUSCADOR 
+========================================================== */
 
 .busqueda-inicio h2 {
     font-family: 'Orbitron', sans-serif;
@@ -195,6 +259,10 @@ body {
 .texto-naranja {
     color: #ff7900;
 }
+
+/* ==========================================================
+   17. CONTENEOR PRINCIPAL DEL FORMULARIO DE BUSQUEDA
+========================================================== */
 
 #formulario-busqueda {
     display: flex;
@@ -214,12 +282,20 @@ body {
     transition: all 0.3s ease;
 }
 
+/* ==========================================================
+   18. ACOMODA EL ICONO Y EL CAMPO DONDE SE ESCRIBE
+========================================================== */
+
 .campo-busqueda {
     display: flex;
     align-items: center;
     flex: 1;
     padding: 0 18px;
 }
+
+/* ==========================================================
+   19. COCNFIGURACION DEL ICONO DE BÚSQUEDA
+========================================================== */
 
 .campo-busqueda img {
     width: 22px;
@@ -228,6 +304,10 @@ body {
     filter: brightness(0) invert(1);
     margin-right: 15px;
 }
+
+/* ==========================================================
+   20.CAMPO DE TEXTO DONDE EL USUARIO ESCRIBE LO QUE BUSCA
+========================================================== */
 
 .campo-busqueda input {
     width: 100%;
@@ -240,9 +320,15 @@ body {
     font-size: 15px;
 }
 
+/* 20.1 Color del texto de ejemplo dentro del buscador. */
+
 .campo-busqueda input::placeholder {
     color: #aebbd0;
 }
+
+/* ==========================================================
+   21. APARIENCIA DEL BOTON PARA EJECUTAR BUSQUEDA
+========================================================== */
 
 #formulario-busqueda button {
     display: flex;
@@ -265,6 +351,10 @@ body {
     transition: 0.3s ease;
 }
 
+/* ==========================================================
+   22. TAMAÑO Y COLOR DENTRO DEL BOTON
+========================================================== */
+
 #formulario-busqueda button img {
     width: 19px;
     height: 19px;
@@ -272,15 +362,27 @@ body {
     filter: brightness(0) invert(1);
 }
 
+/* ==========================================================
+   23. EFECTO DE BOTON AL PASAR CURSOR ENCIMA 
+========================================================== */
+
 #formulario-busqueda button:hover {
     background: #ff9500;
     box-shadow: 0 0 15px rgba(255, 121, 0, 0.6);
 }
 
+/* ==========================================================
+   24. CONTENIDO PRINCIPAL Y CATÁLOGO
+========================================================== */
+
 main {
     padding: 25px 28px 30px;
     background: transparent;
 }
+
+/* ==========================================================
+   25. TITULO E SECCION DONDE SE MUESRAN LOS PRODUCTOS 
+========================================================== */
 
 #productos {
     position: relative;
@@ -291,6 +393,10 @@ main {
     margin-bottom: 5px;
     text-align: center;
 }
+
+/* ==========================================================
+    26. BARRA DECORATIVA NARANJA QUE ACOMPAÑA AL TITULO 
+========================================================== */
 
 #productos::before {
     content: "";
@@ -307,6 +413,10 @@ main {
     border-radius: 10px;
 }
 
+/* ==========================================================
+   27. TEXTO DESCRIPTIVO DEBAJO DEL CATALOGO
+========================================================== */
+
 main > p {
     font-family: 'Orbitron', sans-serif;
     font-size: 12px;
@@ -316,11 +426,19 @@ main > p {
     text-align: center;
 }
 
+/* ==========================================================
+   28. CONTENEDOR QUE ACOMODA LAS TARJETAS DE PRODUCTOS
+========================================================== */
+
 .productos {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
 }
+
+/* ==========================================================
+   29. TARJETA INDIVIDUAL DE CADA PRODUCTO 
+========================================================== */
 
 .producto {
     display: grid;
@@ -350,6 +468,10 @@ main > p {
     transition: all 0.3s ease;
 }
 
+/* ============================================================
+   30. EFECTO DE AMPLIACION AL PASAR CURSOR SOBRE UNA TAREJETA 
+============================================================ */
+
 .producto:hover {
     transform: translateY(-4px);
     border-color: #ffad42;
@@ -360,6 +482,11 @@ main > p {
         0 0 30px rgba(255, 121, 0, 0.7),
         inset 0 0 12px rgba(255, 121, 0, 0.2);
 }
+
+/* ==========================================================
+   31. FOTO DEL PRODUCTO UBICADA EN LA PRIMERA COLUMNA 
+========================================================== */
+
 .foto-producto {
     grid-column: 1;
     grid-row: 1 / 5;
@@ -370,6 +497,10 @@ main > p {
     border-radius: 12px;
     padding: 5px;
 }
+
+/* ==========================================================
+   32. NOMBRE DE CADA PRODUCTO 
+========================================================== */
 
 .producto h3 {
     grid-column: 2;
@@ -382,6 +513,10 @@ main > p {
     align-self: end;
 }
 
+/* ==========================================================
+   33. DESCRIPCION DE PRODUCTO 
+========================================================== */
+
 .producto p:not(.precio) {
     grid-column: 2;
     grid-row: 2;
@@ -390,6 +525,10 @@ main > p {
     color: #b8c4d8;
     padding-left: 18px;
 }
+
+/* ==========================================================
+   34. ESTILO DEL PRECIO DE CADA PRODUCTO 
+========================================================== */
 
 .producto .precio {
     grid-column: 2;
@@ -400,6 +539,10 @@ main > p {
     padding-left: 18px;
     margin: 5px 0;
 }
+
+/* ==========================================================
+   35. ESTILOS GENERALES DE LOS BOTONES DE CADA TARJETA 
+========================================================== */
 
 .producto button {
     display: flex;
@@ -419,12 +562,16 @@ main > p {
     transition: all 0.3s ease;
 }
 
+/* 35.1  Ubicación del primer botón de la tarjeta. */
+
 .producto button:nth-of-type(1) {
     grid-column: 2;
     grid-row: 4;
     justify-self: start;
     margin-left: 18px;
 }
+
+/* 35.2 Estilo y ubicación del botón para agregar al carrito. */
 
 .producto button.agregar {
     grid-column: 2;
@@ -440,12 +587,20 @@ main > p {
     border-color: #ff7900;
 }
 
+/* ===============================================================
+   36. EFECTOS AL PASAR EL CURSOR SOBRE LOS  BOTONES DEL PRODUCTO
+================================================================ */
+
 .producto button:hover {
     background: #ff9500;
     color: #030a17;
     transform: scale(1.04);
     box-shadow: 0 0 10px rgba(255, 121, 0, 0.4);
 }
+
+/* ==========================================================
+   37. PIE DE PÁGINA
+========================================================== */
 
 footer {
     display: flex;
@@ -461,11 +616,361 @@ footer {
     border-top: 2px solid #142c4b;
 }
 
+/* ==========================================================
+   38. TESXTO QUE APARECE DENTRO DEL PIE DE PÁGINA
+========================================================== */
+
 footer p {
     font-family: 'Orbitron', sans-serif;
     font-size: 13px;
     color: #dce6f5;
 }
+
+/* ==========================================
+   39. PANEL LATERAL (OFF-CANVAS) DE CUENTA
+========================================== */
+
+.overlay-cuenta {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(3, 10, 23, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/*  39.1 Hace visible el fondo cuando se activa. */
+
+.overlay-cuenta.activo {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ==========================================================
+   40. CONFIGURACION DEL PANEL LATERAL DE LA CUENTA 
+========================================================== */
+
+.panel-cuenta {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    width: 320px;
+    max-width: 85vw;
+    height: 100vh;
+    background: #071429;
+    border-left: 1px solid #00aaff;
+    box-shadow: -5px 0 25px rgba(0, 170, 255, 0.2);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-sizing: border-box;
+}
+
+/* 40.1 Desplaza el panel hacia dentro cuando se activa. */
+
+.panel-cuenta.activo {
+    right: 0;
+}
+
+/* ==========================================================
+   41. ENCABEZADO INTERNO DEL PANEL DE CUENTA 
+========================================================== */
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #101f36;
+}
+
+/* ==========================================================
+   42. TITULO DEL PANEL LATERAL 
+========================================================== */
+
+.panel-header h3 {
+    margin: 0;
+    color: #ff8617;
+    font-size: 18px;
+}
+
+/* ==========================================================
+   43. BOTON QUE PERMITE CERRAR EL PANEL 
+========================================================== */
+
+.btn-cerrar {
+    background: transparent;
+    border: none;
+    color: #91a3ba;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+/* 43.1 Cambia el color del botón al pasar el cursor. */
+
+.btn-cerrar:hover {
+    color: #ff7908;
+}
+
+/* ==========================================================
+   44. CONTENDOR DE LA INFORMACION DEL USUARIO  
+========================================================== */
+
+.perfil-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 0;
+    text-align: center;
+}
+
+/* ==========================================================
+   45. MARCO CIRCULAR QUE RODEA LA FOTO DE PERFIL 
+========================================================== */
+
+.avatar-container {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(135deg, #ff7908, #00aaff);
+    margin-bottom: 10px;
+}
+
+/* ==========================================================
+   46. FOTO DE PERFIL DEL USUARIO  
+========================================================== */
+
+.avatar-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #101f36;
+}
+
+/* ==========================================================
+   47. NOMBRE MOSTRADO EN LA INFROMACION DEL PERFIL 
+========================================================== */
+
+.perfil-info h4 {
+    margin: 0 0 4px;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+/* ==========================================================
+   48. CORREO MOSTRADO DEBAJO EL NOMBRE  
+========================================================== */
+
+.user-email {
+    color: #91a3ba;
+    font-size: 13px;
+}
+
+/* ==========================================================
+   49 CONTENEDOR QUE ORGANIZA VERTICALMENTE LAS OPCIONES 
+========================================================== */
+
+.panel-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+/* ==========================================================
+   50.ESTILO GENERAL DE LOS ENLACES Y BOTONES DEL PANEL  
+========================================================== */
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 12px 14px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    color: #d5deeb;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+/* ==========================================================
+   51. EFECTO AL PASAR EL CURSOR SOBRE UNA OPCION DEL PANEL
+========================================================== */
+
+.menu-item:hover {
+    background: #101f36;
+    border-color: #3b587c;
+    color: #ffffff;
+}
+
+/* ==========================================================
+   52. LINEA QUE SEPARA RUPOS DE OPCIONES DEL MENU 
+========================================================== */
+
+.menu-divider {
+    height: 1px;
+    background: #101f36;
+    margin: 8px 0;
+}
+
+/* 52.1. Efecto especial para la opción de cerrar sesión. */
+
+.btn-logout:hover {
+    color: #ff9b3c;
+    border-color: #ff790840;
+}
+
+/* 52.2. Color que identifica la opción de eliminar cuenta. */
+
+.btn-danger {
+    color: #ff5555;
+}
+
+/* 52.3. Efecto de advertencia al pasar el cursor por esa opción. */
+
+.btn-danger:hover {
+    background: rgba(255, 85, 85, 0.1);
+    border-color: rgba(255, 85, 85, 0.3);
+    color: #ff6b6b;
+}
+
+/* ==========================================================
+   53. VENTANA MODAL DE CIERRE DE SESIÓN
+========================================================== */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(3, 10, 23, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Muestra la ventana modal cuando se activa. */
+
+.modal-overlay.activo {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ==========================================================
+   54. CUADRO PRINCIPAL DE CONFIRMACION
+========================================================== */
+
+.modal-card {
+    background: #071429;
+    border: 1px solid #ff8617;
+    box-shadow: 0 0 20px rgba(255, 134, 23, 0.3);
+    padding: 24px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 380px;
+    text-align: center;
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+/* ==========================================================
+   55. TITULO QUE APARECE DENTRO DE LA VENTANA MODAL
+========================================================== */
+
+.modal-card h3 {
+    margin-top: 0;
+    color: #ff8617;
+    font-size: 20px;
+}
+
+/* 55.1. Texto explicativo de la ventana de confirmación. */
+
+.modal-card p {
+    color: #91a3ba;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+/* ==========================================================
+   56. CONTENEDOR DE LOS BOTONES DE CONFIRMACION
+========================================================== */
+
+.modal-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+/* ==========================================================
+   57. ESTILOS GENERALES  DE LOS BOTONES DE LA VENTANA MODAL
+========================================================== */
+
+.modal-buttons button {
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+/* ==========================================================
+   58. BOTON SECUNDARIO PARA CANCELAR LA ACCION
+========================================================== */
+
+.btn-secundario {
+    background: #101f36;
+    color: #d5deeb;
+    border: 1px solid #3b587c !important;
+}
+
+/*  58.1. Efecto del botón secundario al pasar el cursor. */
+
+
+.btn-secundario:hover {
+    background: #1a3154;
+}
+
+/* ==========================================================
+   59. BOTON PRINCIPAL PARA CONFIRMAR LA ACCION
+========================================================== */
+
+.btn-principal {
+    background: #ff8617;
+    color: #ffffff;
+}
+
+/* 59.1. Efecto del botón principal al pasar el cursor. */
+
+.btn-principal:hover {
+    background: #ff9b3c;
+    box-shadow: 0 0 10px rgba(255, 134, 23, 0.5);
+}
+
+/* ==========================================================
+   7. DISEÑO RESPONSIVO PARA TABLETAS
+========================================================== */
 
 @media (max-width: 900px) {
     .encabezado {
@@ -493,6 +998,10 @@ footer p {
         flex: 1 1 100%;
     }
 }
+
+/* ==========================================================
+   7. DISEÑO RESPONSIVO PARA CELULARES 
+========================================================== */
 
 @media (max-width: 550px) {
 
@@ -568,246 +1077,4 @@ footer p {
     footer p {
         font-size: 10px;
     }
-}
-/* ==========================================
-   PANEL LATERAL (OFF-CANVAS) DE CUENTA
-   ========================================== */
-.overlay-cuenta {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(3, 10, 23, 0.7);
-    backdrop-filter: blur(4px);
-    z-index: 998;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-}
-
-.overlay-cuenta.activo {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.panel-cuenta {
-    position: fixed;
-    top: 0;
-    right: -320px;
-    width: 320px;
-    max-width: 85vw;
-    height: 100vh;
-    background: #071429;
-    border-left: 1px solid #00aaff;
-    box-shadow: -5px 0 25px rgba(0, 170, 255, 0.2);
-    z-index: 999;
-    display: flex;
-    flex-direction: column;
-    padding: 24px;
-    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    box-sizing: border-box;
-}
-
-.panel-cuenta.activo {
-    right: 0;
-}
-
-.panel-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 16px;
-    border-bottom: 1px solid #101f36;
-}
-
-.panel-header h3 {
-    margin: 0;
-    color: #ff8617;
-    font-size: 18px;
-}
-
-.btn-cerrar {
-    background: transparent;
-    border: none;
-    color: #91a3ba;
-    font-size: 24px;
-    cursor: pointer;
-    transition: color 0.2s;
-}
-
-.btn-cerrar:hover {
-    color: #ff7908;
-}
-
-.perfil-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 24px 0;
-    text-align: center;
-}
-
-.avatar-container {
-    width: 75px;
-    height: 75px;
-    border-radius: 50%;
-    padding: 3px;
-    background: linear-gradient(135deg, #ff7908, #00aaff);
-    margin-bottom: 10px;
-}
-
-.avatar-container img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    background: #101f36;
-}
-
-.perfil-info h4 {
-    margin: 0 0 4px;
-    color: #ffffff;
-    font-size: 16px;
-}
-
-.user-email {
-    color: #91a3ba;
-    font-size: 13px;
-}
-
-.panel-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 10px;
-}
-
-.menu-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    width: 100%;
-    padding: 12px 14px;
-    background: transparent;
-    border: 1px solid transparent;
-    border-radius: 8px;
-    color: #d5deeb;
-    font-size: 14px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    box-sizing: border-box;
-}
-
-.menu-item:hover {
-    background: #101f36;
-    border-color: #3b587c;
-    color: #ffffff;
-}
-
-.menu-divider {
-    height: 1px;
-    background: #101f36;
-    margin: 8px 0;
-}
-
-.btn-logout:hover {
-    color: #ff9b3c;
-    border-color: #ff790840;
-}
-
-.btn-danger {
-    color: #ff5555;
-}
-
-.btn-danger:hover {
-    background: rgba(255, 85, 85, 0.1);
-    border-color: rgba(255, 85, 85, 0.3);
-    color: #ff6b6b;
-}
-
-/* ==========================================
-   MODAL PERSONALIZADO DE CIERRE DE SESIÓN
-   ========================================== */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(3, 10, 23, 0.8);
-    backdrop-filter: blur(5px);
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-}
-
-.modal-overlay.activo {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.modal-card {
-    background: #071429;
-    border: 1px solid #ff8617;
-    box-shadow: 0 0 20px rgba(255, 134, 23, 0.3);
-    padding: 24px;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 380px;
-    text-align: center;
-    color: #ffffff;
-    box-sizing: border-box;
-}
-
-.modal-card h3 {
-    margin-top: 0;
-    color: #ff8617;
-    font-size: 20px;
-}
-
-.modal-card p {
-    color: #91a3ba;
-    font-size: 14px;
-    margin-bottom: 24px;
-}
-
-.modal-buttons {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-}
-
-.modal-buttons button {
-    padding: 10px 18px;
-    border-radius: 8px;
-    font-size: 14px;
-    cursor: pointer;
-    border: none;
-    transition: all 0.2s ease;
-}
-
-.btn-secundario {
-    background: #101f36;
-    color: #d5deeb;
-    border: 1px solid #3b587c !important;
-}
-
-.btn-secundario:hover {
-    background: #1a3154;
-}
-
-.btn-principal {
-    background: #ff8617;
-    color: #ffffff;
-}
-
-.btn-principal:hover {
-    background: #ff9b3c;
-    box-shadow: 0 0 10px rgba(255, 134, 23, 0.5);
 }

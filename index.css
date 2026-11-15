@@ -1,8 +1,6 @@
 /* ==========================================================
-   [CORRECCIÓN 1]: Rutas absolutas estables para las fuentes
-   Se cambió a rutas absolutas (/frontend/fonts/...) para evitar 
-   que los navegadores móviles fallen al localizarlas desde vistas secundarias.
-   ========================================================== */
+    2. FUENTES
+========================================================== */
 @font-face {
     font-family: 'TitanOne';
     src: url('/frontend/fonts/TitanOne-Regular.ttf') format('truetype');
@@ -13,9 +11,17 @@
     src: url('/frontend/fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
 }
 
+/* ==========================================================
+   2. CONFIGURACIÓN GENERAL
+========================================================== */
+
 * {
     box-sizing: border-box;
 }
+
+/* ==========================================================
+   3. CONFIGURACIÓN DEL CUERPO DE LA PÁGINA
+========================================================== */
 
 body {
     margin: 0;
@@ -25,9 +31,17 @@ body {
     color: white;
 }
 
+/* ==========================================================
+   4. ENCABEZADO DEL LOGOTIPO
+========================================================== */
+
 header.logo-container {
     display: none;
 }
+
+/* ==========================================================
+   5. CONTENEDOR PRINCIPAL
+========================================================== */
 
 .contenedor {
     position: relative;
@@ -41,6 +55,10 @@ header.logo-container {
     background: #030a17;
     overflow: hidden;
 }
+
+/* ==========================================================
+   6. IMAGEN DE FONDO
+========================================================== */
 
 .contenedor::before {
     content: "";
@@ -65,9 +83,17 @@ header.logo-container {
     background-size: cover, contain;
 }
 
+/* ==========================================================
+   7. IMAGEN DEL TIGRE
+========================================================== */
+
 .imagen-tigre {
     display: none;
 }
+
+/* ==========================================================
+   8. SECCIÓN DE TEXTO Y NOMBRE DE LA PLATAFORMA
+========================================================== */
 
 .texto {
     position: absolute;
@@ -78,8 +104,12 @@ header.logo-container {
     text-align: center;
 }
 
+/* ==========================================================
+   9. TÍTULO PRINCIPAL
+========================================================== */
+
 .titulo {
-    margin: 0 0 10px;
+margin: 0 0 10px;
     color: #ff7900;
 
     font-family: 'TitanOne', sans-serif;
@@ -100,6 +130,10 @@ header.logo-container {
     filter: drop-shadow(3px 4px 2px #713000);
 }
 
+/* ==========================================================
+   10. DESCRIPCIÓN DE LA PLATAFORMA
+========================================================== */
+
 .parrafo {
     margin: 0;
     color: #dce6f5;
@@ -110,6 +144,10 @@ header.logo-container {
 
     text-shadow: 0 0 8px #168cff50;
 }
+
+/* ==========================================================
+   11. CONTENEDOR DEL FORMULARIO
+========================================================== */
 
 .formulario {
     position: relative;
@@ -133,11 +171,19 @@ header.logo-container {
         inset 0 0 8px #008cff30;
 }
 
+/* ==========================================================
+   12. TÍTULO DEL FORMULARIO
+========================================================== */
+
 .formulario h2 {
     margin: 0 0 8px;
     color: #ff8617;
     font-size: 29px;
 }
+
+/* ==========================================================
+   13. TEXTOS DEL FORMULARIO
+========================================================== */
 
 .formulario p {
     margin: 8px 0;
@@ -145,11 +191,19 @@ header.logo-container {
     line-height: 1.4;
 }
 
+/* ==========================================================
+   14. DISTRIBUCIÓN DEL FORMULARIO
+========================================================== */
+
 form {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
+
+/* ==========================================================
+   15. ETIQUETAS DE LOS CAMPOS
+========================================================== */
 
 form > label {
     margin-top: 5px;
@@ -157,6 +211,10 @@ form > label {
     font-weight: bold;
     font-size: 14px;
 }
+
+/* ==========================================================
+   16. CONTENEDORES DE LOS CAMPOS
+========================================================== */
 
 .input-container,
 .password-wrapper {
@@ -173,11 +231,19 @@ form > label {
     border-radius: 8px;
 }
 
+/* ==========================================================
+   17. EFECTO AL SELECCIONAR LOS CAMPOS
+========================================================== */
+
 .input-container:focus-within,
 .password-wrapper:focus-within {
     border-color: #168cff;
     box-shadow: 0 0 8px #168cff40;
 }
+
+/* ==========================================================
+   18. ESTILOS DE LOS CAMPOS DE ENTRADA
+========================================================== */
 
 .input-container input,
 .password-wrapper input {
@@ -200,6 +266,10 @@ form > label {
     color: #91a3ba;
 }
 
+/* ==========================================================
+   19. TERMINACIÓN DEL CORREO INSTITUCIONAL
+========================================================== */
+
 .domain-fixed {
     flex-shrink: 0;
     padding: 0 9px 0 0;
@@ -208,6 +278,10 @@ form > label {
     font-size: 11px;
     white-space: nowrap;
 }
+
+/* ==========================================================
+   20. BOTÓN PARA MOSTRAR U OCULTAR LA CONTRASEÑA
+========================================================== */
 
 .password-wrapper button {
     position: absolute !important;
@@ -234,6 +308,10 @@ form > label {
     color: #ff8617 !important;
 }
 
+/* ==========================================================
+   21. BOTÓN DE INICIO DE SESIÓN
+========================================================== */
+
 form > button[type="submit"] {
     width: 100%;
     padding: 12px;
@@ -256,11 +334,19 @@ form > button[type="submit"]:hover {
     background: #ff9b3c;
 }
 
+/* ==========================================================
+   22. ENLACE PARA RECUPERAR LA CONTRASEÑA
+========================================================== */
+
 .OMC {
     margin-top: 12px !important;
     text-align: right;
     font-size: 13px;
 }
+
+/* ==========================================================
+   23. ESTILOS GENERALES DE LOS ENLACES
+========================================================== */
 
 a {
     color: #ff941f;
@@ -271,11 +357,20 @@ a:hover {
     text-decoration: underline;
 }
 
+/* ==========================================================
+   24. ENLACE PARA CREAR UNA CUENTA
+========================================================== */
+
 .nota {
     margin-top: 12px !important;
     text-align: center;
     font-size: 13px;
 }
+
+
+/* ==========================================================
+   25. ADAPTACIÓN PARA PANTALLAS MEDIANAS
+========================================================== */
 
 @media (max-width: 1000px) {
     .contenedor {
@@ -298,6 +393,10 @@ a:hover {
     }
 }
 
+/* ==========================================================
+   26. ADAPTACIÓN PARA DISPOSITIVOS MÓVILES
+========================================================== */
+
 @media (max-width: 700px) {
     .contenedor {
         width: 100%;
@@ -309,10 +408,8 @@ a:hover {
     }
 
     /* ==========================================================
-       [CORRECCIÓN 2]: Ruta absoluta de la imagen en dispositivos móviles
-       Se unificó la ruta a /frontend/img/tigre.jpeg para evitar que el fondo 
-       desaparezca o se rompa en pantallas pequeñas.
-       ========================================================== */
+        CORRECCIÓN 2: RUTA ABSOLUTA DE LA IMAGEN EN MÓVILES
+    ========================================================== */
     .contenedor::before {
         width: 100%;
         height: 100%;
@@ -354,11 +451,8 @@ a:hover {
 }
 
 /* ==========================================================
-   [CORRECCIÓN 3]: Bloqueo definitivo del botón de contraseña nativo
-   Se implementó el selector completo para Edge y navegadores Chromium 
-   (::-ms-reveal y ::-webkit-credentials-auto-fill-button) asegurando 
-   que no se encime el icono del navegador con el botón SVG personalizado.
-   ========================================================== */
+   27. OCULTAR LOS CONTROLES NATIVOS DE CONTRASEÑA
+========================================================== */
 input[type="password"]::-ms-reveal,
 input[type="password"]::-ms-clear {
     display: none !important;

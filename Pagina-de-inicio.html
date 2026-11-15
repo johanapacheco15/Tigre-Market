@@ -9,6 +9,10 @@
 </head>
 <body>
 
+<!-- ==========================================================
+    1. ENCABEZADO PRINCIPAL Y BARRA DE NAVEGACIÓN
+========================================================== -->
+
 <header class="encabezado">
         <div class="contenedor-logo-titulo">
             <img src="/frontend/img/logoencab1.jpg.jpeg" alt="Logo Tigre Market" class="logo-tigre-encabezado">
@@ -18,6 +22,11 @@
                 <p>Compra y vende entre estudiantes universitarios GTU</p>
             </div>
         </div>
+
+<!-- ==========================================================
+    2. MENU DE NAVEGACION PARA ACCEDEER A DIFERENTES SECCIONES
+=========================================================== -->
+
     <nav>
         <a href="">
             <img src="/frontend/iconos/inicio.png" alt=""> Inicio
@@ -41,7 +50,11 @@
     </nav>
 
     </header>
-<!-- Fondo oscuro semitransparente para el panel -->
+
+<!-- ==========================================================
+    3. PANEL LATERAL DE OPCIONES DE CUENTA
+=========================================================== -->
+
 <div id="overlay-cuenta" class="overlay-cuenta" onclick="cerrarPanelCuenta()"></div>
 
 <!-- Panel Lateral Deslizante -->
@@ -86,7 +99,10 @@
     </nav>
 </aside>
 
-<!-- Modal Personalizado de Confirmación de Cierre de Sesión -->
+<!-- ==========================================================
+    4. MODAL DE CONFIRMACIÓN PARA CERRAR SESIÓN
+========================================================== -->
+
 <div id="modal-logout" class="modal-overlay">
     <div class="modal-card">
         <h3>Cerrar Sesión</h3>
@@ -97,6 +113,10 @@
         </div>
     </div>
 </div>
+
+<!-- ==========================================================
+    5. SECCIÓN DE BÚSQUEDA DE PRODUCTOS
+========================================================== -->
     
 <section class="busqueda-inicio">
     <h2>¿Qué estás <span class="texto-naranja">buscando?</span></h2>
@@ -119,6 +139,10 @@
     </button>
 </form>
 </section>
+
+<!-- ==========================================================
+    6. CATÁLOGO PRINCIPAL DE PRODUCTOS
+========================================================== -->
 
     <main>
         <h2 id="productos">Encuentra lo que necesitas</h2>
@@ -161,11 +185,23 @@
         </div>
     </main>
 
+<!-- ==========================================================
+    7. PIE DE PÁGINA
+========================================================== -->
+
     <footer>
         <p>© 2026 Tigre Market</p>
     </footer>
 
+<!-- ==========================================================
+    8. CONEXIÓN CON EL ARCHIVO JAVASCRIPT DEL CARRITO
+========================================================== -->
+
 <script src="carrito.js" defer></script>
+
+<!-- ==========================================================
+    9. CONFIGURACIÓN E INICIALIZACIÓN DE FIREBASE
+========================================================== -->
 
     <script type="module">
   // Import the functions you need from the SDKs you need
