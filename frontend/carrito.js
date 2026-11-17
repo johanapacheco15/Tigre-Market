@@ -1,13 +1,22 @@
+/* =========================================
+   1. CARGAR PRODUCTOS DEL CARRITO
+========================================= */
+
 let carrito = JSON.parse(localStorage.getItem("miCarrito")) || [];
 
-// Elementos del carrito
+/* =========================================
+   2. ELEMENTOS DEL CARRITO
+========================================= */
 const listaCarrito = document.getElementById("lista-carrito");
 const subtotalElemento = document.getElementById("subtotal");
 const totalElemento = document.getElementById("total");
 const botonConfirmar = document.getElementById("confirmar-pedido");
 const mensaje = document.getElementById("mensaje");
 
-// Formato de precios
+/* =========================================
+   3. FORMATO DE PRECIOS
+========================================= */
+
 function formatoPrecio(precio) {
     return precio.toLocaleString("es-MX", {
         style: "currency",
@@ -15,12 +24,18 @@ function formatoPrecio(precio) {
     });
 }
 
-// Guardar los productos
+/* =========================================
+   4. GUARDAR PRODUCTOS
+========================================= */
+
 function guardarCarrito() {
     localStorage.setItem("miCarrito", JSON.stringify(carrito));
 }
 
-// AGREGAR PRODUCTOS DESDE INICIO
+/* =========================================
+   5. AGREGAR PRODUCTOS DESDE INICIO
+========================================= */
+
 const catalogo = document.getElementById("catalogo");
 
 if (catalogo) {
@@ -36,6 +51,10 @@ if (catalogo) {
         const existente = carrito.find(function(producto) {
             return producto.id === id;
         });
+
+    /* ===================================================
+        6. SI EL PRODUCTO YA EXISTE AUMENTA LA CANTIDAD
+    ===================================================== */
 
         if (existente) {
             existente.cantidad++;
@@ -54,7 +73,10 @@ if (catalogo) {
     });
 }
 
-// MOSTRAR LOS PRODUCTOS DEL CARRITO
+/* =========================================
+   7. MOSTRAR LOS PRODUCTOS DEL CARRITO
+========================================= */
+
 function mostrarCarrito() {
     if (!listaCarrito) return;
 
@@ -124,7 +146,10 @@ function mostrarCarrito() {
     totalElemento.textContent = formatoPrecio(total);
 }
 
-// AUMENTAR O DISMINUIR CANTIDAD
+/* =========================================
+   8. AUMENTAR O DISMINUIR CANTIDAD
+========================================= */
+
 function cambiarCantidad(id, cambio) {
     const producto = carrito.find(function(item) {
         return item.id === id;
@@ -143,7 +168,10 @@ function cambiarCantidad(id, cambio) {
     mostrarCarrito();
 }
 
-// ELIMINAR PRODUCTOS
+/* =========================================
+   9. ELIMINAR PRODUCTOS
+========================================= */
+
 function quitarProducto(id) {
     carrito = carrito.filter(function(producto) {
         return producto.id !== id;
@@ -157,7 +185,9 @@ function quitarProducto(id) {
     }
 }
 
-// CONFIRMAR PEDIDO
+/* =========================================
+   10. CONFIRMAR PEDIDO
+========================================= */
 
 const ventanaExito = document.getElementById("ventana-exito");
 const cerrarExito = document.getElementById("cerrar-exito");
@@ -175,7 +205,9 @@ if (botonConfirmar) {
     });
 }
 
-// CERRAR VENTANA
+/* =========================================
+   11. CERRAR VENTANA DE COMPRA EXITOSA
+========================================= */
 
 if (cerrarExito) {
     cerrarExito.addEventListener("click", function() {
@@ -189,25 +221,34 @@ if (cerrarExito) {
     });
 }
 
-// ACTUALIZAR LA PÁGINA DEL CARRITO
+/* =========================================
+   12. ACTUALIZAR LA PÁGINA DEL CARRITO
+========================================= */
+
 mostrarCarrito();
 
-//Guardado en favoritos si no funciona ignorar por ahora//
+/* =========================================
+   13. GUARDADO EN FAVORITOS
+========================================= */
+
 document.addEventListener('DOMContentLoaded', () => {
     renderizarCarrito();
 });
 
+/* =========================================
+   14. RENDERIZAR CARRITO ADICIONAL
+========================================= */
+
 function renderizarCarrito() {
-    // Leer los productos guardados desde Favoritos o la Tienda
+
     const carrito = JSON.parse(localStorage.getItem('tigre_carrito')) || [];
     
-    // Reemplaza 'contenedor-productos-carrito' por el ID real que usaste en tu carrito.html
     const contenedor = document.getElementById('contenedor-productos-carrito'); 
-    const totalElemento = document.getElementById('total-carrito'); // ID donde muestras el total a pagar
+    const totalElemento = document.getElementById('total-carrito');
 
     if (!contenedor) return;
 
-    contenedor.innerHTML = ''; // Limpiar contenido previo
+    contenedor.innerHTML = ''; 
     let totalGeneral = 0;
 
     if (carrito.length === 0) {
@@ -216,11 +257,14 @@ function renderizarCarrito() {
         return;
     }
 
+/* ===================================================================
+    15. RECORRE LOS PRODUCTOS GUARDADOS PARA MOSTRARLOS EN PANTALLA
+==================================================================== */
+
     carrito.forEach((producto, index) => {
         const subtotal = producto.precio * producto.cantidad;
         totalGeneral += subtotal;
 
-        // Adapta estas clases HTML a las que ya diseñaste en tu carrito.css
         contenedor.innerHTML += `
             <div class="item-carrito">
                 <img src="${producto.imagen}" alt="${producto.nombre}">
@@ -241,9 +285,13 @@ function renderizarCarrito() {
     }
 }
 
+/* =========================================
+   16. ELIMINAR PRODUCTOS DEL CARRITO ADICIONAL
+========================================= */
+
 function eliminarDelCarrito(index) {
     let carrito = JSON.parse(localStorage.getItem('tigre_carrito')) || [];
-    carrito.splice(index, 1); // Quita el elemento por su posición
+    carrito.splice(index, 1);
     localStorage.setItem('tigre_carrito', JSON.stringify(carrito));
-    renderizarCarrito(); // Vuelve a dibujar el carrito actualizado
+    renderizarCarrito(); 
 }

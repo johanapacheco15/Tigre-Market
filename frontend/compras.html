@@ -12,6 +12,10 @@
 
 <body>
 
+<!-- ==========================================================
+    1. ENCABEZADO PRINCIPAL
+========================================================== -->
+
 <header class="encabezado">
 
     <div class="contenedor-logo-titulo">
@@ -26,6 +30,10 @@
         </div>
 
     </div>
+
+<!-- ==========================================================
+    2. BARRA DE NAVEGACION PARA CAMBIAR ENTRE LAS PAGINAS
+========================================================== -->
 
 <nav>
     <a href="Pagina-de-inicio.html">
@@ -46,10 +54,18 @@
 
 </header>
 
+<!-- ==========================================================
+    3. CONTENIDO PRINCIPAL
+========================================================== -->
+
 <main class="contenedor">
 
     <h2>Productos disponibles</h2>
     <section class="barra-busqueda-filtros">
+
+   <!-- ======================================================
+      4. BARRA DE BÚSQUEDA Y FILTROS
+    ====================================================== -->
 
        <div class="buscador">
 
@@ -64,6 +80,9 @@
     </button>
 </div>
 
+    <!-- ==================================================
+        5. FILTROS DE PRODUCTOS
+    ================================================== -->
         <section class="filtros">
 
             <div class="filtro">
@@ -83,6 +102,10 @@
 
             </div>
 
+    <!-- ==================================================
+        5. FILTRO PARA SELECCIONAR EL COLOR 
+    ================================================== -->
+
             <div class="filtro">
 
                 <label for="filtro-color">Color:</label>
@@ -99,6 +122,9 @@
                 </select>
 
             </div>
+    <!-- ==================================================
+        6. FILTRO PARA SELECCIONAR EL PRESUPUESTO 
+    ================================================== -->
 
             <div class="filtro">
 
@@ -113,6 +139,10 @@
 
             </div>
 
+    <!-- ==================================================
+        6. BOTON PARA REESTABLECER LOS FILTROS 
+    ================================================== -->
+
             <button type="button" id="limpiar-filtros">
                 Limpiar
             </button>
@@ -120,6 +150,13 @@
         </section>
 
     </section>
+
+        
+<!-- ==================================================
+    7. CATALOGO DE PRODUCTOS 
+================================================== -->
+
+    <!-- 7.1. PRODUCTO UNO -->
 
     <section class="catalogo" id="catalogo">
 
@@ -129,15 +166,27 @@
             data-color="negro"
             data-precio="180">
 
+            <!-- 7.2. Fotografía del producto. -->
+
+
             <img src="mochila.jpg"
                  alt="Mochila universitaria"
                  class="foto-producto">
+            <!-- 7.3. Nombre del artículo. -->
 
             <h3>Mochila universitaria</h3>
 
+            <!-- 7.4. Descripción breve del estado y uso del producto. -->
+
             <p>En buen estado, ideal para tus clases.</p>
 
+            <!-- 7.5. Precio del producto expresado en pesos mexicanos. -->
+
             <p class="precio">$180 MXN</p>
+
+            <!-- ====================================================
+                8. BOTON QUE PERMITE CONSULTAR MAS INF DEL PRODUCTO 
+            ====================================================== -->
 
             <button class="ver-producto"
                 data-nombre="Mochila universitaria"
@@ -147,6 +196,10 @@
                 Ver producto
 
             </button>
+
+            <!-- ==================================================
+                9. BOTON PARA AGREGAR PRODUCTO AL CARRITO 
+            ================================================== -->
 
             <button class="agregar"
                 data-id="1"
@@ -159,6 +212,8 @@
             </button>
 
         </article>
+    
+        <!-- PRODUCTO 2 -->
 
         <article class="tarjeta-producto"
             data-categoria="calculadoras"
@@ -166,15 +221,27 @@
             data-color="negro"
             data-precio="250">
 
+        <!-- 7.6. Fotografía del producto. -->
+
             <img src="calculadora.jpg"
                  alt="Calculadora científica"
                  class="foto-producto">
 
+        <!--7.5. Nombre del artículo. -->
+
             <h3>Calculadora científica</h3>
+
+        <!-- 7.5. Descripción de las características del producto. -->
 
             <p>Ideal para matemáticas y otras materias.</p>
 
+        <!-- 7.6. Precio del producto. -->
+
             <p class="precio">$250 MXN</p>
+
+            <!-- ====================================================
+                8.1. BOTON QUE PERMITE CONSULTAR MAS INF DEL PRODUCTO 
+            ====================================================== -->            
 
             <button class="ver-producto"
                 data-nombre="Calculadora científica"
@@ -184,6 +251,10 @@
                 Ver producto
 
             </button>
+
+            <!-- ==================================================
+                9.1. BOTON PARA AGREGAR PRODUCTO AL CARRITO 
+            ================================================== -->
 
             <button class="agregar"
                 data-id="2"
@@ -201,12 +272,20 @@
 
 </main>
 
+<!-- ==========================================================
+    10. PIE DE PÁGINA
+========================================================== -->
+
 <footer>
     <p>© 2026 Tigre Market</p>
 </footer>
 
 </body>
 </html>
+
+<!-- ==========================================================
+     CONFIGURACIÓN DE FIREBASE
+========================================================== -->
 
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";

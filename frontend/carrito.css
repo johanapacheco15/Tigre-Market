@@ -1,5 +1,5 @@
 /* =========================================
-   FUENTES
+   1. FUENTES
 ========================================= */
 
 @font-face {
@@ -17,7 +17,7 @@
 }
 
 /* =========================================
-   CONFIGURACIÓN GENERAL
+   2. CONFIGURACIÓN GENERAL
 ========================================= */
 
 * {
@@ -39,7 +39,7 @@ body {
 }
 
 /* =========================================
-   ENCABEZADO
+   3. ENCABEZADO
 ========================================= */
 
 .encabezado {
@@ -65,7 +65,7 @@ body {
 }
 
 /* =========================================
-   LOGO Y TITULO
+   4. LOGO Y TITULO
 ========================================= */
 
 .contenedor-logo-titulo {
@@ -122,7 +122,7 @@ body {
 
 
 /* =========================================
-   MENÚ DE NAVEGACIÓN
+   5. MENÚ DE NAVEGACIÓN
 ========================================= */
 
 .encabezado nav {
@@ -147,6 +147,10 @@ body {
     transition: all 0.3s ease;
 }
 
+/* ==============================================
+   6. APARIENCIA DE CADA ENLACE DE NAVEGACION
+===============================================*/
+
 .encabezado nav a {
     display: flex;
     align-items: center;
@@ -161,6 +165,10 @@ body {
     background: transparent;
     transition: all 0.3s ease;
 }
+
+/* =========================================
+   7. TAMAÑO Y COLOR DE ICONOS
+========================================= */
 
 .encabezado nav a img {
     width: 17px;
@@ -178,12 +186,20 @@ body {
     transition: all 0.3s ease;
 }
 
+/* =========================================
+   8. EFECTO AL PASAR CURSOR SOBRE MENU
+========================================= */
+
 .encabezado nav a:hover {
     background: #ff7900;
     color: white;
     box-shadow: 0 0 12px rgba(6, 21, 131, 0.7);
     transform: translateY(-2px);
 }
+
+/* ===================================================
+   9. CAMBIA EL COLOR DE LOS ICONOS AL PASAR CURSOR
+=====================================================*/
 
 .encabezado nav a:hover img {
     filter:
@@ -198,7 +214,7 @@ body {
 }
 
 /* =========================================
-   CONTENEDOR PRINCIPAL
+   10 CONTENEDOR PRINCIPAL
 ========================================= */
 
 .contenedor-carrito {
@@ -206,6 +222,10 @@ body {
     max-width: 1050px;
     margin: 45px auto;
 }
+
+/* =========================================
+   11. ESTILOS DE TITULO
+========================================= */
 
 .contenedor-carrito > h2 {
     margin-bottom: 12px;
@@ -226,7 +246,7 @@ body {
 
 
 /* =========================================
-   LISTA DEL CARRITO
+   13. LISTA DEL CARRITO
 ========================================= */
 
 #lista-carrito {
@@ -236,8 +256,8 @@ body {
     margin-bottom: 30px;
 }
 
-/* =========================================
-TARHETA DE CADA PRODUCTO
+/*=========================================
+    14. TARHETA DE CADA PRODUCTO
 ========================================= */
 
 #lista-carrito .producto-carrito {
@@ -263,7 +283,7 @@ TARHETA DE CADA PRODUCTO
 }
 
 /* =========================================
-CONTROLES DE CANTIDAD
+    15. CONTROLES DE CANTIDAD
 ========================================= */
 
 #lista-carrito .controles-cantidad {
@@ -278,7 +298,7 @@ CONTROLES DE CANTIDAD
 }
 
 /* =========================================
-BOTONES DE - Y +
+    16. BOTONES DE - Y +
 ========================================= */
 
 #lista-carrito .controles-cantidad button {
@@ -289,7 +309,7 @@ BOTONES DE - Y +
 }
 
 /* =========================================
-NUMERO DE PRODUCTO
+    17. NUMERO DE PRODUCTO
 ========================================= */
 
 #lista-carrito .controles-cantidad span {
@@ -297,8 +317,8 @@ NUMERO DE PRODUCTO
     font-size: 13px;
 }
 
-/* =========================================
-BOTON QUITAR
+/* =========================================   
+    18. BOTON QUITAR
 ========================================= */
 
 #lista-carrito .controles-cantidad .boton-quitar {
@@ -307,7 +327,7 @@ BOTON QUITAR
 }
 
 /* =========================================
-IMAGEN DEL PRODUCTO
+    19. IMAGEN DEL PRODUCTO
 ========================================= */
 
 #lista-carrito img {
@@ -318,9 +338,8 @@ IMAGEN DEL PRODUCTO
     border-radius: 10px;
 }
 
-
 /* =========================================
-NOMBRE Y DESCRIPCION
+    20. NOMBRE Y DESCRIPCION
 ========================================= */
 
 #lista-carrito h3 {
@@ -335,9 +354,8 @@ NOMBRE Y DESCRIPCION
     line-height: 1.7;
 }
 
-
 /* =========================================
-   BOTONES DEL CARRITO
+   21. BOTONES DEL CARRITO
 ========================================= */
 
 #lista-carrito button {
@@ -362,7 +380,7 @@ NOMBRE Y DESCRIPCION
 
 
 /* =========================================
-   RESUMEN DE COMPRA
+   22. RESUMEN DE COMPRA
 ========================================= */
 
 .resumen-carrito {
@@ -403,9 +421,8 @@ NOMBRE Y DESCRIPCION
     font-weight: bold;
 }
 
-
 /* =========================================
-   BOTÓN CONFIRMAR PEDIDO
+   23. BOTÓN CONFIRMAR PEDIDO
 ========================================= */
 
 #confirmar-pedido {
@@ -442,7 +459,7 @@ NOMBRE Y DESCRIPCION
 } 
 
 /* =====================================
-   VENTANA DE COMPRA EXITOSA
+   24. VENTANA DE COMPRA EXITOSA
 ===================================== */
 
 .ventana-exito {
@@ -458,7 +475,7 @@ NOMBRE Y DESCRIPCION
 }
 
 /* =========================================
-CONTENEDOR PRINCIPAL
+    25. CONTENEDOR PRINCIPAL
 ========================================= */
 
 .contenido-exito {
@@ -487,7 +504,7 @@ CONTENEDOR PRINCIPAL
 }
 
 /* =========================================
-TITULO FELICIDADES
+    26. TITULO FELICIDADES
 ========================================= */
 
 .contenido-exito h2 {
@@ -516,7 +533,7 @@ TITULO FELICIDADES
 }
 
 /* =========================================
-MENSAJE DE COMPRA EXITOSA
+    27. MENSAJE DE COMPRA EXITOSA
 ========================================= */
 
 .mensaje-exito {
@@ -526,7 +543,7 @@ MENSAJE DE COMPRA EXITOSA
 }
 
 /* =========================================
-IMAGEN DEL TIGRE
+    28. IMAGEN DEL TIGRE
 ========================================= */
 .contenido-exito img {
     width: 250px;
@@ -539,7 +556,7 @@ IMAGEN DEL TIGRE
 }
 
 /* =========================================
-MENSAJE DE ENTREGA
+    29. MENSAJE DE ENTREGA
 ========================================= */
 
 .entrega-exito {
@@ -550,7 +567,7 @@ MENSAJE DE ENTREGA
 }
 
 /* =========================================
-BOTON ENTENDIDO
+    30. BOTON ENTENDIDO
 ========================================= */
 
 #cerrar-exito {
@@ -588,7 +605,7 @@ BOTON ENTENDIDO
 }
 
 /* =========================================
-ANIMACION
+    31. ANIMACION DE APARICION
 ========================================= */
 
 @keyframes aparecer {
@@ -604,7 +621,7 @@ ANIMACION
 }
 
 /* =========================================
-   MENSAJES
+   32. MENSAJES
 ========================================= */
 
 #mensaje {
@@ -614,9 +631,9 @@ ANIMACION
     text-align: center;
 }
 
-/* =========================================
-   DISEÑO RESPONSIVO
-========================================= */
+/* ===========================================================
+   33. DISEÑO RESPONSIVO ADAPTACION PARA PANTALLAS DE 600 PX
+============================================================*/
 
 @media (max-width: 600px) {
 
@@ -676,9 +693,9 @@ ANIMACION
 
 }
 
-/* =========================================
-ADAPTACION PARA PANTALLAS PEQUEÑAS
-========================================= */
+/* =========================================================
+    34. ADAPTACION DE LA VENTANA PARA PANTALLAS DE 600 PX
+========================================================== */
 
 @media (max-width: 600px) {
 

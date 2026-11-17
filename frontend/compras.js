@@ -1,5 +1,5 @@
 /* =========================================
-   BOTONES VER PRODUCTO
+   1. BOTONES VER PRODUCTO
 ========================================= */
 
 document.querySelectorAll(".ver-producto").forEach(function(boton) {
@@ -18,7 +18,7 @@ document.querySelectorAll(".ver-producto").forEach(function(boton) {
 
 
 /* =========================================
-   ELEMENTOS DE BÚSQUEDA Y FILTROS
+   2. ELEMENTOS DE BÚSQUEDA Y FILTROS
 ========================================= */
 
 const buscador = document.getElementById("buscador-producto");
@@ -33,7 +33,7 @@ const botonLimpiar = document.getElementById("limpiar-filtros");
 
 
 /* =========================================
-   FUNCIÓN PARA FILTRAR PRODUCTOS
+   3. FUNCIÓN PARA FILTRAR PRODUCTOS
 ========================================= */
 
 function filtrarProductos() {
@@ -96,7 +96,7 @@ function filtrarProductos() {
 
 
 /* =========================================
-   EVENTOS DE BÚSQUEDA Y FILTROS
+   4. EVENTOS DE BÚSQUEDA Y FILTROS
 ========================================= */
 
 buscador.addEventListener("input", filtrarProductos);
@@ -109,7 +109,7 @@ filtroPresupuesto.addEventListener("input", filtrarProductos);
 
 
 /* =========================================
-   BUSCAR DESDE LA PÁGINA DE INICIO
+   5. BUSCAR DESDE LA PÁGINA DE INICIO
 ========================================= */
 
 const parametros = new URLSearchParams(window.location.search);
@@ -126,7 +126,7 @@ if (busquedaInicial) {
 
 
 /* =========================================
-   LIMPIAR FILTROS
+   6. LIMPIAR FILTROS
 ========================================= */
 
 botonLimpiar.addEventListener("click", function() {
