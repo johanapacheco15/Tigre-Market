@@ -1,0 +1,457 @@
+/* =========================================
+   FUENTES
+========================================= */
+
+@font-face {
+    font-family: 'TitanOne';
+    src: url('fonts/TitanOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
+    font-weight: 400 900;
+}
+
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 35px 20px;
+    font-family: 'Orbitron', sans-serif;
+    background-color: #030a17;
+    background-image: url("img/fondo8.jpeg");
+    background-size: 100% auto;
+    background-position: center top;
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+    color: #f2f5ff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   DISTRIBUCIÓN PRINCIPAL
+========================================= */
+
+.paneles-perfil {
+    width: 95%;
+    max-width: 1350px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    align-items: start;
+    gap: 25px;
+}
+
+/* =========================================
+   CONTENEDORES
+========================================= */
+
+.main-contenedor {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 25px;
+
+    background: rgba(7, 25, 52, 0.95);
+    border: 1.5px solid #168bff;
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 10px rgba(22, 139, 255, 0.35),
+        0 0 25px rgba(22, 139, 255, 0.12);
+}
+
+/* CONTENEDOR DE MI PERFIL */
+
+.contenedor-perfil {
+    padding: 25px;
+}
+
+/* COLUMNA DERECHA */
+
+.columna-derecha {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    min-width: 0;
+}
+
+.columna-derecha .main-contenedor {
+    padding: 22px;
+}
+
+/* =========================================
+   TÍTULOS
+========================================= */
+
+.titulo-seccion {
+    font-family: 'TitanOne', sans-serif;
+    font-size: 28px;
+    font-weight: normal;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
+
+    background: linear-gradient(
+        to bottom,
+        #fff0a3 0%,
+        #ffbd24 25%,
+        #ff8500 65%,
+        #d94b00 100%
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    filter:
+        drop-shadow(0 3px 0 #a94300)
+        drop-shadow(0 5px 3px rgba(0, 0, 0, 0.7));
+}
+
+/* =========================================
+   MI PERFIL
+========================================= */
+
+.perfil-contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    padding: 10px 5px;
+}
+
+/* FOTO DE PERFIL */
+
+.foto-perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    min-width: 125px;
+}
+
+.foto-perfil img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #168bff;
+    background: #102c50;
+
+    box-shadow:
+        0 0 12px rgba(22, 139, 255, 0.7),
+        0 0 25px rgba(22, 139, 255, 0.3);
+}
+
+/* BOTÓN CAMBIAR FOTO */
+
+.btn-foto {
+    padding: 10px 18px;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    background: #0b63bd;
+    border: 1px solid #39a5ff;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-foto:hover {
+    background: #168bff;
+    box-shadow: 0 0 12px #168bff;
+}
+
+/* =========================================
+   FORMULARIO DEL PERFIL
+========================================= */
+
+.form-perfil {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo label {
+    color: #8bcaff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.campo input {
+    width: 100%;
+    padding: 12px 14px;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    background: #0b2342;
+    border: 1.5px solid #176fc2;
+    border-radius: 9px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.campo input::placeholder {
+    color: #829bb8;
+}
+
+.campo input:focus {
+    border-color: #36a5ff;
+    box-shadow: 0 0 10px rgba(22, 139, 255, 0.45);
+}
+
+/* =========================================
+   BOTONES
+========================================= */
+
+.btn-principal {
+    padding: 12px 18px;
+    color: #17345a;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+
+    background: linear-gradient(
+        to bottom,
+        #fff0a3,
+        #ffbd24,
+        #ff8500
+    );
+
+    border: 2px solid #ffbd24;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-perfil .btn-principal {
+    align-self: center;
+    margin-top: 10px;
+}
+
+.btn-principal:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 15px rgba(255, 153, 0, 0.6);
+}
+
+#mensaje-perfil {
+    color: #65e6a2;
+    text-align: center;
+    font-size: 13px;
+}
+
+/* =========================================
+   PRODUCTOS FAVORITOS
+========================================= */
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+}
+
+.card-producto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 18px;
+
+    background: #0b2342;
+    border: 1.5px solid #168bff;
+    border-radius: 15px;
+
+    box-shadow: 0 0 12px rgba(22, 139, 255, 0.2);
+    transition: 0.3s;
+}
+
+.card-producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 18px rgba(22, 139, 255, 0.5);
+}
+
+.card-producto img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
+
+.card-producto h3 {
+    color: #ffffff;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.precio {
+    color: #ffbd24;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.card-acciones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.card-acciones .btn-principal {
+    font-size: 11px;
+    padding: 10px 13px;
+}
+
+.btn-eliminar-fav {
+    padding: 10px 15px;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    background: #a82935;
+    border: 1px solid #ff5865;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-eliminar-fav:hover {
+    background: #d52d3c;
+    box-shadow: 0 0 10px rgba(255, 60, 75, 0.4);
+}
+
+/* =========================================
+   HISTORIAL DE COMPRAS
+========================================= */
+
+.tabla-historial-container {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 12px;
+}
+
+.tabla-historial {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+    background: #0b2342;
+}
+
+.tabla-historial th {
+    padding: 14px 12px;
+    color: #fff0a3;
+    background: #10365f;
+    border-bottom: 2px solid #168bff;
+    font-size: 12px;
+}
+
+.tabla-historial td {
+    padding: 14px 12px;
+    color: #e5f2ff;
+    text-align: center;
+    border-bottom: 1px solid rgba(22, 139, 255, 0.25);
+    font-size: 12px;
+}
+
+.tabla-historial tbody tr:hover {
+    background: rgba(22, 139, 255, 0.12);
+}
+
+/* ESTADO DEL PEDIDO */
+
+.badge {
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.entregado {
+    color: #8affbd;
+    background: rgba(35, 180, 100, 0.18);
+    border: 1px solid #35c978;
+}
+
+/* =========================================
+   DISEÑO RESPONSIVO
+========================================= */
+
+@media (max-width: 950px) {
+
+    .paneles-perfil {
+        grid-template-columns: 1fr;
+        width: 95%;
+    }
+
+    .perfil-contenedor {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 750px) {
+
+    body {
+        padding: 20px 10px;
+    }
+
+    .paneles-perfil {
+        width: 100%;
+    }
+
+    .main-contenedor {
+        padding: 22px 15px;
+    }
+
+    .perfil-contenedor {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .form-perfil {
+        max-width: 100%;
+    }
+
+    .titulo-seccion {
+        font-size: 24px;
+    }
+
+    .foto-perfil img {
+        width: 110px;
+        height: 110px;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .titulo-seccion {
+        font-size: 21px;
+    }
+
+    .card-acciones {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .card-acciones button {
+        width: 100%;
+    }
+}

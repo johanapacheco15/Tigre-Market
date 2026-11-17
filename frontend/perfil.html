@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tigre Market - Mi perfil</title>
+
+    <link rel="stylesheet" href="perfil.css">
+    <script src="perfil.js"></script>
+</head>
+
+<body>
+ <!-- =================================
+CONTENEDOR GENERAL
+==================================== -->
+
+    <div class="paneles-perfil">
+
+        <!-- =================================
+             MI PERFIL
+        ================================== -->
+
+     <main class="main-contenedor contenedor-perfil">
+        <h2 class="titulo-seccion">Mi Perfil</h2>
+            <section class="perfil-contenedor">
+
+        <!-- =================================
+        FOTO DE PERFIL
+        ================================== -->
+
+        <div class="foto-perfil">
+            <img
+                id="imagen-perfil"src="iconos/usuario.png" alt="Foto de perfil">
+                    <label for="cambiar-foto" class="btn-foto">
+                        Cambiar foto
+                    </label>
+
+        <input
+            type="file" id="cambiar-foto" accept="image/*"hidden>
+        </div>
+
+        <!-- =================================
+        FORMULARIO DE DATOS
+        ================================== -->
+
+        <form id="form-perfil" class="form-perfil">
+            <div class="campo">
+                <label for="nombre">Nombre completo</label>
+                    <input type="text" id="nombre" placeholder="Escribe tu nombre">
+            </div>
+
+            <div class="campo">
+                <label for="usuario">Nombre de usuario</label>
+                    <input
+                            type="text" id="usuario" placeholder="@usuario">
+            </div>
+
+            <div class="campo">
+                <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" placeholder="Tu número de teléfono">
+            </div>
+
+            <div class="campo">
+                <label for="contrasena">Nueva contraseña</label>
+                    <input type="password" id="contrasena" placeholder="Deja vacío si no deseas cambiarla">
+            </div>
+
+                <button type="submit" class="btn-principal"> Guardar cambios
+                </button>
+
+            <p id="mensaje-perfil"></p>
+        </form>
+    </section>
+</main>
+
+        <!-- =================================
+             COLUMNA DERECHA
+        ================================== -->
+
+        <div class="columna-derecha">
+
+            <!-- =================================
+                 PRODUCTOS FAVORITOS
+            ================================== -->
+
+    <main class="main-contenedor contenedor-favoritos">
+
+        <h2 class="titulo-seccion">Mis Productos Favoritos</h2>
+            <div id="grid-favoritos" class="productos-grid">
+                <div class="card-producto">
+                     <img src="/frontend/img/producto-ejemplo.jpg" alt="Producto">
+        <h3>Control Inalámbrico Neón</h3>
+            <span class="precio">$599.00 MXN</span>
+
+        <div class="card-acciones">
+            <button class="btn-principal" 
+                onclick="agregarAlCarrito(1)">Mover al Carrito
+            </button>
+
+            <button class="btn-eliminar-fav"
+                onclick="quitarFavorito(1)">Eliminar
+            </button>
+        </div>
+    </div>
+</div>
+
+    </main>
+
+        <!-- =================================
+         HISTORIAL DE COMPRAS
+        ================================== -->
+        
+        <main class="main-contenedor contenedor-historial">
+            <h2 class="titulo-seccion">
+                Historial de Compras
+            </h2>
+
+        <div class="tabla-historial-container">
+            <table class="tabla-historial">
+                <thead>
+                <tr>
+                    <th>ID Pedido</th>
+                    <th>Fecha</th>
+                    <th>Productos</th>
+                    <th>Total</th>
+                    <th>Estado</th>
+                </tr>
+
+        </thead>
+            <tbody id="body-historial">
+                <tr>
+                    <td>#TM-84920</td>
+                    <td>05/11/2026</td>
+                    <td>Smart Car Robot Arduino, Cable Jumper</td>
+                    <td>$850.00 MXN</td>
+                <td>
+                    <span class="badge entregado">Entregado</span>
+                </td>
+                </tr>
+            </tbody>
+            </table>
+
+        </div>
+        </main>
+        </div>
+
+    </div>
+</body>
+</html>

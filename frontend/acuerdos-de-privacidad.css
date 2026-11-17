@@ -98,12 +98,12 @@ body.pagina-legal {
 }
 
 .tigre-hembra {
-    left: 75px;
+    left: -40px;
     width: clamp(250px, 25vw, 330px);
 }
 
 .tigre-macho {
-    right: 10px;
+    right: -60px;
     width: clamp(240px, 25vw, 370px);
 }
 
