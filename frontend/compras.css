@@ -41,6 +41,9 @@ body {
 }
 
 
+.btn-hamburguesa {
+    display: none;
+}
 /* =========================================
    3. ENCABEZADO
 ========================================= */
@@ -739,6 +742,80 @@ footer p {
 ================================================================= */
 
 @media (max-width: 550px) {
+
+    /*==============================================================
+    Ajuste para la hamburguesa y el menú de navegación en pantallas pequeñas
+    ===============================================================*/
+    /* 1. El encabezado se ajusta para que el texto no choque con la hamburguesa */
+    .encabezado {
+        position: relative;
+        padding-right: 60px; /* Deja espacio a la derecha para que el texto no choque con la hamburguesa */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 12px;
+    }
+
+    /* 2. El botón hamburguesa se fija exactamente arriba a la derecha */
+    .btn-hamburguesa {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: none;
+        border: none;
+        color: #00d2ff;
+        font-size: 28px;
+        cursor: pointer;
+        padding: 0;
+        z-index: 100;
+    }
+
+    /* 3. El menú desplegable aparece justo debajo del encabezado al activarse */
+    #menu-navegacion {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #071429;
+        border-top: 2px solid #ff8617;
+        border-bottom: 2px solid #ff8617;
+        padding: 10px 0;
+        z-index: 1000;
+        box-sizing: border-box;
+    }
+
+    #menu-navegacion.activo {
+        display: flex;
+    }
+
+    #menu-navegacion a {
+        font-size: 11px;
+        padding: 10px 20px;
+        text-align: left;
+        color: #ffffff;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    #menu-navegacion a img {
+        height: 16px;
+    }
+
+    #menu-navegacion a:last-child {
+        border-bottom: none;
+    }
+
+    /*==============================================================
+    Ajustes de tamaño de elementos para pantallas pequeñas
+    ===============================================================*/
 
     .contenedor-logo-titulo {
         gap: 10px;

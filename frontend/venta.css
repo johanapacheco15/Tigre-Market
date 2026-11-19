@@ -33,6 +33,7 @@ body {
     overflow-x: hidden;
 }
 
+
 .encabezado {
     position: relative;
     display: flex;
@@ -53,6 +54,14 @@ body {
     border-bottom: 2px solid #ff7900;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
     overflow: visible;
+}
+
+/* ==============================================================
+Se agrega esta seccion para evitar que la hamburguesa se muestre en pantallas grandes. 
+====================================================================*/
+
+.btn-hamburguesa {
+    display: none;
 }
 
 .contenedor-logo-titulo {
@@ -697,4 +706,128 @@ body {
     background: rgba(7, 20, 41, 0.6);
     border: 1px dashed #3b587c;
     border-radius: 12px;
+}
+/* ==========================================================
+   7. DISEÑO RESPONSIVO PARA TABLETAS
+========================================================== */
+
+@media (max-width: 900px) {
+    .encabezado {
+        flex-wrap: wrap;
+        padding: 15px;
+        justify-content: center;
+        gap: 15px;
+        height: auto;
+    }
+
+    .encabezado nav {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .texto-encabezado h1 {
+        font-size: 32px;
+    }
+
+    .busqueda-inicio h2 {
+        font-size: 27px;
+    }
+
+    .producto {
+        flex: 1 1 100%;
+    }
+}
+
+/* ==========================================================
+   7. DISEÑO RESPONSIVO PARA CELULARES 
+========================================================== */
+
+@media (max-width: 550px) {
+
+    /* 1. El encabezado se vuelve relativo para contener el botón y el menú desplegable */
+    .encabezado {
+        position: relative;
+        padding-right: 60px; /* Deja espacio a la derecha para que el texto no choque con la hamburguesa */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 12px;
+    }
+
+    /* 2. El botón hamburguesa se fija exactamente arriba a la derecha */
+    .btn-hamburguesa {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: none;
+        border: none;
+        color: #00d2ff;
+        font-size: 28px;
+        cursor: pointer;
+        padding: 0;
+        z-index: 100;
+    }
+
+    /* 3. El menú desplegable aparece justo debajo del encabezado al activarse */
+    #menu-navegacion {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #071429;
+        border-top: 2px solid #ff8617;
+        border-bottom: 2px solid #ff8617;
+        padding: 10px 0;
+        z-index: 1000;
+        box-sizing: border-box;
+    }
+
+    #menu-navegacion.activo {
+        display: flex;
+    }
+
+    #menu-navegacion a {
+        font-size: 11px;
+        padding: 10px 20px;
+        text-align: left;
+        color: #ffffff;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    #menu-navegacion a img {
+        height: 16px;
+    }
+
+    #menu-navegacion a:last-child {
+        border-bottom: none;
+    }
+
+    /* --- TUS OTROS ESTILOS MÓVILES EXISTENTES --- */
+    .logo-tigre-encabezado {
+        height: 70px;
+    }
+
+    .texto-encabezado h1 {
+        font-size: 22px;
+    }
+
+    .texto-encabezado p {
+        font-size: 8px;
+    }
+    footer {
+        padding: 12px;
+    }
+
+    footer p {
+        font-size: 10px;
+    }
 }

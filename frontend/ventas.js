@@ -235,3 +235,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+/*=====================================
+script que se encarga de que la hamburguesa se muestre en pantallas pequeñas
+======================================*/
+const btnHamburguesa = document.getElementById('btn-hamburguesa');
+const menuNavegacion = document.getElementById('menu-navegacion');
+
+btnHamburguesa.addEventListener('click', () => {
+    menuNavegacion.classList.toggle('activo');
+});

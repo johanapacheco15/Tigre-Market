@@ -21,10 +21,17 @@
 * {
     box-sizing: border-box;
 }
+/* ==============================================================
+Se agrega esta seccion para evitar que la hamburguesa se muestre en pantallas grandes. 
+====================================================================*/
+
+.btn-hamburguesa {
+    display: none;
+}
 
 body {
     margin: 0;
-    padding: 35px 20px;
+    padding: 0;
     font-family: 'Orbitron', sans-serif;
     background-color: #030a17;
     background-image: url("img/fondo8.jpeg");
@@ -35,6 +42,150 @@ body {
     color: #f2f5ff;
     min-height: 100vh;
     overflow-x: hidden;
+}
+
+/* =========================================
+   ENCABEZADO
+========================================= */
+
+.encabezado {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 160px;
+    padding: 15px 35px;
+
+    background:
+        linear-gradient(
+            rgba(3, 10, 23, 0.15),
+            rgba(3, 10, 23, 0.35)
+        ),
+        url('img/encabezado2.jpeg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-bottom: 2px solid #ff7900;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+}
+/* LOGO Y TÍTULO */
+
+.contenedor-logo-titulo {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex-shrink: 0;
+}
+
+.logo-tigre-encabezado {
+    height: 145px;
+    width: auto;
+    object-fit: contain;
+}
+
+.texto-encabezado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.texto-encabezado h1 {
+    font-family: 'TitanOne', sans-serif;
+    font-size: 55px;
+    font-weight: normal;
+    line-height: 1.2;
+
+    background: linear-gradient(
+        to bottom,
+        #fff0a3 0%,
+        #ffbd24 25%,
+        #ff8500 65%,
+        #d94b00 100%
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    filter:
+        drop-shadow(0 3px 0 #a94300)
+        drop-shadow(0 6px 0 #713000)
+        drop-shadow(0 9px 5px rgba(0, 0, 0, 0.8));
+}
+
+.texto-encabezado p {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    color: #dce6f5;
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================
+   MENÚ DE NAVEGACIÓN
+========================================= */
+
+.encabezado nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Espacio entre el botón de Inicio y el de Carrito */
+    padding: 6px 10px; /* Ajusta este padding si se ve muy gruesa */
+    
+    /* Mantiene tu diseño de píldora neón pero evita que se expanda de más */
+    background: rgba(7, 20, 41, 0.95);
+    border: 1.5px solid #168bff;
+    border-radius: 35px;
+    
+    /* Elimina cualquier propiedad como margin: 0 auto; si la tuviera */
+    margin-left: auto; 
+
+    box-shadow:
+        0 0 5px #168bff,
+        0 0 12px rgba(22, 139, 255, 0.8),
+        0 0 22px rgba(22, 139, 255, 0.5),
+        inset 0 0 8px rgba(22, 139, 255, 0.15);
+}
+
+.encabezado nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 16px;
+
+    color: #e5eaf5;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+/* COLOR NARANJA DE LOS ICONOS */
+.encabezado nav a img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    filter: invert(52%) sepia(98%) saturate(3000%) hue-rotate(359deg) brightness(102%);
+}
+
+/* ICONOS AZULES AL PASAR EL CURSOR */
+.encabezado nav a:hover img {
+    filter: brightness(0) saturate(100%)
+            invert(35%) sepia(98%) saturate(2500%)
+            hue-rotate(190deg) brightness(105%);
+}
+
+.encabezado nav a:hover {
+    background: #ff7900;
+    color: white;
+    box-shadow: 0 0 12px rgba(255, 121, 0, 0.7);
+    transform: translateY(-2px);
 }
 
 /* =========================================
@@ -59,8 +210,9 @@ body {
 .main-contenedor {
     width: 100%;
     max-width: none;
-    margin: 0;
+    margin-top: 20px;
     padding: 25px;
+    gap: 20px;
 
     background: rgba(7, 25, 52, 0.95);
     border: 1.5px solid #168bff;
@@ -441,7 +593,78 @@ body {
 }
 
 @media (max-width: 450px) {
+/* =========================================
+   MENÚ HAMBURGUESA
+========================================= */
+    /* 1. El encabezado se ajusta para dejar espacio a la hamburguesa */
+    .encabezado {
+        position: relative;
+        padding-right: 60px; /* Deja espacio a la derecha para que el texto no choque con la hamburguesa */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 12px;
+    }
 
+    /* 2. El botón hamburguesa se fija exactamente arriba a la derecha */
+    .btn-hamburguesa {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: none;
+        border: none;
+        color: #00d2ff;
+        font-size: 28px;
+        cursor: pointer;
+        padding: 0;
+        z-index: 100;
+    }
+
+    /* 3. El menú desplegable aparece justo debajo del encabezado al activarse */
+    #menu-navegacion {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #071429;
+        border-top: 2px solid #ff8617;
+        border-bottom: 2px solid #ff8617;
+        padding: 10px 0;
+        z-index: 1000;
+        box-sizing: border-box;
+    }
+
+    #menu-navegacion.activo {
+        display: flex;
+    }
+
+    #menu-navegacion a {
+        font-size: 11px;
+        padding: 10px 20px;
+        text-align: left;
+        color: #ffffff;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    #menu-navegacion a img {
+        height: 16px;
+    }
+
+    #menu-navegacion a:last-child {
+        border-bottom: none;
+    }
+    /* =========================================
+         RESTO DE LA PÁGINA
+    ========================================= */
     .titulo-seccion {
         font-size: 21px;
     }
