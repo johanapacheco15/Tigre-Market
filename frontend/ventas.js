@@ -235,3 +235,227 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+
+// ==========================================
+// COMPRESIÓN DE FOTOGRAFÍAS DE PRODUCTOS
+// ==========================================
+
+// Configuración
+const MAX_FOTOS = 5;
+const MAX_DIMENSION = 1600;
+const CALIDAD_IMAGEN = 0.86;
+const MAX_PESO_ORIGINAL = 15 * 1024 * 1024; // 15 MB
+
+// Obtener elementos HTML
+const inputFotos = document.getElementById("input-fotos");
+const estadoFotos = document.getElementById("estado-fotos");
+
+// Aquí se guardarán las fotografías comprimidas
+// Estarán disponibles para el proceso de publicación.
+window.fotosComprimidas = [];
+
+
+// ==========================================
+// FUNCIÓN PARA COMPRIMIR UNA FOTOGRAFÍA
+// ==========================================
+
+async function comprimirImagen(archivo) {
+
+    // Comprobar que el archivo sea una imagen
+    if (!archivo.type.startsWith("image/")) {
+        throw new Error("El archivo seleccionado no es una imagen.");
+    }
+
+    // Evitar archivos originales demasiado grandes
+    if (archivo.size > MAX_PESO_ORIGINAL) {
+        throw new Error(
+            "La imagen " + archivo.name +
+            " supera el límite de 15 MB."
+        );
+    }
+
+    // Crear una imagen a partir del archivo original
+    const imagen = await createImageBitmap(archivo);
+
+    // Obtener dimensiones originales
+    const anchoOriginal = imagen.width;
+    const altoOriginal = imagen.height;
+
+    // Calcular el tamaño sin deformar la fotografía
+    const escala = Math.min(
+        1,
+        MAX_DIMENSION / Math.max(anchoOriginal, altoOriginal)
+    );
+
+    const nuevoAncho = Math.round(anchoOriginal * escala);
+    const nuevoAlto = Math.round(altoOriginal * escala);
+
+    // Crear un lienzo para procesar la fotografía
+    const canvas = document.createElement("canvas");
+
+    canvas.width = nuevoAncho;
+    canvas.height = nuevoAlto;
+
+    const contexto = canvas.getContext("2d");
+
+    // Mejorar el suavizado al reducir dimensiones
+    contexto.imageSmoothingEnabled = true;
+    contexto.imageSmoothingQuality = "high";
+
+    // Dibujar la fotografía en el nuevo tamaño
+    contexto.drawImage(
+        imagen,
+        0,
+        0,
+        nuevoAncho,
+        nuevoAlto
+    );
+
+    // Liberar recursos de la imagen original
+    imagen.close();
+
+    // Convertir el lienzo a formato WebP
+    const blob = await new Promise((resolve, reject) => {
+
+        canvas.toBlob(
+            function(resultado) {
+
+                if (resultado) {
+                    resolve(resultado);
+                } else {
+                    reject(new Error("No se pudo comprimir la imagen."));
+                }
+
+            },
+            "image/webp",
+            CALIDAD_IMAGEN
+        );
+
+    });
+
+    // Liberar memoria del lienzo
+    canvas.width = 0;
+    canvas.height = 0;
+
+    // Si el resultado pesa más que el original,
+    // conservar el original en lugar de aumentar su tamaño.
+    if (blob.size >= archivo.size) {
+        return archivo;
+    }
+
+    // Crear un archivo comprimido
+    const nombreArchivo =
+        archivo.name.replace(/\.[^/.]+$/, "") + ".webp";
+
+    const imagenComprimida = new File(
+        [blob],
+        nombreArchivo,
+        {
+            type: "image/webp",
+            lastModified: Date.now()
+        }
+    );
+
+    return imagenComprimida;
+}
+
+
+// ==========================================
+// EVENTO AL SELECCIONAR FOTOGRAFÍAS
+// ==========================================
+
+if (inputFotos) {
+
+    inputFotos.addEventListener("change", async function() {
+
+        const archivos = Array.from(this.files);
+
+        // Reiniciar las fotografías anteriores
+        window.fotosComprimidas = [];
+
+        if (estadoFotos) {
+            estadoFotos.textContent = "";
+        }
+
+        // Comprobar que no excedan las 5 fotografías
+        if (archivos.length > MAX_FOTOS) {
+
+            alert("Solo puedes seleccionar un máximo de 5 fotografías.");
+
+            this.value = "";
+            return;
+        }
+
+        if (archivos.length === 0) {
+            return;
+        }
+
+        // Deshabilitar el campo mientras se comprimen
+        inputFotos.disabled = true;
+
+        if (estadoFotos) {
+            estadoFotos.textContent = "Comprimiendo fotografías...";
+        }
+
+        try {
+
+            let pesoOriginalTotal = 0;
+            let pesoComprimidoTotal = 0;
+
+            // Procesar cada fotografía
+            for (const archivo of archivos) {
+
+                pesoOriginalTotal += archivo.size;
+
+                const imagenComprimida = await comprimirImagen(archivo);
+
+                window.fotosComprimidas.push(imagenComprimida);
+
+                pesoComprimidoTotal += imagenComprimida.size;
+            }
+
+            // Calcular ahorro de espacio
+            const ahorro = pesoOriginalTotal > 0
+                ? (1 - pesoComprimidoTotal / pesoOriginalTotal) * 100
+                : 0;
+
+            // Mostrar resultados
+            if (estadoFotos) {
+
+                estadoFotos.textContent =
+                    window.fotosComprimidas.length +
+                    " fotografías listas. " +
+                    "Tamaño original: " +
+                    (pesoOriginalTotal / 1024 / 1024).toFixed(2) +
+                    " MB. Tamaño final: " +
+                    (pesoComprimidoTotal / 1024 / 1024).toFixed(2) +
+                    " MB. Ahorro: " +
+                    Math.max(0, ahorro).toFixed(1) + "%.";
+            }
+
+            console.log("Fotografías originales:", archivos);
+            console.log("Fotografías comprimidas:", window.fotosComprimidas);
+
+        } catch (error) {
+
+            console.error("Error al comprimir fotografías:", error);
+
+            alert(error.message);
+
+            window.fotosComprimidas = [];
+            inputFotos.value = "";
+
+            if (estadoFotos) {
+                estadoFotos.textContent = "No se pudieron procesar las fotografías.";
+            }
+
+        } finally {
+
+            inputFotos.disabled = false;
+        }
+
+    });
+
+}
