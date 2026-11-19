@@ -7,6 +7,7 @@
  <link rel="stylesheet" href="Pagina-de-inicio.css">
     <script src="opcion-de-cuenta.js"></script>
     <script src="Pagina-de-inicio.js" defer></script>
+    <script type="module" src="./cargar-productos.js"></script>
 </head>
 <body>
 
@@ -177,40 +178,10 @@
                 <p>Tus artículos a precios accesibles.</p>
 
             <div class="productos" id="catalogo">
-            <div class="producto">
-                <h3>Mochila universitaria</h3>
-                <img src="/frontend/img/mochila.jpg" alt="Mochila universitaria" class="foto-producto">
-                <p>Descripcion del producto</p>
-                <p class="precio">$180 MXN</p>
-                <button onclick="alert
-                ('Mochila universitaria: en buen estado. Precio: $180 MXN')">Ver producto
 
-                </button>
-                <button class="agregar"
-                data-id="1"
-                data-nombre="Mochila universitaria"
-                data-precio="180">
-                Agregar al carrito
-            </button>
+                <p id="mensaje-catalogo">Cargando productos...</p>
+
             </div>
-
-            <div class="producto">
-                <h3>Calculadora científica</h3>
-                <img src="/frontend/img/calculadora.jpg" alt="Calculadora científica" class="foto-producto">
-                <p>Descripcion del producto.</p>
-                <p class="precio">$250 MXN</p>
-                <button onclick="alert('Calculadora científica: ideal para tus clases. Precio: $250 MXN')">
-                 Ver producto
-            </button>
-
-                <button class="agregar"
-                data-id="2"
-                data-nombre="Calculadora científica"
-                data-precio="250">
-                Agregar al carrito
-            </button>
-            </div>
-        </div>
     </main>
 
 <!-- ==========================================================
@@ -226,34 +197,6 @@
 ========================================================== -->
 
 <script src="frontend/carrito.js" defer></script>
-
-<!-- ==========================================================
-    9. CONFIGURACIÓN E INICIALIZACIÓN DE FIREBASE
-========================================================== -->
-
-    <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyBnRAQ9ZX82hOCqnML9QqPfBIJNzhSXIHU",
-    authDomain: "tiger-market-73a36.firebaseapp.com",
-    projectId: "tiger-market-73a36",
-    storageBucket: "tiger-market-73a36.firebasestorage.app",
-    messagingSenderId: "219212142513",
-    appId: "1:219212142513:web:364f290d2cc6188c9f8f90",
-    measurementId: "G-N0SN077EY6"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
 
 </body>
 </html>

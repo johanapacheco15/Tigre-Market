@@ -7,7 +7,7 @@
     <title>Compras | Tigre Market</title>
     <link rel="stylesheet" href="compras.css">
     <script src="carrito.js" defer></script>
-    <script src="compras.js" defer></script>
+    <script type="module" src="compras.js"></script>
 </head>     
 
 <body>
@@ -156,119 +156,13 @@
     7. CATALOGO DE PRODUCTOS 
 ================================================== -->
 
-    <!-- 7.1. PRODUCTO UNO -->
+<section class="catalogo" id="catalogo">
 
-    <section class="catalogo" id="catalogo">
+    <!-- Los productos se cargarán automáticamente desde Firestore -->
 
-        <article class="tarjeta-producto"
-            data-categoria="mochilas"
-            data-producto="mochila universitaria"
-            data-color="negro"
-            data-precio="180">
+    <p id="mensaje-catalogo">Cargando productos...</p>
 
-            <!-- 7.2. Fotografía del producto. -->
-
-
-            <img src="mochila.jpg"
-                 alt="Mochila universitaria"
-                 class="foto-producto">
-            <!-- 7.3. Nombre del artículo. -->
-
-            <h3>Mochila universitaria</h3>
-
-            <!-- 7.4. Descripción breve del estado y uso del producto. -->
-
-            <p>En buen estado, ideal para tus clases.</p>
-
-            <!-- 7.5. Precio del producto expresado en pesos mexicanos. -->
-
-            <p class="precio">$180 MXN</p>
-
-            <!-- ====================================================
-                8. BOTON QUE PERMITE CONSULTAR MAS INF DEL PRODUCTO 
-            ====================================================== -->
-
-            <button class="ver-producto"
-                data-nombre="Mochila universitaria"
-                data-descripcion="En buen estado, ideal para tus clases."
-                data-precio="180">
-
-                Ver producto
-
-            </button>
-
-            <!-- ==================================================
-                9. BOTON PARA AGREGAR PRODUCTO AL CARRITO 
-            ================================================== -->
-
-            <button class="agregar"
-                data-id="1"
-                data-nombre="Mochila universitaria"
-                data-precio="180"
-                data-imagen="mochila.jpg">
-
-                Agregar al carrito
-
-            </button>
-
-        </article>
-    
-        <!-- PRODUCTO 2 -->
-
-        <article class="tarjeta-producto"
-            data-categoria="calculadoras"
-            data-producto="calculadora científica"
-            data-color="negro"
-            data-precio="250">
-
-        <!-- 7.6. Fotografía del producto. -->
-
-            <img src="calculadora.jpg"
-                 alt="Calculadora científica"
-                 class="foto-producto">
-
-        <!--7.5. Nombre del artículo. -->
-
-            <h3>Calculadora científica</h3>
-
-        <!-- 7.5. Descripción de las características del producto. -->
-
-            <p>Ideal para matemáticas y otras materias.</p>
-
-        <!-- 7.6. Precio del producto. -->
-
-            <p class="precio">$250 MXN</p>
-
-            <!-- ====================================================
-                8.1. BOTON QUE PERMITE CONSULTAR MAS INF DEL PRODUCTO 
-            ====================================================== -->            
-
-            <button class="ver-producto"
-                data-nombre="Calculadora científica"
-                data-descripcion="Ideal para matemáticas y otras materias."
-                data-precio="250">
-
-                Ver producto
-
-            </button>
-
-            <!-- ==================================================
-                9.1. BOTON PARA AGREGAR PRODUCTO AL CARRITO 
-            ================================================== -->
-
-            <button class="agregar"
-                data-id="2"
-                data-nombre="Calculadora científica"
-                data-precio="250"
-                data-imagen="calculadora.jpg">
-
-                Agregar al carrito
-
-            </button>
-
-        </article>
-
-    </section>
+</section>
 
 </main>
 
@@ -280,30 +174,9 @@
     <p>© 2026 Tigre Market</p>
 </footer>
 
-</body>
-</html>
-
 <!-- ==========================================================
      CONFIGURACIÓN DE FIREBASE
 ========================================================== -->
-
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-analytics.js";
-  
-  const firebaseConfig = {
-    apiKey: "AIzaSyBnRAQ9ZX82hOCqnML9QqPfBIJNzhSXIHU",
-    authDomain: "tiger-market-73a36.firebaseapp.com",
-    projectId: "tiger-market-73a36",
-    storageBucket: "tiger-market-73a36.firebasestorage.app",
-    messagingSenderId: "219212142513",
-    appId: "1:219212142513:web:364f290d2cc6188c9f8f90",
-    measurementId: "G-N0SN077EY6"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
     
 <script type="module" src="./proteger-pagina.js"></script>
 
