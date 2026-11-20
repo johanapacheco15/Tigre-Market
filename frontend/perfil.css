@@ -21,13 +21,6 @@
 * {
     box-sizing: border-box;
 }
-/* ==============================================================
-Se agrega esta seccion para evitar que la hamburguesa se muestre en pantallas grandes. 
-====================================================================*/
-
-.btn-hamburguesa {
-    display: none;
-}
 
 body {
     margin: 0;
@@ -45,15 +38,14 @@ body {
 }
 
 /* =========================================
-   ENCABEZADO
+   ENCABEZADO   
 ========================================= */
-
 .encabezado {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 160px;
+    height: 160px;
     padding: 15px 35px;
 
     background:
@@ -61,16 +53,22 @@ body {
             rgba(3, 10, 23, 0.15),
             rgba(3, 10, 23, 0.35)
         ),
-        url('img/encabezado2.jpeg');
-
+        url('/frontend/img/encabezado2.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
     border-bottom: 2px solid #ff7900;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+    overflow: visible;
 }
-/* LOGO Y TÍTULO */
+
+/* ==============================================================
+Se agrega esta seccion para evitar que la hamburguesa se muestre en pantallas grandes. 
+====================================================================*/
+
+.btn-hamburguesa {
+    display: none;
+}
 
 .contenedor-logo-titulo {
     display: flex;
@@ -80,24 +78,29 @@ body {
 }
 
 .logo-tigre-encabezado {
-    height: 145px;
+    height: 155px;
     width: auto;
     object-fit: contain;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    filter: none;
 }
 
 .texto-encabezado {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 10px;
+    gap: 0px;
+    padding: 5px;
 }
 
 .texto-encabezado h1 {
     font-family: 'TitanOne', sans-serif;
     font-size: 55px;
     font-weight: normal;
-    line-height: 1.2;
-
+    line-height: 1;
+    margin: 0;
     background: linear-gradient(
         to bottom,
         #fff0a3 0%,
@@ -105,11 +108,9 @@ body {
         #ff8500 65%,
         #d94b00 100%
     );
-
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
     filter:
         drop-shadow(0 3px 0 #a94300)
         drop-shadow(0 6px 0 #713000)
@@ -118,74 +119,83 @@ body {
 
 .texto-encabezado p {
     font-family: 'Orbitron', sans-serif;
-    font-size: 13px;
+    font-size: 15px;
+    font-style: italic;
     color: #dce6f5;
     letter-spacing: 0.5px;
+    margin: 0;
+    margin-top: 20px;
 }
 
-
-/* =========================================
-   MENÚ DE NAVEGACIÓN
-========================================= */
-
 .encabezado nav {
+    position: static;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px; /* Espacio entre el botón de Inicio y el de Carrito */
-    padding: 6px 10px; /* Ajusta este padding si se ve muy gruesa */
-    
-    /* Mantiene tu diseño de píldora neón pero evita que se expanda de más */
+    gap: 5px;
+    padding: 7px;
+
     background: rgba(7, 20, 41, 0.95);
     border: 1.5px solid #168bff;
     border-radius: 35px;
-    
-    /* Elimina cualquier propiedad como margin: 0 auto; si la tuviera */
-    margin-left: auto; 
 
     box-shadow:
         0 0 5px #168bff,
         0 0 12px rgba(22, 139, 255, 0.8),
         0 0 22px rgba(22, 139, 255, 0.5),
         inset 0 0 8px rgba(22, 139, 255, 0.15);
+
+    transition: all 0.3s ease;
 }
 
 .encabezado nav a {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    padding: 10px 16px;
-
+    gap: 7px;
+    padding: 10px 14px;
     color: #e5eaf5;
     text-decoration: none;
     font-family: 'Orbitron', sans-serif;
-    font-size: 13px;
-
+    font-size: 14px;
     border-radius: 25px;
+    background: transparent;
     transition: all 0.3s ease;
 }
 
-/* COLOR NARANJA DE LOS ICONOS */
 .encabezado nav a img {
-    width: 22px;
-    height: 22px;
+    width: 17px;
+    height: 17px;
     object-fit: contain;
-    filter: invert(52%) sepia(98%) saturate(3000%) hue-rotate(359deg) brightness(102%);
-}
-
-/* ICONOS AZULES AL PASAR EL CURSOR */
-.encabezado nav a:hover img {
-    filter: brightness(0) saturate(100%)
-            invert(35%) sepia(98%) saturate(2500%)
-            hue-rotate(190deg) brightness(105%);
+    filter:
+        brightness(0)
+        saturate(100%)
+        invert(49%)
+        sepia(98%)
+        saturate(1947%)
+        hue-rotate(1deg)
+        brightness(103%)
+        contrast(106%);
+    transition: all 0.3s ease;
 }
 
 .encabezado nav a:hover {
     background: #ff7900;
     color: white;
-    box-shadow: 0 0 12px rgba(255, 121, 0, 0.7);
+    box-shadow: 0 0 12px rgba(6, 21, 131, 0.7);
     transform: translateY(-2px);
+}
+
+.encabezado nav a:hover img {
+    filter:
+        brightness(0)
+        saturate(100%)
+        invert(15%)
+        sepia(95%)
+        saturate(4000%)
+        hue-rotate(225deg)
+        brightness(90%)
+        contrast(110%);
 }
 
 /* =========================================
@@ -195,12 +205,29 @@ body {
 .paneles-perfil {
     width: 95%;
     max-width: 1350px;
-    margin: 0 auto;
+    margin-top: 25px;
+    padding: 0 15px;
 
     display: grid;
     grid-template-columns: 1.15fr 1fr;
     align-items: start;
     gap: 25px;
+}
+
+/* COLUMNA IZQUIERDA */
+.columna-izquierda {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 0;
+}
+
+/* COLUMNA DERECHA */
+.columna-derecha {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    min-width: 0;
 }
 
 /* =========================================
@@ -210,9 +237,8 @@ body {
 .main-contenedor {
     width: 100%;
     max-width: none;
-    margin-top: 20px;
+    margin: 0;
     padding: 25px;
-    gap: 20px;
 
     background: rgba(7, 25, 52, 0.95);
     border: 1.5px solid #168bff;
@@ -291,7 +317,11 @@ body {
     align-items: center;
     gap: 15px;
     min-width: 125px;
+    align-self: flex-start;
+    margin-top: 0;
+    transform: translateY(0px);
 }
+
 
 .foto-perfil img {
     width: 120px;
@@ -318,6 +348,11 @@ body {
     border-radius: 20px;
     cursor: pointer;
     transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
 }
 
 .btn-foto:hover {
@@ -376,6 +411,9 @@ body {
 ========================================= */
 
 .btn-principal {
+    display: block;
+    margin: 10px auto 0;
+
     padding: 12px 18px;
     color: #17345a;
     font-family: 'Orbitron', sans-serif;
@@ -395,16 +433,17 @@ body {
     transition: 0.3s;
 }
 
+
 .form-perfil .btn-principal {
     align-self: center;
     margin-top: 10px;
+    transform: translateX(-68px);
 }
 
 .btn-principal:hover {
-    transform: scale(1.04);
+    filter: brightness(1.1);
     box-shadow: 0 0 15px rgba(255, 153, 0, 0.6);
 }
-
 #mensaje-perfil {
     color: #65e6a2;
     text-align: center;
@@ -544,14 +583,74 @@ body {
 }
 
 /* =========================================
-   DISEÑO RESPONSIVO
+   BOTÓN REGRESAR AL INICIO
 ========================================= */
+
+.btn-regresar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    margin: 0 auto;
+    padding: 12px 22px;
+
+    color: #17345a;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+
+    background: linear-gradient(
+        to bottom,
+        #fff0a3,
+        #ffbd24,
+        #ff8500
+    );
+
+    border: 2px solid #ffbd24;
+    border-radius: 25px;
+
+    box-shadow:
+        0 0 12px rgba(255, 153, 0, 0.4),
+        0 4px 8px rgba(0, 0, 0, 0.3);
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-regresar:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 15px rgba(255, 153, 0, 0.6);
+}
+
+.btn-regresar:hover {
+    background: linear-gradient(135deg, #ffbd24, #ff7900);
+    border-color: #ffbd24;
+    box-shadow: 0 0 15px rgba(255, 153, 0, 0.6);
+    transform: translateY(-3px);
+}
+
+/* ===============================================
+   DISEÑO RESPONSIVO DE TABLETAS (HASTA 950px)
+================================================*/
 
 @media (max-width: 950px) {
 
     .paneles-perfil {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         width: 95%;
+    }
+
+    .columna-izquierda,
+    .columna-derecha {
+        width: 100%;
+    }
+
+    .columna-derecha {
+        display: flex;
+        flex-direction: column;
     }
 
     .perfil-contenedor {
@@ -559,13 +658,100 @@ body {
     }
 }
 
+
+/* =============================================
+   DISEÑO RESPONSIVO DE CELULARES (HASTA 750px)
+================================================*/
+
 @media (max-width: 750px) {
+     /* 1. El encabezado se vuelve relativo para contener el botón y el menú desplegable */
+    .encabezado {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 12px;
+        height: auto;
+        position: relative;
+        
+    }
+
+    /* 2. El botón hamburguesa se fija exactamente arriba a la derecha */
+    .btn-hamburguesa {
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        background: none;
+        border: none;
+        color: #00d2ff;
+        font-size: 26px;
+        cursor: pointer;
+        padding: 0;
+        z-index: 9999;
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        gap: 5px;
+        transform: translateY(-50%);
+    }
+
+    /* 3. El menú desplegable aparece justo debajo del encabezado al activarse */
+    #menu-navegacion {
+        display: none;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        position: absolute ;
+        top: 0;
+        left: 0;
+        width: 50vw;
+        height: auto;
+        background-color: #071429;
+        padding: 40px 15px 20px;
+        margin: 0;
+        border: none;
+        border-radius: 0;
+        z-index: 1000;
+        box-sizing: border-box;
+    }
+
+    #menu-navegacion.activo {
+        display: flex;
+    }
+
+    #menu-navegacion a {
+        font-size: 11px;
+        padding: 10px 20px;
+        text-align: left;
+        color: #ffffff;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    #menu-navegacion a img {
+        height: 24px !important;
+        width: auto !important;
+    }
+
+    #menu-navegacion a:last-child {
+        border-bottom: none;
+    }
+
 
     body {
         padding: 20px 10px;
     }
 
     .paneles-perfil {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .columna-izquierda,
+    .columna-derecha {
         width: 100%;
     }
 
@@ -590,13 +776,54 @@ body {
         width: 110px;
         height: 110px;
     }
+    .contenedor-logo-titulo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 14px;
+        min-width: 0;
+    }
+    .logo-tigre-encabezado {
+        height: 70px;
+    }
+    .texto-encabezado{
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        min-width: 0;
+    }
+    .texto-encabezado h1 {
+        font-size: 18px;
+        line-height: 1.1;
+        white-space: nowrap;
+    }
+    .texto-encabezado p {
+        font-size: 8px;
+        line-height: 1.25;
+    }
+
+
 }
 
+/* ======================================================
+   DISEÑO RESPONSIVO DE CELULARES PEQUEÑOS (HASTA 450px)
+======================================================== */
+
 @media (max-width: 450px) {
-/* =========================================
-   MENÚ HAMBURGUESA
-========================================= */
-    /* 1. El encabezado se ajusta para dejar espacio a la hamburguesa */
+
+    .titulo-seccion {
+        font-size: 21px;
+    }
+
+    .card-acciones {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .card-acciones button {
+        width: 100%;
+    }
+ /* 1. El encabezado se vuelve relativo para contener el botón y el menú desplegable */
     .encabezado {
         position: relative;
         padding-right: 60px; /* Deja espacio a la derecha para que el texto no choque con la hamburguesa */
@@ -661,20 +888,5 @@ body {
 
     #menu-navegacion a:last-child {
         border-bottom: none;
-    }
-    /* =========================================
-         RESTO DE LA PÁGINA
-    ========================================= */
-    .titulo-seccion {
-        font-size: 21px;
-    }
-
-    .card-acciones {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .card-acciones button {
-        width: 100%;
     }
 }

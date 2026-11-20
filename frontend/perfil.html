@@ -8,106 +8,142 @@
     <title>Tigre Market - Mi perfil</title>
 
     <link rel="stylesheet" href="perfil.css">
-    <script src="perfil.js"></script>
+    <script src="perfil.js" defer></script>
 </head>
 
-<!-- ==========================================================
-    1. ENCABEZADO PRINCIPAL Y BARRA DE NAVEGACIÓN
-========================================================== -->
-
-<header class="encabezado">
+<body>
+    <header class="encabezado">
         <div class="contenedor-logo-titulo">
             <img src="/frontend/img/logoencab1.jpg.jpeg" alt="Logo Tigre Market" class="logo-tigre-encabezado">
             
             <div class="texto-encabezado">
-                <h1>Tigre Market</h1>
+                <h1>Tiger Market</h1>
                 <p>Compra y vende entre estudiantes universitarios GTU</p>
             </div>
         </div>
-
-<!-- ==========================================================
-    2. MENU DE NAVEGACION PARA ACCEDEER A DIFERENTES SECCIONES
-=========================================================== -->
 
 <button class="btn-hamburguesa" id="btn-hamburguesa" aria-label="Abrir menú">
         &#9776;
     </button>
     <nav class="menu-navegacion" id="menu-navegacion">
-        <a href="">
+        <a href="../Pagina-de-inicio.html">
             <img src="/frontend/iconos/inicio.png" alt=""> Inicio
          </a>
+
+        <a href="/frontend/compras.html">
+            <img src="/frontend/iconos/compras.png" alt=""> Compras
+        </a>
+
+        <a href="/frontend/carrito.html">
+            <img src="/frontend/iconos/carrito.png" alt=""> Carrito
+        </a>
+            </a>
+        <a href="javascript:void(0);" onclick="abrirPanelCuenta()">
+            <img src="/frontend/iconos/usuario.png" alt=""> Mi cuenta
+        </a>
     </nav>
 
     </header>
-<body>
+
  <!-- =================================
 CONTENEDOR GENERAL
 ==================================== -->
 
     <div class="paneles-perfil">
+    
+        
+    <!-- =================================
+    COLUMNA IZQUIERDA
+    ================================== -->
 
-        <!-- =================================
-             MI PERFIL
-        ================================== -->
+    <div class="columna-izquierda">
 
-     <main class="main-contenedor contenedor-perfil">
-        <h2 class="titulo-seccion">Mi Perfil</h2>
+    <!-- =================================
+    MI PERFIL
+    ================================== -->     
+        <main class="main-contenedor contenedor-perfil">
+
+            <h2 class="titulo-seccion">Mi Perfil</h2>
+
             <section class="perfil-contenedor">
 
         <!-- =================================
-        FOTO DE PERFIL
+        MI FOTO DE PERFIL
         ================================== -->
 
         <div class="foto-perfil">
-            <img
-                id="imagen-perfil"src="iconos/usuario.png" alt="Foto de perfil">
+
+                    <img
+                        id="imagen-perfil"
+                        src="iconos/usuario.png"
+                        alt="Foto de perfil"
+                    >
+
                     <label for="cambiar-foto" class="btn-foto">
                         Cambiar foto
                     </label>
 
-        <input
-            type="file" id="cambiar-foto" accept="image/*"hidden>
-        </div>
-
-        <!-- =================================
-        FORMULARIO DE DATOS
-        ================================== -->
-
-        <form id="form-perfil" class="form-perfil">
-            <div class="campo">
-                <label for="nombre">Nombre completo</label>
-                    <input type="text" id="nombre" placeholder="Escribe tu nombre">
-            </div>
-
-            <div class="campo">
-                <label for="usuario">Nombre de usuario</label>
                     <input
-                            type="text" id="usuario" placeholder="@usuario">
-            </div>
+                        type="file"
+                        id="cambiar-foto"
+                        accept="image/*"
+                        hidden
+                    >
 
-            <div class="campo">
-                <label for="telefono">Teléfono</label>
-                    <input type="tel" id="telefono" placeholder="Tu número de teléfono">
-            </div>
+                </div>
+            <!-- =================================
+            FORMULARIO DE DATOS
+            ================================== -->
 
-            <div class="campo">
-                <label for="contrasena">Nueva contraseña</label>
-                    <input type="password" id="contrasena" placeholder="Deja vacío si no deseas cambiarla">
-            </div>
+            <form id="form-perfil" class="form-perfil">
 
-                <button type="submit" class="btn-principal"> Guardar cambios
-                </button>
+                    <div class="campo">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" placeholder="Escribe tu nombre">
+                    </div>
 
-            <p id="mensaje-perfil"></p>
-        </form>
-    </section>
-</main>
+                    <div class="campo">
+                        <label for="usuario">Nombre de usuario</label>
+                        <input type="text" id="usuario" placeholder="@usuario">
+                    </div>
 
-        <!-- =================================
-             COLUMNA DERECHA
-        ================================== -->
+                    <div class="campo">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" placeholder="Tu número de teléfono">
+                    </div>
 
-        <div class="columna-derecha">
+                    <div class="campo">
+                        <label for="contrasena">Nueva contraseña</label>
+                        <input type="password" id="contrasena" placeholder="Deja vacío si no deseas cambiarla">
+                    </div>
+
+                    <button type="submit" class="btn-principal">
+                        Guardar cambios
+                    </button>
+
+                    <p id="mensaje-perfil"></p>
+
+                </form>
+
+            </section>
+
+        </main>
+
+            <!-- =================================
+            BOTON DE REGRESAR AL INICIO
+            ================================== -->
+
+            <a href="landing .html" class="btn-regresar">
+            ← Regresar al inicio
+        </a>
+
+    </div>
+
+    <!-- =================================
+    COLUMNA DERECHA
+    ================================== -->
+
+    <div class="columna-derecha">
 
             <!-- =================================
                  PRODUCTOS FAVORITOS
