@@ -1154,7 +1154,6 @@ Se agrega esta seccion para evitar que la hamburguesa se muestre en pantallas gr
         border-bottom: none;
     }
     /* 63.1 PANEL DE CUENTA EN CELULARES */
-@media (max-width: 550px) {
     .panel-cuenta {
         display: none;
         visibility: hidden;
@@ -1179,7 +1178,6 @@ Se agrega esta seccion para evitar que la hamburguesa se muestre en pantallas gr
         z-index: 2000;
         box-sizing: border-box;
     }
-}
     /* =========================================
        FIN MENÚ HAMBURGUESA
     ========================================= */
