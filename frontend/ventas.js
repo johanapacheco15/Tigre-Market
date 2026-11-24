@@ -855,55 +855,6 @@ async function eliminarPublicacion(id) {
 
 }
 
-
-/* ==========================================================================
-   13. PANEL LATERAL DE CUENTA
-   ========================================================================== */
-
-function abrirPanelCuenta() {
-
-    const panel = document.getElementById("panel-cuenta");
-
-    const overlay = document.getElementById("overlay-cuenta");
-
-    if (panel && overlay) {
-
-        panel.classList.add("activo");
-
-        overlay.classList.add("activo");
-
-        document.body.style.overflow = "hidden";
-
-    }
-
-}
-
-
-function cerrarPanelCuenta() {
-
-    const panel = document.getElementById("panel-cuenta");
-
-    const overlay = document.getElementById("overlay-cuenta");
-
-    if (panel && overlay) {
-
-        panel.classList.remove("activo");
-
-        overlay.classList.remove("activo");
-
-        document.body.style.overflow = "auto";
-
-    }
-
-}
-
-
-// Permite que los botones del HTML puedan utilizar estas funciones
-window.abrirPanelCuenta = abrirPanelCuenta;
-
-window.cerrarPanelCuenta = cerrarPanelCuenta;
-
-
 /* ==========================================================================
    14. CIERRE DE SESIÓN
    ========================================================================== */

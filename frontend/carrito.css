@@ -1406,7 +1406,6 @@ footer {
         border-bottom: none;
     }
     /* 63.1 PANEL DE CUENTA EN CELULARES */
-@media (max-width: 550px) {
     .panel-cuenta {
         display: none;
         visibility: hidden;
@@ -1431,7 +1430,6 @@ footer {
         z-index: 2000;
         box-sizing: border-box;
     }
-}
     /* =========================================
        FIN MENÚ HAMBURGUESA
     ========================================= */
