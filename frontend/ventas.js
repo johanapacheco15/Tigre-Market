@@ -1035,3 +1035,20 @@ onAuthStateChanged(auth, async (user) => {
     await renderizarPublicaciones();
 
 });
+/*=====================================
+script que modifica el panel de opciones de cuenta en pantallas pequeñas
+======================================*/
+function abrirPanelCuenta() {
+    const menuNavegacion = document.getElementById('menu-navegacion');
+    if (menuNavegacion) {
+        menuNavegacion.classList.remove('activo');
+    }
+
+    const panel = document.getElementById('panel-cuenta');
+    const overlay = document.getElementById('overlay-cuenta');
+    if (panel && overlay) {
+        panel.classList.add('activo');
+        overlay.classList.add('activo');
+        document.body.style.overflow = 'hidden';
+    }
+}
