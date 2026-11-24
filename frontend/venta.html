@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publicar Producto | Tigre Market</title>
-    <link rel="stylesheet" href="venta.css">
-<script type="module" src="./ventas.js"></script>
+    <link rel="stylesheet" href="/frontend/venta.css">
+<script type="module" src="/frontend/ventas.jss"></script>
+<script src="/frontend/venta.js" defer></script>
 </head>
 <body>
+<!-- ==========================================================
+    1. ENCABEZADO PRINCIPAL Y BARRA DE NAVEGACIÓN
+========================================================== -->
+
 <header class="encabezado">
         <div class="contenedor-logo-titulo">
             <img src="/frontend/img/logoencab1.jpg.jpeg" alt="Logo Tigre Market" class="logo-tigre-encabezado">
@@ -18,11 +23,15 @@
             </div>
         </div>
 
+<!-- ==========================================================
+    2. MENU DE NAVEGACION PARA ACCEDEER A DIFERENTES SECCIONES
+=========================================================== -->
+
 <button class="btn-hamburguesa" id="btn-hamburguesa" aria-label="Abrir menú">
         &#9776;
     </button>
     <nav class="menu-navegacion" id="menu-navegacion">
-        <a href="../Pagina-de-inicio.html">
+        <a href="">
             <img src="/frontend/iconos/inicio.png" alt=""> Inicio
          </a>
 
@@ -30,16 +39,21 @@
             <img src="/frontend/iconos/compras.png" alt=""> Compras
         </a>
 
+        <a href="/frontend/venta.html">
+            <img src="/frontend/iconos/vender.png" alt=""> Vender
+        </a>
+
         <a href="/frontend/carrito.html">
             <img src="/frontend/iconos/carrito.png" alt=""> Carrito
         </a>
-            </a>
+
         <a href="javascript:void(0);" onclick="abrirPanelCuenta()">
             <img src="/frontend/iconos/usuario.png" alt=""> Mi cuenta
         </a>
     </nav>
 
     </header>
+
 <!-- ==========================================================
     3. PANEL LATERAL DE OPCIONES DE CUENTA
 =========================================================== -->
@@ -109,14 +123,16 @@
     </div>
 </aside>
 
-<!===================================
-Modal para confirmar cierre de sesión
-====================================>
-<!-- Modal Personalizado de Confirmación de Cierre de Sesión -->
+
+<!-- ==========================================================
+    4. MODAL DE CONFIRMACIÓN PARA CERRAR SESIÓN
+=========================================================== -->
+
 <div id="modal-logout" class="modal-overlay">
     <div class="modal-card">
         <h3>Cerrar Sesión</h3>
         <p>¿Estás seguro de que deseas salir de tu cuenta?</p>
+
         <div class="modal-buttons">
             <button id="btn-cancelar-logout" class="btn-secundario">Cancelar</button>
             <button id="btn-confirmar-logout" class="btn-principal">Sí, salir</button>
