@@ -28,7 +28,7 @@ import {
    ========================================================================== */
 
 // Cloudinary
-const CLOUDINARY_CLOUD_NAME = "nfhkqtzap";
+const CLOUDINARY_CLOUD_NAME = "nfhkqtza";
 const CLOUDINARY_UPLOAD_PRESET = "tigre_market_productos";
 
 // Fotografías
@@ -74,7 +74,8 @@ const inputNombreUsuario = document.getElementById("modal-nombre-usuario");
 const checkTerminos = document.getElementById("check-terminos");
 const btnFinalPub = document.getElementById("btn-final-publicar");
 
-const gridPublicaciones = document.getElementById("grid-mis-publicaciones");
+const gridPublicaciones = 
+    document.getElementById("grid-mis-publicaciones");
 
 
 /* ==========================================================================
