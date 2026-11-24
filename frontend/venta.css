@@ -1,0 +1,1312 @@
+/* ==========================================================
+   1. CARGA DE FUENTES PERSONALIZADAS
+========================================================== */
+
+@font-face {
+    font-family: 'TitanOne';
+    src: url('fonts/TitanOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
+    font-weight: 400 900;
+    font-style: normal;
+}
+
+/* ==========================================================
+   2. CONFIGURACIÓN GENERAL
+========================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ==========================================================
+   3. ESTILOS GENERALES DEL DOCUMENTO
+========================================================== */
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #030a17;
+    background-image: url("/frontend/img/fondo8.jpeg");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    color: #f2f5ff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ==========================================================
+   4. ENCABEZADO PRINCIPAL
+========================================================== */
+
+.encabezado {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 160px;
+    padding: 15px 35px;
+
+    background:
+        linear-gradient(
+            rgba(3, 10, 23, 0.15),
+            rgba(3, 10, 23, 0.35)
+        ),
+        url('/frontend/img/encabezado2.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom: 2px solid #ff7900;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+    overflow: visible;
+}
+
+/* ==============================================================
+Se agrega esta seccion para evitar que la hamburguesa se muestre en pantallas grandes. 
+====================================================================*/
+
+.btn-hamburguesa {
+    display: none;
+}
+
+/* ==========================================================
+   5. AGRUPA EL LOGOTIPO Y EL TEXTO DEL ENCABEZADO
+========================================================== */
+
+.contenedor-logo-titulo {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex-shrink: 0;
+}
+
+/* ==========================================================
+   6. CONFIGURACION DE LA IMAGEN DE LOGOTIPO
+========================================================== */
+
+.logo-tigre-encabezado {
+    height: 155px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    filter: none;
+}
+
+/* ==========================================================
+   7. ORGANIZA VERTICALMENTE EL TITULO Y SUBTITULO
+========================================================== */
+
+.texto-encabezado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* ==========================================================
+   8. TITULO PRINCIPAL
+========================================================== */
+
+.texto-encabezado h1 {
+    font-family: 'TitanOne', sans-serif;
+    font-size: 55px;
+    font-weight: normal;
+    line-height: 1.2;
+    background: linear-gradient(
+        to bottom,
+        #fff0a3 0%,
+        #ffbd24 25%,
+        #ff8500 65%,
+        #d94b00 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter:
+        drop-shadow(0 3px 0 #a94300)
+        drop-shadow(0 6px 0 #713000)
+        drop-shadow(0 9px 5px rgba(0, 0, 0, 0.8));
+}
+
+/* ==========================================================
+   9. SUBTITULO
+========================================================== */
+
+.texto-encabezado p {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 15px;
+    font-style: italic;
+    color: #dce6f5;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================
+   10. MENÚ DE NAVEGACIÓN (AGRUPA LAS OPCIONES DE MENU)
+========================================================== */
+
+.encabezado nav {
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 7px;
+
+    background: rgba(7, 20, 41, 0.95);
+    border: 1.5px solid #168bff;
+    border-radius: 35px;
+
+    box-shadow:
+        0 0 5px #168bff,
+        0 0 12px rgba(22, 139, 255, 0.8),
+        0 0 22px rgba(22, 139, 255, 0.5),
+        inset 0 0 8px rgba(22, 139, 255, 0.15);
+
+    transition: all 0.3s ease;
+}
+
+/* ==========================================================
+   11. APARIENCIA DE CADA ENLACE DEL MENU
+========================================================== */
+
+.encabezado nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 10px 14px;
+    color: #e5eaf5;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    border-radius: 25px;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+/* ==========================================================
+   12. TAMAÑO Y COLOR DE LOS ICONOS
+========================================================== */
+
+.encabezado nav a img {
+    width: 17px;
+    height: 17px;
+    object-fit: contain;
+    filter:
+        brightness(0)
+        saturate(100%)
+        invert(49%)
+        sepia(98%)
+        saturate(1947%)
+        hue-rotate(1deg)
+        brightness(103%)
+        contrast(106%);
+    transition: all 0.3s ease;
+}
+
+/* ==========================================================
+   13. ANIMACION AL PASAR EL CURSOR SOBRE UNA OPCION
+========================================================== */
+
+.encabezado nav a:hover {
+    background: #ff7900;
+    color: white;
+    box-shadow: 0 0 12px rgba(6, 21, 131, 0.7);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================
+   14. CAMBIA EL COLOR DE LOS ICONOS AL PASAR CURSOR
+========================================================== */
+
+.encabezado nav a:hover img {
+    filter:
+        brightness(0)
+        saturate(100%)
+        invert(15%)
+        sepia(95%)
+        saturate(4000%)
+        hue-rotate(225deg)
+        brightness(90%)
+        contrast(110%);
+}
+
+
+/* ==========================================================================
+   5. CONTENEDOR PRINCIPAL Y TARJETA DE FORMULARIO DE PUBLICACIÓN
+   ========================================================================== */
+.main-contenedor {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.titulo-seccion {
+    color: #ff8617;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.tarjeta-publicacion {
+    background: #071429;
+    border: 1px solid rgba(22, 140, 255, 0.4);
+    box-shadow: 0 0 20px rgba(0, 170, 255, 0.15);
+    border-radius: 16px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.campo-form {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo-form label {
+    font-size: 13px;
+    color: #91a3ba;
+}
+
+.campo-form input[type="text"],
+.campo-form input[type="number"],
+.campo-form textarea,
+.campo-form input[type="file"] {
+    background: #030a17;
+    border: 1px solid #168bff;
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 13px;
+}
+
+.contador {
+    font-size: 11px;
+    color: #91a3ba;
+    text-align: right;
+}
+
+.info-legibilidad {
+    font-size: 11px;
+    color: #00aaff;
+}
+
+
+/* ==========================================================================
+   6. BOTONES (PRINCIPALES, SECUNDARIOS Y ESTADOS DE PUBLICACIÓN)
+   ========================================================================== */
+.btn-principal {
+    background: #ff8617;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.2s ease;
+}
+
+.btn-principal:hover {
+    background: #ff9b3c;
+    box-shadow: 0 0 10px rgba(255, 134, 23, 0.5);
+}
+
+.btn-secundario {
+    background: #101f36;
+    color: #d5deeb;
+    border: 1px solid #3b587c;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* Estado inactivo del botón de publicar final (Color Gris) */
+.btn-publicar-inactivo {
+    background: #2a3b52 !important;
+    color: #8c9cb8 !important;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: not-allowed;
+    transition: all 0.2s ease;
+}
+
+/* Estado activo del botón de publicar final (Color Naranja brillante) */
+.btn-publicar-activo {
+    background: #ff8617 !important;
+    color: #ffffff !important;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    box-shadow: 0 0 12px rgba(255, 134, 23, 0.6);
+}
+
+
+/* ==========================================================
+   39. PANEL LATERAL DE CUENTA
+========================================================== */
+
+.overlay-cuenta {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(3, 10, 23, 0.78);
+    backdrop-filter: blur(5px);
+    z-index: 998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+
+.overlay-cuenta.activo {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* ==========================================================
+   40. ESTRUCTURA PRINCIPAL DEL PANEL
+========================================================== */
+
+.panel-cuenta {
+    position: fixed;
+    top: 0;
+    right: -450px;
+
+    width: 420px;
+    max-width: 90vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 25px 22px;
+
+    background: #030a17;
+
+    border-left: 2px solid #00aaff;
+
+    box-shadow:
+        -5px 0 15px rgba(0, 170, 255, 0.35),
+        -10px 0 35px rgba(0, 170, 255, 0.15);
+
+    overflow: visible;
+
+    z-index: 999;
+
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-sizing: border-box;
+}
+
+.panel-cuenta.activo {
+    right: 0;
+}
+
+
+/* ==========================================================
+   41. FONDO PERSONALIZADO DEL PANEL
+========================================================== */
+
+.panel-fondo {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(3, 10, 23, 0.45),
+            rgba(3, 10, 23, 0.72)
+        ),
+        url('img/fondo-panel.png');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    z-index: 0;
+}
+
+
+/* ==========================================================
+   42. TIGRES DECORATIVOS
+========================================================== */
+
+.tigre-panel {
+    position: absolute;
+
+    bottom: 350px;
+
+    width: clamp(135px, 43%, 205px);
+    max-height: 42%;
+
+    object-fit: contain;
+
+    opacity: 0.95;
+
+    z-index: 1;
+    pointer-events: none;
+}
+
+.tigre-hembra {
+    right: -20px;
+    left: auto;
+    width: 165px;
+    bottom: 50px;
+}
+
+.tigre-macho {
+    left: -53px;
+    right: auto;
+    width: 210px;
+}
+
+
+/* ==========================================================
+   43. CONTENIDO INTERNO DEL PANEL
+========================================================== */
+
+.panel-contenido {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ==========================================================
+   44. ENCABEZADO DEL PANEL
+========================================================== */
+
+.panel-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    padding-bottom: 18px;
+
+    border-bottom: 2px solid #00aaff;
+
+    box-shadow: 0 4px 8px -7px #00aaff;
+}
+
+.panel-header h3 {
+    font-family: 'TitanOne', sans-serif;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 1.2;
+
+    background: linear-gradient(
+        to bottom,
+        #fff0a3 0%,
+        #ffbd24 25%,
+        #ff8500 65%,
+        #d94b00 100%
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    filter:
+        drop-shadow(0 3px 0 #a94300)
+        drop-shadow(0 6px 0 #713000)
+        drop-shadow(0 9px 5px rgba(0, 0, 0, 0.8));
+}
+
+
+/* ==========================================================
+   45. BOTÓN PARA CERRAR EL PANEL
+========================================================== */
+
+.btn-cerrar {
+    font-family: 'Orbitron', sans-serif;
+
+    width: 38px;
+    height: 38px;
+
+    position: absolute;
+    right: -8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        145deg,
+        #102b49,
+        #030a17
+    );
+
+    border: 1px solid #ff8617;
+    border-radius: 10px;
+
+    color: #ffbd24;
+    font-size: 25px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 7px rgba(255, 134, 23, 0.4),
+        inset 0 0 7px rgba(255, 134, 23, 0.1);
+
+    transition: all 0.3s ease;
+}
+
+.btn-cerrar:hover {
+    background: #ff7900;
+
+    color: #ffffff;
+
+    border-color: #ffbd24;
+
+    box-shadow:
+        0 0 10px #ff7900,
+        0 0 20px rgba(255, 121, 0, 0.6);
+
+    transform: rotate(90deg);
+}
+
+
+/* ==========================================================
+   46. INFORMACIÓN DEL USUARIO
+========================================================== */
+
+.perfil-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 25px 0 20px;
+
+    text-align: center;
+
+    background: rgba(3, 10, 23, 0.48);
+
+    border-bottom: 1px solid rgba(0, 170, 255, 0.4);
+}
+
+
+/* ==========================================================
+   47. MARCO DE LA FOTO DE PERFIL
+========================================================== */
+
+.avatar-container {
+    width: 88px;
+    height: 88px;
+
+    padding: 3px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #00aaff,
+        #ff7900
+    );
+
+    box-shadow:
+        0 0 8px #00aaff,
+        0 0 18px rgba(0, 170, 255, 0.5);
+
+    margin-bottom: 12px;
+}
+
+.avatar-container img {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    background: #071429;
+}
+
+
+/* ==========================================================
+   48. NOMBRE DEL USUARIO
+========================================================== */
+
+.perfil-info h4 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+
+    color: #ffffff;
+
+    margin-bottom: 6px;
+
+    text-shadow: 0 0 8px rgba(0, 170, 255, 0.5);
+}
+
+
+/* ==========================================================
+   49. CORREO DEL USUARIO
+========================================================== */
+
+.user-email {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+
+    color: #ffbd75;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* ==========================================================
+   50. MENÚ DE OPCIONES
+========================================================== */
+
+.panel-menu {
+    display: flex;
+    flex-direction: column;
+
+    gap: 11px;
+
+    margin-top: 20px;
+}
+
+
+/* ==========================================================
+   51. BOTONES Y ENLACES DEL MENÚ
+========================================================== */
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    width: 65%;
+    margin: 0 auto 12px;
+
+    padding: 10px 12px;
+
+    background: rgba(3, 10, 23, 0.82);
+
+    border: 1px solid rgba(0, 170, 255, 0.55);
+    border-radius: 10px;
+
+    color: #e5edfa;
+
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+    transition: all 0.3s ease;
+}
+
+.menu-item svg {
+    flex-shrink: 0;
+    color: #00aaff;
+    transition: all 0.3s ease;
+}
+
+
+/* ==========================================================
+   52. EFECTO DE ILUMINACIÓN DEL MENÚ
+========================================================== */
+
+.menu-item:hover {
+    background: rgba(255, 121, 0, 0.16);
+
+    border-color: #ff7900;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 0 7px rgba(255, 121, 0, 0.5),
+        inset 0 0 8px rgba(255, 121, 0, 0.1);
+
+    transform: translateX(4px);
+}
+
+.menu-item:hover svg {
+    color: #ff8617;
+}
+
+
+/* ==========================================================
+   53. SEPARADOR DEL MENÚ
+========================================================== */
+
+.menu-divider {
+    height: 2px;
+
+    margin: 8px 0;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #00aaff,
+        #ff7900,
+        transparent
+    );
+
+    box-shadow: 0 0 8px rgba(0, 170, 255, 0.5);
+}
+
+
+/* ==========================================================
+   54. OPCIÓN CERRAR SESIÓN
+========================================================== */
+
+.btn-logout:hover {
+    color: #ffbd75;
+    border-color: #ff7900;
+}
+
+
+/* ==========================================================
+   55. OPCIÓN ELIMINAR CUENTA
+========================================================== */
+
+.btn-danger {
+    color: #ff7777;
+    border-color: rgba(255, 85, 85, 0.4);
+}
+
+.btn-danger svg {
+    color: #ff5555;
+}
+
+.btn-danger:hover {
+    background: rgba(255, 55, 55, 0.13);
+
+    border-color: #ff5555;
+
+    color: #ff7777;
+
+    box-shadow: 0 0 10px rgba(255, 55, 55, 0.3);
+}
+
+
+/* ==========================================================
+   56. FONDO DE LA VENTANA DE CONFIRMACIÓN
+========================================================== */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(3, 10, 23, 0.85);
+    backdrop-filter: blur(6px);
+
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.activo {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* ==========================================================
+   57. CUADRO DEL MODAL
+========================================================== */
+
+.modal-card {
+    width: 90%;
+    max-width: 380px;
+
+    padding: 26px;
+
+    background: linear-gradient(
+        145deg,
+        #071a32,
+        #030a17
+    );
+
+    border: 1.5px solid #00aaff;
+    border-radius: 15px;
+
+    box-shadow:
+        0 0 10px #00aaff,
+        0 0 25px rgba(0, 170, 255, 0.35),
+        inset 0 0 12px rgba(0, 170, 255, 0.08);
+
+    text-align: center;
+    color: white;
+
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   58. TÍTULO Y TEXTO DEL MODAL
+========================================================== */
+
+.modal-card h3 {
+    margin-bottom: 15px;
+
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+
+    color: #ff8617;
+}
+
+.modal-card p {
+    margin-bottom: 24px;
+
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    line-height: 1.7;
+
+    color: #d5deeb;
+}
+
+
+/* ==========================================================
+   59. BOTONES DEL MODAL
+========================================================== */
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.modal-buttons button {
+    padding: 11px 18px;
+
+    border-radius: 8px;
+
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+
+/* ==========================================================
+   60. BOTÓN CANCELAR
+========================================================== */
+
+.btn-secundario {
+    background: #071429;
+
+    color: #d5deeb;
+
+    border: 1px solid #00aaff !important;
+}
+
+.btn-secundario:hover {
+    background: #103052;
+
+    box-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
+}
+
+
+/* ==========================================================
+   61. BOTÓN CONFIRMAR
+========================================================== */
+
+.btn-principal {
+    background: linear-gradient(
+        135deg,
+        #ff7900,
+        #ff9b3c
+    );
+
+    color: #ffffff;
+
+    border: 1px solid #ff7900;
+}
+
+.btn-principal:hover {
+    background: #ffad42;
+
+    box-shadow: 0 0 15px rgba(255, 134, 23, 0.65);
+    transform: translateY(-2px);
+}
+
+/*==========================================
+    Seccion para la visualizacion de las publicaciones del usuario
+    ==========================================*/
+.mis-publicaciones {
+    margin-top: 50px;
+}
+.contenedor-publicaciones {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+.card-publicacion {
+    background: #071429;
+    border: 1.5px solid rgba(22, 140, 255, 0.4);
+    box-shadow: 0 0 20px rgba(0, 170, 255, 0.15);
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-publicacion:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 170, 255, 0.3);
+    border-color: #00aaff;
+}
+.card-publicacion img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    background: #101f36;
+}
+.card-publicacion h3 {
+    color: #ff8617;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+.card-publicacion .precio-pub{
+    color: #00aaff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+.card-publicacion p {
+    color: #d5deeb;
+    font-size: 13px;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+.btn-eliminar-pub{
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #ff5555;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    transition: all 0.2s ease;
+}
+.btn-eliminar-pub:hover {
+    background: #ff4d4d;
+    color: #ffffff;
+}
+.mensaje-sin-publicaciones {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #91a3ba;
+    font-size: 13px;
+    padding: 30px;
+    background: rgba(7, 20, 41, 0.6);
+    border: 1px dashed #3b587c;
+    border-radius: 12px;
+}
+/* ==========================================================
+   7. DISEÑO RESPONSIVO PARA TABLETAS
+========================================================== */
+
+@media (max-width: 900px) {
+    .encabezado {
+        flex-wrap: wrap;
+        padding: 15px;
+        justify-content: center;
+        gap: 15px;
+        height: auto;
+    }
+
+    .encabezado nav {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .texto-encabezado h1 {
+        font-size: 32px;
+    }
+
+    .busqueda-inicio h2 {
+        font-size: 27px;
+    }
+
+    .producto {
+        flex: 1 1 100%;
+    }
+}
+
+/* ==========================================================
+   63. DISEÑO RESPONSIVO PARA CELULARES 
+========================================================== */
+
+@media (max-width: 550px) {
+/* =========================================
+   MENÚ HAMBURGUESA
+========================================= */
+/* 1. El encabezado se vuelve relativo para contener el botón y el menú desplegable */
+    .encabezado {
+        position: relative;
+        padding-right: 60px; /* Deja espacio a la derecha para que el texto no choque con la hamburguesa */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 12px;
+    }
+
+    /* 2. El botón hamburguesa se fija exactamente arriba a la derecha */
+    .btn-hamburguesa {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: none;
+        border: none;
+        color: #00d2ff;
+        font-size: 28px;
+        cursor: pointer;
+        padding: 0;
+        z-index: 100;
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        gap: 5px;
+    }
+
+    /* 3. El menú desplegable aparece justo debajo del encabezado al activarse */
+    #menu-navegacion {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #071429;
+        border-top: 2px solid #ff8617;
+        border-bottom: 2px solid #ff8617;
+        padding: 10px 0;
+        z-index: 1000;
+        box-sizing: border-box;
+    }
+
+    #menu-navegacion.activo {
+        display: flex;
+    }
+
+    #menu-navegacion a {
+        font-size: 11px;
+        padding: 10px 20px;
+        text-align: left;
+        color: #ffffff;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    #menu-navegacion a img {
+        height: 16px;
+    }
+
+    #menu-navegacion a:last-child {
+        border-bottom: none;
+    }
+    /* 63.1 PANEL DE CUENTA EN CELULARES */
+@media (max-width: 550px) {
+    .panel-cuenta {
+        display: none;
+        visibility: hidden;
+    }
+
+    .panel-cuenta.activo {
+        display: block;
+        visibility: visible;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        max-width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        transform: none;
+        border-radius: 0;
+        overflow-y: auto;
+        padding: 20px 15px;
+        z-index: 2000;
+        box-sizing: border-box;
+    }
+}
+    /* =========================================
+       FIN MENÚ HAMBURGUESA
+    ========================================= */
+
+    .logo-tigre-encabezado {
+        height: 70px;
+    }
+
+    .texto-encabezado h1 {
+        font-size: 22px;
+    }
+
+    .texto-encabezado p {
+        font-size: 8px;
+    }
+    .busqueda-inicio h2 {
+        font-size: 22px;
+    }
+
+    main {
+        padding: 20px 12px;
+    }
+
+    #productos {
+        font-size: 21px;
+    }
+
+    .producto {
+        grid-template-columns: 115px minmax(0, 1fr);
+        grid-template-rows: auto auto auto auto;
+        padding: 9px;
+        min-height: 170px;
+    }
+
+    .foto-producto {
+        height: 145px;
+    }
+
+    .producto h3 {
+        font-size: 11px;
+        padding-left: 8px;
+    }
+
+    .producto p:not(.precio) {
+        font-size: 11px;
+        padding-left: 8px;
+    }
+
+    .producto .precio {
+        font-size: 17px;
+        padding-left: 8px;
+    }
+
+    .producto button {
+        font-size: 8px;
+        padding: 0 7px;
+        height: 32px;
+    }
+
+    .producto button:nth-of-type(1) {
+        margin-left: 8px;
+    }
+
+    footer {
+        padding: 12px;
+    }
+
+    footer p {
+        font-size: 10px;
+    }
+
+    /* 63.1 PANEL DE CUENTA EN CELULARES */
+
+    .panel-cuenta {
+        width: 100%;
+        max-width: 100%;
+        height: 100vh;
+        height: 100dvh;
+
+        padding: 20px 15px;
+    }
+
+    .panel-header h3 {
+        font-size: 20px;
+    }
+
+    .btn-cerrar {
+        width: 32px;
+        height: 32px;
+        font-size: 21px;
+    }
+
+    .avatar-container {
+        width: 75px;
+        height: 75px;
+    }
+
+    .perfil-info {
+        padding: 20px 0 15px;
+    }
+
+    .perfil-info h4 {
+        font-size: 14px;
+    }
+
+    .user-email {
+        font-size: 9px;
+    }
+
+    .panel-menu {
+        gap: 8px;
+        margin-top: 15px;
+    }
+
+    .menu-item {
+        width: 65%;
+        padding: 9px 8px;
+        font-size: 9px;
+    }
+
+    .tigre-macho {
+        width: 150px;
+        left: -35px;
+    }
+
+    .tigre-hembra {
+        width: 110px;
+        right: -15px;
+    }
+}

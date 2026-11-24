@@ -1,0 +1,406 @@
+/* ==========================================
+   1. FUENTES TIGER MARKET
+========================================== */
+
+@font-face {
+    font-family: 'TitanOne';
+    src: url('fonts/TitanOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
+    font-weight: 400 900;
+}
+
+/* ==========================================
+   2. CONFIGURACIÓN GENERAL
+========================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body.pagina-legal {
+    position: relative;
+    min-height: 100vh;
+    padding: 45px 20px;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    background-color: #07132f;
+    background-image: url("img/fondopoliticas2.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: #ffffff;
+}
+
+/* ==========================================
+   3. PANEL CENTRAL
+========================================== */
+
+.contenedor-legal {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 40px;
+
+    background:
+        linear-gradient(#050f30, #050f30) padding-box,
+        linear-gradient(
+            to bottom,
+            #168dcc 0%,
+            #168dcc 50%,
+            #d97932 50%,
+            #d97932 100%
+        ) border-box;
+
+    border: 2px solid transparent;
+    border-radius: 18px;
+
+    box-shadow:
+    0 0 12px rgba(22, 141, 204, 0.65),
+    0 0 22px rgba(22, 141, 204, 0.40),
+    0 0 12px rgba(217, 121, 50, 0.55),
+    0 0 22px rgba(217, 121, 50, 0.30),
+    0 10px 35px rgba(0, 0, 0, 0.6);
+}
+
+/* ==========================================
+   4. TIGRES DECORATIVOS
+========================================== */
+
+.tigre-decoracion {
+    position: fixed;
+    z-index: 3;
+
+    top: 55%;
+    transform: translateY(-50%);
+
+    width: clamp(150px, 15vw, 240px);
+    max-height: 75vh;
+
+    object-fit: contain;
+    object-position: center;
+
+    filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.5));
+
+    pointer-events: none;
+}
+
+.tigre-hembra {
+    left: -40px;
+    width: clamp(250px, 25vw, 330px);
+}
+
+.tigre-macho {
+    right: -60px;
+    width: clamp(240px, 25vw, 370px);
+}
+
+/* ==========================================
+   5. TÍTULO PRINCIPAL
+========================================== */
+
+.titulo-legal {
+    margin: 0 0 10px;
+    font-family: 'TitanOne', sans-serif;
+    font-size: clamp(24px, 3vw, 45px);
+    font-weight: normal;
+    line-height: 1.2;
+    text-align: center;
+
+    background: linear-gradient(
+        180deg,
+        #fff0a3 0%,
+        #ffbd24 35%,
+        #ff8500 70%,
+        #d94b00 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    filter: drop-shadow(3px 4px 2px #713000);
+
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(
+        to right,
+          #d94b00,
+         #ff8500,
+         #ffbd24,
+         #ff8500,
+         #d94b00
+    ) 1;
+}
+
+/* ==========================================
+   6. SUBTÍTULOS
+========================================== */
+
+.subtitulo-legal {
+    color: #ffbd24;
+
+    margin-top: 30px;
+    margin-bottom: 15px;
+
+    font-size: 1.25rem;
+    font-weight: bold;
+
+    border-bottom: 1px solid rgba(255, 189, 36, 0.3);
+    padding-bottom: 8px;
+}
+
+/* ==========================================
+   7. PÁRRAFOS
+========================================== */
+
+.parrafo-legal {
+    color: #ffffff;
+
+    font-size: 0.95rem;
+    line-height: 1.75;
+
+    text-align: justify;
+
+    margin-bottom: 17px;
+}
+
+/* ==========================================
+   8. FECHA DE ACTUALIZACIÓN
+========================================== */
+
+.ultima-actualizacion {
+    color: #b9d8ff;
+
+    font-size: 0.85rem;
+    font-style: italic;
+
+    margin-bottom: 25px;
+}
+
+/* ==========================================
+   9. LISTAS
+========================================== */
+
+.lista-legal {
+    padding-left: 28px;
+    margin-bottom: 20px;
+}
+
+.lista-legal li {
+    color: #ffbd24;
+
+    font-weight: bold;
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+    margin-top: 12px;
+    margin-bottom: 5px;
+}
+
+.lista-legal p {
+    color: #ffffff;
+    font-size: 0.95rem;
+    line-height: 1.75;
+    text-align: justify;
+
+    margin-bottom: 15px;
+}
+
+/* ==========================================
+   10. ENLACES
+========================================== */
+
+.tarjeta-legal a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+.tarjeta-legal a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================
+   11. CONTACTO
+========================================== */
+
+.contacto {
+    color: #ffffff;
+
+    text-align: center;
+    font-weight: bold;
+
+    margin-top: 30px;
+    line-height: 1.7;
+}
+
+.correo-contacto {
+
+    display: block;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(
+        to right,
+        #ffffff 50%,
+        #ff8500 50%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================
+   12. CONTENEDOR DEL BOTÓN
+========================================== */
+
+.contenedor-boton {
+    margin-top: 35px;
+    text-align: center;
+}
+
+/* ==========================================
+   13. BOTÓN REGRESAR
+========================================== */
+
+.btn-volver {
+    display: inline-block;
+
+    padding: 12px 22px;
+
+    color: #17345a !important;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+
+    background: linear-gradient(
+        to bottom,
+        #fff0a3 0%,
+        #ffbd24 45%,
+        #ff8500 100%
+    );
+
+    border: 2px solid #ffbd24;
+    border-radius: 25px;
+
+    text-decoration: none !important;
+
+    box-shadow:
+        0 0 8px rgba(255, 189, 36, 0.65),
+        0 0 16px rgba(255, 133, 0, 0.35);
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-volver:hover {
+    background: linear-gradient(
+        180deg,
+        #ff9900,
+        #d97706
+    );
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 6px 18px rgba(245, 158, 11, 0.45);
+}
+.btn-volver:hover {
+    background: linear-gradient(
+        180deg,
+        #ff9900,
+        #d97706
+    );
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 6px 18px rgba(245, 158, 11, 0.45);
+}
+
+/* ==========================================
+   14. TABLETS Y PANTALLAS MEDIANAS
+========================================== */
+
+@media (max-width: 1150px) {
+
+    .contenedor-legal {
+        max-width: 780px;
+        padding: 32px;
+    }
+
+    .tigre-decoracion {
+        width: 140px;
+        opacity: 0.85;
+    }
+
+    .tigre-macho {
+        left: -35px;
+    }
+
+    .tigre-hembra {
+        right: -35px;
+    }
+}
+
+/* ==========================================
+   15. CELULARES
+========================================== */
+
+@media (max-width: 750px) {
+
+    body.pagina-legal {
+        padding: 20px 12px;
+
+        background-attachment: scroll;
+        background-position: center;
+    }
+
+    /* Ocultar tigres para dejar espacio al contenido */
+
+    .tigre-decoracion {
+        display: none;
+    }
+
+    .contenedor-legal {
+        width: 100%;
+        padding: 22px 18px;
+
+        border-radius: 14px;
+    }
+
+    .titulo-legal {
+        font-size: clamp(32px, 8vw, 43px);
+    }
+
+    .subtitulo-legal {
+        font-size: 1.1rem;
+    }
+
+    .parrafo-legal,
+    .lista-legal p {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    .lista-legal {
+        padding-left: 23px;
+    }
+
+    .lista-legal li {
+        font-size: 0.9rem;
+    }
+
+    .btn-volver {
+        padding: 11px 24px;
+        font-size: 0.9rem;
+    }
+}

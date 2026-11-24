@@ -1,0 +1,1603 @@
+/* ==========================================================
+   1. CARGA DE FUENTES PERSONALIZADAS
+========================================================== */
+
+@font-face {
+    font-family: 'TitanOne';
+    src: url('fonts/TitanOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
+    font-weight: 400 900;
+    font-style: normal;
+}
+/* =========================================================================
+   2. CONFIGURACION GENERAL
+========================================================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*==========================================================
+   3. ESTILOS GENERALES DEL DOCUMENTO
+==========================================================*/
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #030a17;
+    background-image: url("/frontend/img/fondo8.jpeg");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    color: #f2f5ff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ==========================================================
+   4. ENCABEZADO PRINCIPAL
+========================================================== */
+
+.encabezado {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 160px;
+    padding: 15px 35px;
+
+    background:
+        linear-gradient(
+            rgba(3, 10, 23, 0.15),
+            rgba(3, 10, 23, 0.35)
+        ),
+        url('/frontend/img/encabezado2.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom: 2px solid #ff7900;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+    overflow: visible;
+}
+
+/* ==============================================================
+    5.EVITA QUE LA HAMBURGUER SE MUESTRE EN PC
+====================================================================*/
+
+.btn-hamburguesa {
+    display: none;
+}
+
+/* ==========================================================
+   6. AGRUPA EL LOGOTIPO Y EL TEXTO DEL ENCABEZADO
+========================================================== */
+
+.contenedor-logo-titulo {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex-shrink: 0;
+}
+
+/* ==========================================================
+   7. CONFIGURACION DE LA IMAGEN DE LOGOTIPO
+========================================================== */
+
+.logo-tigre-encabezado {
+    height: 155px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    filter: none;
+}
+
+/* ==========================================================
+   8. ORGANIZA VERTICALMENTE EL TITULO Y SUBTITULO
+========================================================== */
+
+.texto-encabezado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* ==========================================================
+   9. TITULO PRINCIPAL
+========================================================== */
+
+.texto-encabezado h1 {
+    font-family: 'TitanOne', sans-serif;
+    font-size: 55px;
+    font-weight: normal;
+    line-height: 1.2;
+    background: linear-gradient(
+        to bottom,
+        #fff0a3 0%,
+        #ffbd24 25%,
+        #ff8500 65%,
+        #d94b00 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter:
+        drop-shadow(0 3px 0 #a94300)
+        drop-shadow(0 6px 0 #713000)
+        drop-shadow(0 9px 5px rgba(0, 0, 0, 0.8));
+}
+
+/* ==========================================================
+   10. SUBTITULO
+========================================================== */
+
+.texto-encabezado p {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 15px;
+    font-style: italic;
+    color: #dce6f5;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================
+   11. MENÚ DE NAVEGACIÓN (AGRUPA LAS OPCIONES DE MENU)
+========================================================== */
+
+.encabezado nav {
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 7px;
+
+    background: rgba(7, 20, 41, 0.95);
+    border: 1.5px solid #168bff;
+    border-radius: 35px;
+
+    box-shadow:
+        0 0 5px #168bff,
+        0 0 12px rgba(22, 139, 255, 0.8),
+        0 0 22px rgba(22, 139, 255, 0.5),
+        inset 0 0 8px rgba(22, 139, 255, 0.15);
+
+    transition: all 0.3s ease;
+}
+
+/* ==========================================================
+   12. APARIENCIA DE CADA ENLACE DEL MENU
+========================================================== */
+
+.encabezado nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 10px 14px;
+    color: #e5eaf5;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    border-radius: 25px;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+/* ==========================================================
+   13. TAMAÑO Y COLOR DE LOS ICONOS
+========================================================== */
+
+.encabezado nav a img {
+    width: 17px;
+    height: 17px;
+    object-fit: contain;
+    filter:
+        brightness(0)
+        saturate(100%)
+        invert(49%)
+        sepia(98%)
+        saturate(1947%)
+        hue-rotate(1deg)
+        brightness(103%)
+        contrast(106%);
+    transition: all 0.3s ease;
+}
+
+/* ==========================================================
+   14. ANIMACION AL PASAR EL CURSOR SOBRE UNA OPCION
+========================================================== */
+
+.encabezado nav a:hover {
+    background: #ff7900;
+    color: white;
+    box-shadow: 0 0 12px rgba(6, 21, 131, 0.7);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================
+   15. CAMBIA EL COLOR DE LOS ICONOS AL PASAR CURSOR
+========================================================== */
+
+.encabezado nav a:hover img {
+    filter:
+        brightness(0)
+        saturate(100%)
+        invert(15%)
+        sepia(95%)
+        saturate(4000%)
+        hue-rotate(225deg)
+        brightness(90%)
+        contrast(110%);
+}
+
+/* =========================================================================
+   16. CONTENEDOR PRINCIPAL DE RECUADROS.
+   Centra los bloques de contenido y separa el producto de los comentarios.
+========================================================================= */
+.contenedor-principal {
+    max-width: 1050px;
+    margin: 30px auto;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/* =========================================================================
+   17. RECUADRO 1: FICHA Y GALERIA DE IMAGENES DEL PRODUCTO.
+   Organiza la fotografia principal, miniaturas y datos en dos columnas.
+========================================================================= */
+.tarjeta-producto {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 28px;
+    background-color: #09162e;
+    border: 1.5px solid #00d2ff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.15);
+}
+
+.galeria-producto {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.imagen-principal-box {
+    width: 100%;
+    height: 320px;
+    background-color: #050b18;
+    border: 1px solid rgba(255, 121, 0, 0.5);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagen-principal-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.miniaturas {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.miniatura {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all 0.2s ease;
+}
+
+.miniatura.activa,
+.miniatura:hover {
+    border-color: #ff7900;
+    opacity: 1;
+}
+
+/* =========================================================================
+    INFORMACION DEL PRODUCTO (NOMBRE, PRECIO Y DESCRIPCION).
+   Estiliza el titulo, el precio destacado y el recuadro de descripcion.
+========================================================================= */
+.info-producto {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.etiqueta-estado {
+    align-self: flex-start;
+    background-color: rgba(0, 210, 255, 0.15);
+    color: #00d2ff;
+    border: 1px solid #00d2ff;
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.info-producto h2 {
+    font-size: 28px;
+    color: #ffffff;
+    word-break: break-word;
+}
+
+.precio-producto {
+    font-size: 26px;
+    font-weight: 700;
+    color: #ff9b3c;
+}
+
+.caja-descripcion {
+    background-color: #061022;
+    border-left: 3px solid #ff7900;
+    padding: 12px 15px;
+    border-radius: 8px;
+}
+
+.caja-descripcion h3 {
+    font-size: 14px;
+    color: #00d2ff;
+    margin-bottom: 6px;
+}
+
+.caja-descripcion p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #d6e2f5;
+    word-break: break-word;
+}
+
+/* =========================================================================
+    BOTONES DE CARRITO Y FAVORITOS.
+   Configura los botones para agregar al carrito o guardar en favoritos.
+========================================================================= */
+.acciones-producto {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.btn-carrito,
+.btn-favoritos {
+    flex: 1;
+    min-width: 180px;
+    padding: 12px 18px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn-carrito {
+    background: linear-gradient(135deg, #ff7900, #ff9b3c);
+    border: none;
+    color: #ffffff;
+}
+
+.btn-carrito:hover {
+    box-shadow: 0 0 15px rgba(255, 121, 0, 0.6);
+    transform: translateY(-2px);
+}
+
+.btn-favoritos {
+    background-color: transparent;
+    border: 1.5px solid #00d2ff;
+    color: #00d2ff;
+}
+
+.btn-favoritos:hover,
+.btn-favoritos.en-favoritos {
+    background-color: #00d2ff;
+    color: #050b18;
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
+}
+
+.mensaje-accion {
+    font-size: 13px;
+    color: #4ade80;
+    min-height: 18px;
+}
+
+/* =========================================================================
+    RECUADRO 2: SECCION DE COMENTARIOS Y CALIFICACION DE 5 ESTRELLAS.
+   Estiliza el formulario de opinion, las estrellas y la lista de resenas.
+========================================================================= */
+.tarjeta-comentarios {
+    background-color: #09162e;
+    border: 1.5px solid #ff7900;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 0 20px rgba(255, 121, 0, 0.15);
+}
+
+.cabecera-comentarios {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+}
+
+.cabecera-comentarios h3 {
+    font-size: 20px;
+    color: #ff9b3c;
+}
+
+.estrellas-doradas {
+    color: #ffb703;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.form-comentario {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    background-color: #061022;
+    padding: 18px;
+    border-radius: 12px;
+    margin-bottom: 22px;
+}
+
+.campo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo-form label {
+    font-size: 13px;
+    color: #9ec5fe;
+}
+
+.campo-form input,
+.campo-form textarea {
+    background-color: #09162e;
+    border: 1px solid #00d2ff;
+    border-radius: 8px;
+    padding: 10px 12px;
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+}
+
+.campo-form input:focus,
+.campo-form textarea:focus {
+    border-color: #ff7900;
+}
+
+.selector-estrellas {
+    display: flex;
+    gap: 6px;
+}
+
+.estrella-btn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #4b5563;
+    cursor: pointer;
+    transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.estrella-btn.activa {
+    color: #ffb703;
+}
+
+.estrella-btn:hover {
+    transform: scale(1.15);
+}
+
+.btn-publicar-comentario {
+    align-self: flex-start;
+    background: linear-gradient(135deg, #0096c7, #00d2ff);
+    color: #050b18;
+    font-weight: 700;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-publicar-comentario:hover {
+    box-shadow: 0 0 12px rgba(0, 210, 255, 0.6);
+}
+
+.lista-comentarios {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.item-comentario {
+    background-color: #061022;
+    border: 1px solid rgba(0, 210, 255, 0.25);
+    border-radius: 10px;
+    padding: 14px;
+}
+
+.item-comentario-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.item-autor {
+    font-weight: 600;
+    color: #00d2ff;
+    font-size: 14px;
+}
+
+.item-fecha {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.item-estrellas {
+    color: #ffb703;
+    font-size: 15px;
+    margin-bottom: 6px;
+}
+
+.item-texto {
+    font-size: 14px;
+    color: #e2e8f0;
+    line-height: 1.4;
+}
+/* ==========================================================
+   . PANEL LATERAL DE CUENTA
+========================================================== */
+
+.overlay-cuenta {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(3, 10, 23, 0.78);
+    backdrop-filter: blur(5px);
+    z-index: 998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+
+.overlay-cuenta.activo {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* ==========================================================
+   . ESTRUCTURA PRINCIPAL DEL PANEL
+========================================================== */
+
+.panel-cuenta {
+    position: fixed;
+    top: 0;
+    right: -450px;
+
+    width: 420px;
+    max-width: 90vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 25px 22px;
+
+    background: #030a17;
+
+    border-left: 2px solid #00aaff;
+
+    box-shadow:
+        -5px 0 15px rgba(0, 170, 255, 0.35),
+        -10px 0 35px rgba(0, 170, 255, 0.15);
+
+    overflow: visible;
+
+    z-index: 999;
+
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-sizing: border-box;
+}
+
+.panel-cuenta.activo {
+    right: 0;
+}
+
+
+/* ==========================================================
+   . FONDO PERSONALIZADO DEL PANEL
+========================================================== */
+
+.panel-fondo {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(3, 10, 23, 0.45),
+            rgba(3, 10, 23, 0.72)
+        ),
+        url('img/fondo-panel.png');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    z-index: 0;
+}
+
+
+/* ==========================================================
+   . TIGRES DECORATIVOS
+========================================================== */
+
+.tigre-panel {
+    position: absolute;
+
+    bottom: 350px;
+
+    width: clamp(135px, 43%, 205px);
+    max-height: 42%;
+
+    object-fit: contain;
+
+    opacity: 0.95;
+
+    z-index: 1;
+    pointer-events: none;
+}
+
+.tigre-hembra {
+    right: -20px;
+    left: auto;
+    width: 165px;
+    bottom: 50px;
+}
+
+.tigre-macho {
+    left: -53px;
+    right: auto;
+    width: 210px;
+}
+
+
+/* ==========================================================
+   . CONTENIDO INTERNO DEL PANEL
+========================================================== */
+
+.panel-contenido {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ==========================================================
+   . ENCABEZADO DEL PANEL
+========================================================== */
+
+.panel-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    padding-bottom: 18px;
+
+    border-bottom: 2px solid #00aaff;
+
+    box-shadow: 0 4px 8px -7px #00aaff;
+}
+
+.panel-header h3 {
+    font-family: 'TitanOne', sans-serif;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 1.2;
+
+    background: linear-gradient(
+        to bottom,
+        #fff0a3 0%,
+        #ffbd24 25%,
+        #ff8500 65%,
+        #d94b00 100%
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    filter:
+        drop-shadow(0 3px 0 #a94300)
+        drop-shadow(0 6px 0 #713000)
+        drop-shadow(0 9px 5px rgba(0, 0, 0, 0.8));
+}
+
+
+/* ==========================================================
+   . BOTÓN PARA CERRAR EL PANEL
+========================================================== */
+
+.btn-cerrar {
+    font-family: 'Orbitron', sans-serif;
+
+    width: 38px;
+    height: 38px;
+
+    position: absolute;
+    right: -8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        145deg,
+        #102b49,
+        #030a17
+    );
+
+    border: 1px solid #ff8617;
+    border-radius: 10px;
+
+    color: #ffbd24;
+    font-size: 25px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 7px rgba(255, 134, 23, 0.4),
+        inset 0 0 7px rgba(255, 134, 23, 0.1);
+
+    transition: all 0.3s ease;
+}
+
+.btn-cerrar:hover {
+    background: #ff7900;
+
+    color: #ffffff;
+
+    border-color: #ffbd24;
+
+    box-shadow:
+        0 0 10px #ff7900,
+        0 0 20px rgba(255, 121, 0, 0.6);
+
+    transform: rotate(90deg);
+}
+
+
+/* ==========================================================
+   . INFORMACIÓN DEL USUARIO
+========================================================== */
+
+.perfil-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 25px 0 20px;
+
+    text-align: center;
+
+    background: rgba(3, 10, 23, 0.48);
+
+    border-bottom: 1px solid rgba(0, 170, 255, 0.4);
+}
+
+
+/* ==========================================================
+   . MARCO DE LA FOTO DE PERFIL
+========================================================== */
+
+.avatar-container {
+    width: 88px;
+    height: 88px;
+
+    padding: 3px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #00aaff,
+        #ff7900
+    );
+
+    box-shadow:
+        0 0 8px #00aaff,
+        0 0 18px rgba(0, 170, 255, 0.5);
+
+    margin-bottom: 12px;
+}
+
+.avatar-container img {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    background: #071429;
+}
+
+
+/* ==========================================================
+   . NOMBRE DEL USUARIO
+========================================================== */
+
+.perfil-info h4 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+
+    color: #ffffff;
+
+    margin-bottom: 6px;
+
+    text-shadow: 0 0 8px rgba(0, 170, 255, 0.5);
+}
+
+
+/* ==========================================================
+   . CORREO DEL USUARIO
+========================================================== */
+
+.user-email {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+
+    color: #ffbd75;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* ==========================================================
+   . MENÚ DE OPCIONES
+========================================================== */
+
+.panel-menu {
+    display: flex;
+    flex-direction: column;
+
+    gap: 11px;
+
+    margin-top: 20px;
+}
+
+
+/* ==========================================================
+   . BOTONES Y ENLACES DEL MENÚ
+========================================================== */
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    width: 65%;
+    margin: 0 auto 12px;
+
+    padding: 10px 12px;
+
+    background: rgba(3, 10, 23, 0.82);
+
+    border: 1px solid rgba(0, 170, 255, 0.55);
+    border-radius: 10px;
+
+    color: #e5edfa;
+
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+    transition: all 0.3s ease;
+}
+
+.menu-item svg {
+    flex-shrink: 0;
+    color: #00aaff;
+    transition: all 0.3s ease;
+}
+
+
+/* ==========================================================
+   . EFECTO DE ILUMINACIÓN DEL MENÚ
+========================================================== */
+
+.menu-item:hover {
+    background: rgba(255, 121, 0, 0.16);
+
+    border-color: #ff7900;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 0 7px rgba(255, 121, 0, 0.5),
+        inset 0 0 8px rgba(255, 121, 0, 0.1);
+
+    transform: translateX(4px);
+}
+
+.menu-item:hover svg {
+    color: #ff8617;
+}
+
+
+/* ==========================================================
+   . SEPARADOR DEL MENÚ
+========================================================== */
+
+.menu-divider {
+    height: 2px;
+
+    margin: 8px 0;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #00aaff,
+        #ff7900,
+        transparent
+    );
+
+    box-shadow: 0 0 8px rgba(0, 170, 255, 0.5);
+}
+
+
+/* ==========================================================
+   . OPCIÓN CERRAR SESIÓN
+========================================================== */
+
+.btn-logout:hover {
+    color: #ffbd75;
+    border-color: #ff7900;
+}
+
+
+/* ==========================================================
+   . OPCIÓN ELIMINAR CUENTA
+========================================================== */
+
+.btn-danger {
+    color: #ff7777;
+    border-color: rgba(255, 85, 85, 0.4);
+}
+
+.btn-danger svg {
+    color: #ff5555;
+}
+
+.btn-danger:hover {
+    background: rgba(255, 55, 55, 0.13);
+
+    border-color: #ff5555;
+
+    color: #ff7777;
+
+    box-shadow: 0 0 10px rgba(255, 55, 55, 0.3);
+}
+
+
+/* ==========================================================
+   . FONDO DE LA VENTANA DE CONFIRMACIÓN
+========================================================== */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(3, 10, 23, 0.85);
+    backdrop-filter: blur(6px);
+
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.activo {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* ==========================================================
+   . CUADRO DEL MODAL
+========================================================== */
+
+.modal-card {
+    width: 90%;
+    max-width: 380px;
+
+    padding: 26px;
+
+    background: linear-gradient(
+        145deg,
+        #071a32,
+        #030a17
+    );
+
+    border: 1.5px solid #00aaff;
+    border-radius: 15px;
+
+    box-shadow:
+        0 0 10px #00aaff,
+        0 0 25px rgba(0, 170, 255, 0.35),
+        inset 0 0 12px rgba(0, 170, 255, 0.08);
+
+    text-align: center;
+    color: white;
+
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   . TÍTULO Y TEXTO DEL MODAL
+========================================================== */
+
+.modal-card h3 {
+    margin-bottom: 15px;
+
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+
+    color: #ff8617;
+}
+
+.modal-card p {
+    margin-bottom: 24px;
+
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    line-height: 1.7;
+
+    color: #d5deeb;
+}
+
+
+/* ==========================================================
+   . BOTONES DEL MODAL
+========================================================== */
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.modal-buttons button {
+    padding: 11px 18px;
+
+    border-radius: 8px;
+
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+
+/* ==========================================================
+   . BOTÓN CANCELAR
+========================================================== */
+
+.btn-secundario {
+    background: #071429;
+
+    color: #d5deeb;
+
+    border: 1px solid #00aaff !important;
+}
+
+.btn-secundario:hover {
+    background: #103052;
+
+    box-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
+}
+
+
+/* ==========================================================
+   . BOTÓN CONFIRMAR
+========================================================== */
+
+.btn-principal {
+    background: linear-gradient(
+        135deg,
+        #ff7900,
+        #ff9b3c
+    );
+
+    color: #ffffff;
+
+    border: 1px solid #ff7900;
+}
+
+.btn-principal:hover {
+    background: #ffad42;
+
+    box-shadow: 0 0 15px rgba(255, 134, 23, 0.65);
+    transform: translateY(-2px);
+}
+
+/* =========================================================================
+   Alinea el boton debajo de la seccion de comentarios y lo separa del borde inferior.
+========================================================================= */
+.contenedor-volver-producto {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 8px;
+}
+
+/* =========================================================================
+   Estiliza el enlace como boton con degradado naranja y borde dorado de Tigre Market.
+========================================================================= */
+.btn-volver-producto {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #ff7900, #ff9b3c);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 18px;
+    border-radius: 22px;
+    border: 1px solid #ffb703;
+    box-shadow: 0 0 12px rgba(255, 121, 0, 0.35);
+    transition: all 0.25s ease;
+}
+
+/* =========================================================================
+   Aumenta el resplandor naranja y eleva ligeramente el boton al pasar el cursor.
+========================================================================= */
+.btn-volver-producto:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 18px rgba(255, 121, 0, 0.65);
+}
+
+/* ==========================================================
+   . PIE DE PÁGINA
+========================================================== */
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 70px;
+    padding: 10px 25px;
+    box-sizing: border-box;
+
+    background: linear-gradient(90deg, #07152b, #030a17);
+    border-top: 2px solid #142c4b;
+}
+
+.copyright {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.copyright img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.copyright span {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    color: white;
+}
+
+/* =========================================================================
+   . DISENO RESPONSIVO 
+========================================================================= */
+@media (max-width: 750px) {
+/* =========================================
+   MENÚ HAMBURGUESA
+========================================= */
+/* 1. El encabezado se vuelve relativo para contener el botón y el menú desplegable */
+    .encabezado {
+        position: relative;
+        padding-right: 60px; /* Deja espacio a la derecha para que el texto no choque con la hamburguesa */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 12px;
+    }
+
+    /* 2. El botón hamburguesa se fija exactamente arriba a la derecha */
+    .btn-hamburguesa {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: none;
+        border: none;
+        color: #00d2ff;
+        font-size: 28px;
+        cursor: pointer;
+        padding: 0;
+        z-index: 100;
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        gap: 5px;
+    }
+
+    /* 3. El menú desplegable aparece justo debajo del encabezado al activarse */
+    #menu-navegacion {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #071429;
+        border-top: 2px solid #ff8617;
+        border-bottom: 2px solid #ff8617;
+        padding: 10px 0;
+        z-index: 1000;
+        box-sizing: border-box;
+    }
+
+    #menu-navegacion.activo {
+        display: flex;
+    }
+
+    #menu-navegacion a {
+        font-size: 11px;
+        padding: 10px 20px;
+        text-align: left;
+        color: #ffffff;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    #menu-navegacion a img {
+        height: 16px;
+    }
+
+    #menu-navegacion a:last-child {
+        border-bottom: none;
+    }
+    /* 63.1 PANEL DE CUENTA EN CELULARES */
+    .panel-cuenta {
+        display: none;
+        visibility: hidden;
+    }
+
+    .panel-cuenta.activo {
+        display: block;
+        visibility: visible;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        max-width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        transform: none;
+        border-radius: 0;
+        overflow-y: auto;
+        padding: 20px 15px;
+        z-index: 2000;
+        box-sizing: border-box;
+    }
+    /* =========================================
+       FIN MENÚ HAMBURGUESA
+    ========================================= */
+
+    /* =====================================================================
+       ENCABEZADO EN 750PX (@media (max-width: 750px) .encabezado-simple)
+       Reduce el espaciado lateral para que el titulo y los enlaces respiren.
+    ===================================================================== */
+    .encabezado-simple {
+        padding: 12px 16px;
+        gap: 10px;
+    }
+
+    /* =====================================================================
+       TITULO DEL ENCABEZADO EN 750PX (@media (max-width: 750px) .encabezado-simple h1)
+       Disminuye ligeramente el tamano del nombre de la marca.
+    ===================================================================== */
+    .encabezado-simple h1 {
+        font-size: 19px;
+    }
+
+    /* =====================================================================
+       TARJETA DE PRODUCTO EN 750PX (@media (max-width: 750px) .tarjeta-producto)
+       Cambia de dos columnas a una sola columna vertical.
+    ===================================================================== */
+    .tarjeta-producto {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 18px;
+    }
+
+    /* =====================================================================
+       IMAGEN PRINCIPAL EN 750PX (@media (max-width: 750px) .imagen-principal-box)
+       Reduce la altura del marco principal para evitar desplazamientos largos.
+    ===================================================================== */
+    .imagen-principal-box {
+        height: 250px;
+    }
+
+    /* =====================================================================
+       BOTONES DE CARRITO Y FAVORITOS EN 750PX (.acciones-producto button)
+       Permite que cada boton ocupe el ancho completo si no caben lado a lado.
+    ===================================================================== */
+    .acciones-producto .btn-carrito,
+    .acciones-producto .btn-favoritos {
+        min-width: 100%;
+    }
+}
+
+/* =========================================================================
+   MEDIA QUERY PARA CELULARES PEQUENOS DE HASTA 550PX (@media (max-width: 550px))
+   Optimiza margenes, tipografias, miniaturas y botones para pantallas angostas.
+========================================================================= */
+@media (max-width: 550px) {
+
+    /* =========================================
+   MENÚ HAMBURGUESA
+========================================= */
+/* 1. El encabezado se vuelve relativo para contener el botón y el menú desplegable */
+    .encabezado {
+        position: relative;
+        padding-right: 60px; /* Deja espacio a la derecha para que el texto no choque con la hamburguesa */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 12px;
+    }
+
+    /* 2. El botón hamburguesa se fija exactamente arriba a la derecha */
+    .btn-hamburguesa {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: none;
+        border: none;
+        color: #00d2ff;
+        font-size: 28px;
+        cursor: pointer;
+        padding: 0;
+        z-index: 100;
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        gap: 5px;
+    }
+
+    /* 3. El menú desplegable aparece justo debajo del encabezado al activarse */
+    #menu-navegacion {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #071429;
+        border-top: 2px solid #ff8617;
+        border-bottom: 2px solid #ff8617;
+        padding: 10px 0;
+        z-index: 1000;
+        box-sizing: border-box;
+    }
+
+    #menu-navegacion.activo {
+        display: flex;
+    }
+
+    #menu-navegacion a {
+        font-size: 11px;
+        padding: 10px 20px;
+        text-align: left;
+        color: #ffffff;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    #menu-navegacion a img {
+        height: 16px;
+    }
+
+    #menu-navegacion a:last-child {
+        border-bottom: none;
+    }
+    /* 63.1 PANEL DE CUENTA EN CELULARES */
+    .panel-cuenta {
+        display: none;
+        visibility: hidden;
+    }
+
+    .panel-cuenta.activo {
+        display: block;
+        visibility: visible;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        max-width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        transform: none;
+        border-radius: 0;
+        overflow-y: auto;
+        padding: 20px 15px;
+        z-index: 2000;
+        box-sizing: border-box;
+    }
+    /* =========================================
+       FIN MENÚ HAMBURGUESA
+    ========================================= */
+    /* =====================================================================
+       ENCABEZADO APILADO EN 550PX (@media (max-width: 550px) .encabezado-simple)
+       Acomoda los elementos en columna centrada para que no se encimen.
+    ===================================================================== */
+    .encabezado-simple {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 12px;
+    }
+
+    /* =====================================================================
+       BOTONES DEL ENCABEZADO EN 550PX (.btn-volver, .enlace-perfil)
+       Ajusta el tamano de fuente y relleno para facilitar el toque en movil.
+    ===================================================================== */
+    .encabezado-simple .btn-volver,
+    .encabezado-simple .enlace-perfil {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+
+    /* =====================================================================
+       CONTENEDOR PRINCIPAL EN 550PX (@media (max-width: 550px) .contenedor-principal)
+       Reduce margenes exteriores para aprovechar mejor el ancho del celular.
+    ===================================================================== */
+    .contenedor-principal {
+        margin: 16px auto;
+        padding: 0 10px;
+        gap: 18px;
+    }
+
+    /* =====================================================================
+       RECUADROS DE PRODUCTO Y COMENTARIOS EN 550PX
+       Disminuye el padding interno de ambos recuadros principales.
+    ===================================================================== */
+    .tarjeta-producto,
+    .tarjeta-comentarios {
+        padding: 14px;
+        border-radius: 12px;
+    }
+
+    /* =====================================================================
+       IMAGEN PRINCIPAL EN 550PX (@media (max-width: 550px) .imagen-principal-box)
+       Ajusta la altura a 210px para mantener proporciones en pantallas pequenas.
+    ===================================================================== */
+    .imagen-principal-box {
+        height: 210px;
+    }
+
+    /* =====================================================================
+       MINIATURAS EN 550PX (@media (max-width: 550px) .miniatura)
+       Compacta las vistas previas para mostrar mas miniaturas por fila.
+    ===================================================================== */
+    .miniatura {
+        width: 52px;
+        height: 52px;
+    }
+
+    /* =====================================================================
+       NOMBRE Y PRECIO DEL PRODUCTO EN 550PX
+       Escala los tamanos de texto para evitar saltos bruscos de linea.
+    ===================================================================== */
+    .info-producto h2 {
+        font-size: 22px;
+    }
+
+    .precio-producto {
+        font-size: 21px;
+    }
+
+    /* =====================================================================
+       ESTRELLAS DE CALIFICACION EN 550PX (@media (max-width: 550px) .estrella-btn)
+       Ajusta el tamano de cada estrella para tocarla comodamente con el dedo.
+    ===================================================================== */
+    .estrella-btn {
+        font-size: 24px;
+    }
+
+    /* =====================================================================
+       BOTON PUBLICAR OPINION Y VOLVER EN 550PX
+       Expande ambos botones al ancho completo para mayor comodidad en celular.
+    ===================================================================== */
+    .btn-publicar-comentario {
+        width: 100%;
+        text-align: center;
+    }
+
+    .contenedor-volver-producto {
+        justify-content: stretch;
+    }
+
+    .btn-volver-producto {
+        width: 100%;
+        justify-content: center;
+    }
+}

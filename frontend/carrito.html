@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi carrito | Tigre Blanco</title>
+    <link rel="stylesheet" href="carrito.css">
+    <script src="carrito.js" defer></script>
+</head>
+<body>
+
+<!-- ==========================================================
+    1. ENCABEZADO PRINCIPAL DE LA PAGINA
+========================================================== -->
+
+<header class="encabezado">
+        <div class="contenedor-logo-titulo">
+            <img src="img/logoencab1.jpg.jpeg" alt="Logo Tigre Market" class="logo-tigre-encabezado">
+            
+            <div class="texto-encabezado">
+                <h1>Tiger Market</h1>
+                <p>Compra y vende entre estudiantes universitarios GTU</p>
+            </div>
+        </div>
+
+<!-- ==========================================================
+    2. MENU DE NAVEGACION PARA ACCEDEER A DIFERENTES SECCIONES
+=========================================================== -->
+
+<button class="btn-hamburguesa" id="btn-hamburguesa" aria-label="Abrir menú">
+        &#9776;
+    </button>
+    <nav class="menu-navegacion" id="menu-navegacion">
+        <a href="/Pagina-de-inicio.html">
+            <img src="/frontend/iconos/inicio.png" alt=""> Inicio
+         </a>
+
+        <a href="/frontend/compras.html">
+            <img src="/frontend/iconos/compras.png" alt=""> Compras
+        </a>
+
+        <a href="/frontend/venta.html">
+            <img src="/frontend/iconos/vender.png" alt=""> Vender
+        </a>
+
+        <a href="javascript:void(0);" onclick="abrirPanelCuenta()">
+            <img src="/frontend/iconos/usuario.png" alt=""> Mi cuenta
+        </a>
+    </nav>
+
+    </header>
+
+<!-- ==========================================================
+    3. PANEL LATERAL DE OPCIONES DE CUENTA
+=========================================================== -->
+
+<div id="overlay-cuenta" class="overlay-cuenta" onclick="cerrarPanelCuenta()"></div>
+
+<aside id="panel-cuenta" class="panel-cuenta">
+
+    <!-- Fondo decorativo -->
+    <div class="panel-fondo"></div>
+
+    <!-- Tigres decorativos -->
+    <img src="/frontend/img/panel-macho2.png"
+         alt="Tigresa decorativa"
+         class="tigre-panel tigre-hembra">
+
+    <img src="/frontend/img/panel-hembra1.png"
+         alt="Tigre decorativo"
+         class="tigre-panel tigre-macho">
+
+    <!-- Contenido del panel -->
+    <div class="panel-contenido">
+
+        <!-- Encabezado -->
+        <div class="panel-header">
+            <h3>Opciones de Cuenta</h3>
+            <button id="btn-cerrar-panel" class="btn-cerrar" onclick="cerrarPanelCuenta()">&times;</button>
+        </div>
+
+        <!-- Información del Usuario -->
+        <div class="perfil-info">
+            <div class="avatar-container">
+            <img src="/frontend/iconos/usuario.png" alt="Foto de Perfil" id="foto-perfil">
+            </div>
+
+            <h4 id="nombre-usuario">Usuario Tigre</h4>
+            <span class="user-email">usuario@tigremarket.com</span>
+        </div>
+
+        <!-- Opciones del Menú -->
+        <nav class="panel-menu">
+
+            <a href="/frontend/perfil.html" class="menu-item">
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                Editar Perfil
+            </a>
+
+            <a href="/frontend/cambio-password.html" class="menu-item">
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                Cambiar Contraseña
+            </a>
+
+            <div class="menu-divider"></div>
+
+            <button id="btn-logout" class="menu-item btn-logout">
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+                Cerrar Sesión
+            </button>
+
+            <button id="btn-eliminar-cuenta" class="menu-item btn-danger" onclick="if(confirm('¿Estás seguro de eliminar tu cuenta?')) alert('Cuenta eliminada');">
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                Eliminar Cuenta
+            </button>
+
+        </nav>
+
+    </div>
+</aside>
+
+<!-- ==========================================================
+    3. CONTENIDO PRINCIPAL DE CARRITO
+========================================================== -->
+
+
+    <main class="contenedor-carrito">
+
+        <h2>Mi carrito de compras</h2>
+            <h3 class="titulo-productos">Tus productos seleccionados</h3>
+            <section id="lista-carrito">
+            <!-- Los productos aparecerán aquí -->
+        </section>
+
+<!-- ==========================================================
+    4. RESUMEN DE LA COMPRA
+========================================================== -->
+
+        <section class="resumen-carrito">
+            <h3>Resumen de compra</h3>
+
+            <p>
+                Subtotal:
+                <span id="subtotal">$0.00 MXN</span>
+            </p>
+
+            <h3>
+                Total:
+                <span id="total">$0.00 MXN</span>
+            </h3>
+
+            <button id="confirmar-pedido">
+                Confirmar pedido
+            </button>
+    </div>
+</div>
+
+            <p id="mensaje" role="status"></p>
+        </section>
+
+    </main>
+
+<!-- ==========================================================
+    5. VENTANA EMERGENTE DE COMPRA EXITOSA
+========================================================== -->
+
+<div id="ventana-exito" class="ventana-exito">
+
+    <div class="contenido-exito">
+
+        <h2>¡Felicidades!</h2>
+        <p class="mensaje-exito">
+            Tu compra se realizó con éxito
+        </p>
+
+        <img src="img/carrito.jpeg" alt="Tigre de Tigre Market">
+
+        <p class="entrega-exito">
+            Recuerda que tu producto se te entregará
+            en persona en el plantel.
+        </p>
+
+        <button id="cerrar-exito">
+            ¡Entendido!
+        </button>
+
+<!-- ==========================================================
+    6. CONEXION XON FIREBASE 
+========================================================== -->
+
+    <script type="module">
+
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-analytics.js";
+  
+  const firebaseConfig = {
+    apiKey: "AIzaSyBnRAQ9ZX82hOCqnML9QqPfBIJNzhSXIHU",
+    authDomain: "tiger-market-73a36.firebaseapp.com",
+    projectId: "tiger-market-73a36",
+    storageBucket: "tiger-market-73a36.firebasestorage.app",
+    messagingSenderId: "219212142513",
+    appId: "1:219212142513:web:364f290d2cc6188c9f8f90",
+    measurementId: "G-N0SN077EY6"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+    
+<script type="module" src="./proteger-pagina.js"></script>
+<script type="module" src="/frontend/control-salida.js"></script>
+
+</body>
+</html>

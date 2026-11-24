@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Iniciar sesión | Tigre Market</title>
+
+    <link rel="stylesheet" href="/index.css">
+
+    <script src="/frontend/ojo.js" defer></script>
+
+    <script
+        type="module"
+        src="/frontend/formulario.js">
+    </script>
+
+</head>
+
+<body>
+
+    <!--==========================================
+        1. ENCABEZADO Y LOGOTIPO
+    ==========================================-->
+
+    <header class="logo-container">
+
+        <img
+            src="/frontend/img/tigre.jpeg"
+            alt="Logo de Tigre Market"
+            class="logo"
+        >
+
+    </header>
+
+
+    <!--==========================================
+        2. CONTENEDOR PRINCIPAL
+    ==========================================-->
+
+    <main class="contenedor">
+
+        <section class="imagen-tigre">
+
+            <img
+                src="/frontend/img/tigre.jpeg"
+                alt="Tigre blanco de Tigre Market"
+            >
+
+        </section>
+
+
+        <section class="texto">
+
+            <h1 class="titulo">Tiger Market</h1>
+
+            <p class="parrafo">
+                Compra y vende entre estudiantes universitarios
+            </p>
+
+        </section>
+
+
+        <!--==========================================
+            3. FORMULARIO DE INICIO DE SESIÓN
+        ==========================================-->
+
+        <section class="formulario">
+
+            <h2>Iniciar sesión</h2>
+
+            <p>Ingresa a tu cuenta para continuar.</p>
+
+
+            <p id="mensaje-registro" hidden>
+                ¡Registro completado! Ahora puedes iniciar sesión.
+            </p>
+
+
+            <form id="login">
+
+                <!--==========================================
+                    4. CAMPO DE USUARIO
+                ==========================================-->
+
+                <label for="correo-login">
+                    Correo electrónico
+                </label>
+
+                <div class="input-container">
+
+                    <input
+                        type="text"
+                        id="correo-login"
+                        name="correo"
+                        placeholder="ejemplo: juanita_23"
+                        autocomplete="username"
+                        pattern="[a-z0-9_]+"
+                        required
+                    >
+
+                    <span class="domain-fixed">
+                        @tecnaucalpan.mx
+                    </span>
+
+                </div>
+
+
+                <!--==========================================
+                    5. CAMPO DE CONTRASEÑA
+                ==========================================-->
+
+                <label for="contrasena">
+                    Contraseña
+                </label>
+
+                <div
+                    class="password-wrapper"
+                    style="position: relative; display: flex; align-items: center;"
+                >
+
+                    <input
+                        type="password"
+                        id="contrasena"
+                        name="contrasena"
+                        placeholder="Ingresa tu contraseña"
+                        autocomplete="current-password"
+                        minlength="8"
+                        required
+                        style="width: 100%; padding-right: 40px;"
+                    >
+
+
+                    <!--==========================================
+                        6. BOTÓN PARA MOSTRAR U OCULTAR CONTRASEÑA
+                    ==========================================-->
+
+                    <button
+                        type="button"
+                        id="toggle-password"
+                        title="Mostrar contraseña"
+                        style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0;"
+                    >
+
+                        <svg
+                            id="eye-icon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="20px"
+                            viewBox="0 0 24 24"
+                            width="20px"
+                            fill="none"
+                            stroke="#6B7280"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+
+                            <circle cx="12" cy="12" r="3"></circle>
+
+                        </svg>
+
+                    </button>
+
+                </div>
+
+
+                <!--==========================================
+                    7. BOTÓN PARA INICIAR SESIÓN
+                ==========================================-->
+
+                <button type="submit">
+                    Iniciar sesión
+                </button>
+
+            </form>
+
+
+            <!--==========================================
+                8. RECUPERACIÓN DE CONTRASEÑA
+            ==========================================-->
+
+            <p class="OMC">
+
+                <a href="/frontend/cambio-contraseña.html">
+                    ¿Olvidaste tu contraseña?
+                </a>
+
+            </p>
+
+
+            <!--==========================================
+                9. REGISTRO DE NUEVOS USUARIOS
+            ==========================================-->
+
+            <p class="nota">
+
+                ¿Todavía no tienes una cuenta?
+
+                <a href="/frontend/registro.html">
+                    Crear cuenta
+                </a>
+
+            </p>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
