@@ -72,14 +72,9 @@ async function cargarProductos() {
 
             botonVer.addEventListener("click", () => {
 
-                alert(
-                    `${producto.nombre}\n\n` +
-                    `${producto.descripcion}\n\n` +
-                    `Precio: $${producto.precio} MXN\n` +
-                    `Vendedor: ${producto.vendedor || "No disponible"}`
-                );
+            window.location.href = `/frontend/producto.html?id=${id}`;
 
-            });
+        });
 
             // Creamos el botón para agregar al carrito.
             const botonAgregar = document.createElement("button");
