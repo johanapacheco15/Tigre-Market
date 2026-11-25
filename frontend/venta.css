@@ -965,55 +965,98 @@ Se agrega esta seccion para evitar que la hamburguesa se muestre en pantallas gr
 }
 
 
-/* ==========================================================
-   62. DISEÑO RESPONSIVO PARA TABLETAS
-========================================================== */
+/* ================================================================
+   63. DISEÑO RESPONSIVO DE PANTALLAS DE HASTA 600 PX
+================================================================= */
 
-@media (max-width: 900px) {
-    .encabezado {
+@media (max-width: 600px) {
+
+    .contenedor {
+        padding: 30px 20px;
+    }
+
+    .barra-busqueda-filtros {
         flex-wrap: wrap;
-        padding: 15px;
-        justify-content: center;
-        gap: 15px;
-        height: auto;
     }
 
-    .encabezado nav {
-        width: 100%;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .texto-encabezado h1 {
-        font-size: 32px;
+    .buscador {
+        max-width: none;
+        flex-basis: 100%;
     }
 
-    .busqueda-inicio h2 {
-        font-size: 27px;
+    .filtros {
+        flex-basis: 100%;
     }
 
-    .producto {
-        flex: 1 1 100%;
+    .catalogo {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    /* 62.1 PANEL DE CUENTA EN TABLETAS */
-
-    .panel-cuenta {
-        width: 380px;
-        max-width: 90vw;
-        padding: 22px 18px;
+        .filtro label {
+        font-size: 14px;
+        font-weight: bold;
+        color: #ffffff;
     }
 
-    .tigre-macho {
-        width: 190px;
-    }
-
-    .tigre-hembra {
-        width: 145px;
+    .filtro select,
+    .filtro input {
+        font-size: 13px;
     }
 }
 
+/* ================================================================
+   64. DISEÑO RESPONSIVO DE TABLETAS DE HASTA 800 PX
+================================================================= */
+
+@media (max-width: 800px) {
+
+.encabezado {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+}
+
+.texto-encabezado h1 {
+    font-size: 40px;
+}
+
+.texto-encabezado p {
+    font-size: 13px;
+}
+
+.filtros {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.filtro {
+    flex: 1 1 130px;
+}
+
+.catalogo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.texto-encabezado h1 {
+    font-size: 36px;
+}
+
+.filtro label {
+    font-size: 13px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.filtro select,
+.filtro input {
+    font-size: 12px;
+}
+}
+
 /* ==========================================================
-   63. DISEÑO RESPONSIVO PARA CELULARES 
+   65. DISEÑO RESPONSIVO PARA CELULARES 
 ========================================================== */
 
 @media (max-width: 550px) {
@@ -1094,12 +1137,6 @@ Se agrega esta seccion para evitar que la hamburguesa se muestre en pantallas gr
     .panel-cuenta {
         display: none;
         visibility: hidden;
-                width: 100%;
-        max-width: 100%;
-        height: 100vh;
-        height: 100dvh;
-
-        padding: 20px 15px;
     }
 
     .panel-cuenta.activo {
@@ -1121,125 +1158,144 @@ Se agrega esta seccion para evitar que la hamburguesa se muestre en pantallas gr
         z-index: 2000;
         box-sizing: border-box;
     }
-
     /* =========================================
        FIN MENÚ HAMBURGUESA
     ========================================= */
 
-    .logo-tigre-encabezado {
-        height: 70px;
-    }
+.logo-tigre-encabezado {
+    height: 90px;
+    width: auto;
+    object-fit: contain;
+}
 
-    .texto-encabezado h1 {
-        font-size: 22px;
-    }
+.texto-encabezado {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 5px;
+}
 
-    .texto-encabezado p {
-        font-size: 8px;
-    }
-    .busqueda-inicio h2 {
-        font-size: 22px;
-    }
+.texto-encabezado h1 {
+    font-size: 27px;
+    line-height: 1.2;
+    margin: 0;
+}
 
-    main {
-        padding: 20px 12px;
-    }
+.texto-encabezado p {
+    font-size: 11px;
+    line-height: 1.5;
+    margin: 0;
+}
+.busqueda-inicio h2 {
+    font-size: 22px;
+}
 
-    #productos {
-        font-size: 21px;
-    }
+main {
+    padding: 20px 12px;
+}
 
-    .producto {
-        grid-template-columns: 115px minmax(0, 1fr);
-        grid-template-rows: auto auto auto auto;
-        padding: 9px;
-        min-height: 170px;
-    }
+#productos {
+    font-size: 21px;
+}
 
-    .foto-producto {
-        height: 145px;
-    }
+.producto {
+    grid-template-columns: 115px minmax(0, 1fr);
+    grid-template-rows: auto auto auto auto;
+    padding: 9px;
+    min-height: 170px;
+}
 
-    .producto h3 {
-        font-size: 11px;
-        padding-left: 8px;
-    }
+.foto-producto {
+    height: 145px;
+}
 
-    .producto p:not(.precio) {
-        font-size: 11px;
-        padding-left: 8px;
-    }
+.producto h3 {
+    font-size: 11px;
+    padding-left: 8px;
+}
 
-    .producto .precio {
-        font-size: 17px;
-        padding-left: 8px;
-    }
+.producto p:not(.precio) {
+    font-size: 11px;
+    padding-left: 8px;
+}
 
-    .producto button {
-        font-size: 8px;
-        padding: 0 7px;
-        height: 32px;
-    }
+.producto .precio {
+    font-size: 17px;
+    padding-left: 8px;
+}
 
-    .producto button:nth-of-type(1) {
-        margin-left: 8px;
-    }
+.producto button {
+    font-size: 8px;
+    padding: 0 7px;
+    height: 32px;
+}
 
-    footer {
-        padding: 12px;
-    }
+.producto button:nth-of-type(1) {
+    margin-left: 8px;
+}
 
-    footer p {
-        font-size: 10px;
-    }
+footer {
+    padding: 12px;
+}
 
-    /* 63.1 PANEL DE CUENTA EN CELULARES */
+footer p {
+    font-size: 10px;
+}
 
-    .panel-header h3 {
-        font-size: 20px;
-    }
+.panel-cuenta {
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    padding: 20px 15px;
+}
 
-    .btn-cerrar {
-        width: 32px;
-        height: 32px;
-        font-size: 21px;
-    }
+.panel-header h3 {
+    font-size: 20px;
+}
 
-    .avatar-container {
-        width: 75px;
-        height: 75px;
-    }
+.btn-cerrar {
+    width: 32px;
+    height: 32px;
+    font-size: 21px;
+}
 
-    .perfil-info {
-        padding: 20px 0 15px;
-    }
+.avatar-container {
+    width: 75px;
+    height: 75px;
+}
 
-    .perfil-info h4 {
-        font-size: 14px;
-    }
+.perfil-info {
+    padding: 20px 0 15px;
+}
 
-    .user-email {
-        font-size: 9px;
-    }
+.perfil-info h4 {
+    font-size: 14px;
+}
 
-    .panel-menu {
-        gap: 8px;
-        margin-top: 15px;
-    }
+.user-email {
+    font-size: 9px;
+}
 
-    .menu-item {
-        width: 65%;
-        padding: 9px 8px;
-        font-size: 9px;
-    }
+.panel-menu {
+    gap: 8px;
+    margin-top: 15px;
+}
 
-    .tigre-macho {
-        width: 150px;
-        left: -35px;
-    }
+.menu-item {
+    width: 65%;
+    padding: 9px 8px;
+    font-size: 9px;
+}
 
-    .tigre-hembra {
-        width: 110px;
-        right: -15px;
-    }
+.tigre-macho {
+    width: 150px;
+    left: -35px;
+}
+
+.tigre-hembra {
+    width: 110px;
+    right: -15px;
+}
 }

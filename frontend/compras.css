@@ -1285,10 +1285,112 @@ footer p {
 
 
 /* ================================================================
-   37. DISEÑO RESPONSIVO DE TABLETAS Y PANTALLAS DE HASTA 1100 PX
+   63. DISEÑO RESPONSIVO DE PANTALLAS DE HASTA 600 PX
 ================================================================= */
 
-@media (max-width: 1100px) {
+@media (max-width: 600px) {
+
+    /* =========================================
+   MENÚ HAMBURGUESA
+========================================= */
+/* 1. El encabezado se vuelve relativo para contener el botón y el menú desplegable */
+    .encabezado {
+        position: relative;
+        padding-right: 60px; /* Deja espacio a la derecha para que el texto no choque con la hamburguesa */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 12px;
+    }
+
+    /* 2. El botón hamburguesa se fija exactamente arriba a la derecha */
+    .btn-hamburguesa {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: none;
+        border: none;
+        color: #00d2ff;
+        font-size: 28px;
+        cursor: pointer;
+        padding: 0;
+        z-index: 100;
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        gap: 5px;
+    }
+
+    /* 3. El menú desplegable aparece justo debajo del encabezado al activarse */
+    #menu-navegacion {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #071429;
+        border-top: 2px solid #ff8617;
+        border-bottom: 2px solid #ff8617;
+        padding: 10px 0;
+        z-index: 1000;
+        box-sizing: border-box;
+    }
+
+    #menu-navegacion.activo {
+        display: flex;
+    }
+
+    #menu-navegacion a {
+        font-size: 11px;
+        padding: 10px 20px;
+        text-align: left;
+        color: #ffffff;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    #menu-navegacion a img {
+        height: 16px;
+    }
+
+    #menu-navegacion a:last-child {
+        border-bottom: none;
+    }
+    /* 63.1 PANEL DE CUENTA EN CELULARES */
+    .panel-cuenta {
+        display: none;
+        visibility: hidden;
+    }
+
+    .panel-cuenta.activo {
+        display: block;
+        visibility: visible;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        max-width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        transform: none;
+        border-radius: 0;
+        overflow-y: auto;
+        padding: 20px 15px;
+        z-index: 2000;
+        box-sizing: border-box;
+    }
+    /* =========================================
+       FIN MENÚ HAMBURGUESA
+    ========================================= */
 
     .contenedor {
         padding: 30px 20px;
@@ -1310,41 +1412,72 @@ footer p {
     .catalogo {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
+        .filtro label {
+        font-size: 14px;
+        font-weight: bold;
+        color: #ffffff;
+    }
+
+    .filtro select,
+    .filtro input {
+        font-size: 13px;
+    }
 }
 
 /* ================================================================
-   37. DISEÑO RESPONSIVO DE TABLETAS Y PANTALLAS DE HASTA 800 PX
+   64. DISEÑO RESPONSIVO DE TABLETAS DE HASTA 800 PX
 ================================================================= */
 
 @media (max-width: 800px) {
 
-    .encabezado {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-        padding: 15px;
-    }
+.encabezado {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+}
 
-    .filtros {
-        flex-wrap: wrap;
-        justify-content: flex-start;
-    }
+.texto-encabezado h1 {
+    font-size: 40px;
+}
 
-    .filtro {
-        flex: 1 1 130px;
-    }
+.texto-encabezado p {
+    font-size: 13px;
+}
 
-    .catalogo {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+.filtros {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
 
-    .texto-encabezado h1 {
-        font-size: 36px;
-    }
+.filtro {
+    flex: 1 1 130px;
+}
+
+.catalogo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.texto-encabezado h1 {
+    font-size: 36px;
+}
+
+.filtro label {
+    font-size: 13px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.filtro select,
+.filtro input {
+    font-size: 12px;
+}
 }
 
 /* ==========================================================
-   63. DISEÑO RESPONSIVO PARA CELULARES 
+   65. DISEÑO RESPONSIVO PARA CELULARES 
 ========================================================== */
 
 @media (max-width: 550px) {
@@ -1450,129 +1583,140 @@ footer p {
        FIN MENÚ HAMBURGUESA
     ========================================= */
 
-    .logo-tigre-encabezado {
-        height: 70px;
-    }
+.logo-tigre-encabezado {
+    height: 90px;
+    width: auto;
+    object-fit: contain;
+}
 
-    .texto-encabezado h1 {
-        font-size: 22px;
-    }
+.texto-encabezado {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 5px;
+}
 
-    .texto-encabezado p {
-        font-size: 8px;
-    }
-    .busqueda-inicio h2 {
-        font-size: 22px;
-    }
+.texto-encabezado h1 {
+    font-size: 27px;
+    line-height: 1.2;
+    margin: 0;
+}
 
-    main {
-        padding: 20px 12px;
-    }
+.texto-encabezado p {
+    font-size: 11px;
+    line-height: 1.5;
+    margin: 0;
+}
+.busqueda-inicio h2 {
+    font-size: 22px;
+}
 
-    #productos {
-        font-size: 21px;
-    }
+main {
+    padding: 20px 12px;
+}
 
-    .producto {
-        grid-template-columns: 115px minmax(0, 1fr);
-        grid-template-rows: auto auto auto auto;
-        padding: 9px;
-        min-height: 170px;
-    }
+#productos {
+    font-size: 21px;
+}
 
-    .foto-producto {
-        height: 145px;
-    }
+.producto {
+    grid-template-columns: 115px minmax(0, 1fr);
+    grid-template-rows: auto auto auto auto;
+    padding: 9px;
+    min-height: 170px;
+}
 
-    .producto h3 {
-        font-size: 11px;
-        padding-left: 8px;
-    }
+.foto-producto {
+    height: 145px;
+}
 
-    .producto p:not(.precio) {
-        font-size: 11px;
-        padding-left: 8px;
-    }
+.producto h3 {
+    font-size: 11px;
+    padding-left: 8px;
+}
 
-    .producto .precio {
-        font-size: 17px;
-        padding-left: 8px;
-    }
+.producto p:not(.precio) {
+    font-size: 11px;
+    padding-left: 8px;
+}
 
-    .producto button {
-        font-size: 8px;
-        padding: 0 7px;
-        height: 32px;
-    }
+.producto .precio {
+    font-size: 17px;
+    padding-left: 8px;
+}
 
-    .producto button:nth-of-type(1) {
-        margin-left: 8px;
-    }
+.producto button {
+    font-size: 8px;
+    padding: 0 7px;
+    height: 32px;
+}
 
-    footer {
-        padding: 12px;
-    }
+.producto button:nth-of-type(1) {
+    margin-left: 8px;
+}
 
-    footer p {
-        font-size: 10px;
-    }
+footer {
+    padding: 12px;
+}
 
-    /* 63.1 PANEL DE CUENTA EN CELULARES */
+footer p {
+    font-size: 10px;
+}
 
-    .panel-cuenta {
-        width: 100%;
-        max-width: 100%;
-        height: 100vh;
-        height: 100dvh;
+.panel-cuenta {
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    padding: 20px 15px;
+}
 
-        padding: 20px 15px;
-    }
+.panel-header h3 {
+    font-size: 20px;
+}
 
-    .panel-header h3 {
-        font-size: 20px;
-    }
+.btn-cerrar {
+    width: 32px;
+    height: 32px;
+    font-size: 21px;
+}
 
-    .btn-cerrar {
-        width: 32px;
-        height: 32px;
-        font-size: 21px;
-    }
+.avatar-container {
+    width: 75px;
+    height: 75px;
+}
 
-    .avatar-container {
-        width: 75px;
-        height: 75px;
-    }
+.perfil-info {
+    padding: 20px 0 15px;
+}
 
-    .perfil-info {
-        padding: 20px 0 15px;
-    }
+.perfil-info h4 {
+    font-size: 14px;
+}
 
-    .perfil-info h4 {
-        font-size: 14px;
-    }
+.user-email {
+    font-size: 9px;
+}
 
-    .user-email {
-        font-size: 9px;
-    }
+.panel-menu {
+    gap: 8px;
+    margin-top: 15px;
+}
 
-    .panel-menu {
-        gap: 8px;
-        margin-top: 15px;
-    }
+.menu-item {
+    width: 65%;
+    padding: 9px 8px;
+    font-size: 9px;
+}
 
-    .menu-item {
-        width: 65%;
-        padding: 9px 8px;
-        font-size: 9px;
-    }
+.tigre-macho {
+    width: 150px;
+    left: -35px;
+}
 
-    .tigre-macho {
-        width: 150px;
-        left: -35px;
-    }
-
-    .tigre-hembra {
-        width: 110px;
-        right: -15px;
-    }
+.tigre-hembra {
+    width: 110px;
+    right: -15px;
+}
 }

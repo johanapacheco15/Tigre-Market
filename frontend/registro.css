@@ -315,3 +315,166 @@ body::before {
     filter: blur(12px);
     z-index: -1;      
 }
+
+/* =========================================
+   DISEÑO RESPONSIVO PARA CELULARES
+========================================= */
+
+@media (max-width: 600px) {
+/* 1. El encabezado se vuelve relativo para contener el botón y el menú desplegable */
+    .encabezado {
+        position: relative;
+        padding-right: 60px; /* Deja espacio a la derecha para que el texto no choque con la hamburguesa */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 12px;
+    }
+
+body {
+    padding: 15px;
+    justify-content: flex-start;
+}
+
+header.container {
+    min-width: 0;
+    width: 100%;
+    margin: 10px 0 20px;
+}
+
+header.container .title {
+    font-size: clamp(42px, 11vw, 65px);
+}
+
+main.contenedor {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    gap: 0;
+    justify-content: center;
+}
+
+section.formulario {
+    width: 100%;
+    min-width: 0;
+    max-width: 450px;
+    padding: 25px 20px;
+}
+
+.confirmaciones {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.opcion-confirmacion {
+    display: block;
+    width: 100%;
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-align: left;
+    margin: 0;
+}
+
+.opcion-confirmacion input[type="checkbox"] {
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    margin: 0 5px 0 0;
+}
+
+.opcion-confirmacion a {
+    display: inline;
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: normal;
+}
+
+}
+
+/* =========================================
+   DISEÑO RESPONSIVO PARA TABLETAS
+========================================= */
+
+@media (min-width: 601px) and (max-width: 900px) {
+    
+    .encabezado {
+        position: relative;
+        padding-right: 60px; /* Deja espacio a la derecha para que el texto no choque con la hamburguesa */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 12px;
+    }
+
+body {
+    padding: 25px;
+}
+
+header.container {
+    min-width: 0;
+    width: 100%;
+}
+
+header.container .title {
+    font-size: 65px;
+}
+
+main.contenedor {
+    width: 100%;
+    max-width: 650px;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+section.formulario {
+    width: 100%;
+    max-width: 500px;
+    min-width: 0;
+    padding: 30px;
+}
+
+.confirmaciones {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.opcion-confirmacion {
+    display: block;
+    width: 100%;
+    font-size: 13px;
+    line-height: 1.5;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-align: left;
+    margin: 0;
+}
+
+.opcion-confirmacion input[type="checkbox"] {
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    margin: 0 5px 0 0;
+}
+
+    .opcion-confirmacion a {
+    display: inline;
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: normal;
+}
+
+}
+
